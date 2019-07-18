@@ -1,0 +1,92 @@
+#user_mode_enabled                                       bool    false
+#stem_auto_hemi_filter_enabled                           bool    true    # MVI_DOCTOR_STRANGE_CONFIG use false
+stem_auto_hemi_filter_samples                           int     20
+stem_auto_hemi_filter_min_correlative                   double  6.0
+stem_auto_hemi_filter_min_correlative_derivative        double  0.3
+stem_auto_hemi_filter_max_velocity                      double  4.0
+stem_auto_hemi_filter_max_acceleration                  double  50.0
+stem_auto_hemi_filter_max_tx_angular_speed              double  0.70    # Measured in rads/sec. Approximately 45 deg/s
+stem_auto_hemi_filter_max_correlative_stddev            double  50.0
+stem_auto_hemi_filter_max_correlative_dv_stddev         double  50.0
+stem_auto_hemi_distortion_angle_limit                   double  0.5     # Measured in rads
+#auto_hemi_sync_features_enabled                         bool    true
+#auto_hemi_sync_use_single_hemi                          bool    false    # MVI_DOCTOR_STRANGE_CONFIG, JOKER_CONFIG, and HUMAN_TORCH_CONFIG use true
+#auto_hemi_sync_use_single_hemi_tracking                 bool    false    # JOKER_CONFIG use true
+#auto_sync_continuous_validation                         bool    true
+auto_sync_logging                                       bool    false
+auto_sync_G2North_diff_deg_max                          float   20.0    # Degrees of allowable difference between RX and TX de
+auto_sync_min_accel                                     float   9.2     # m/s^2
+auto_sync_max_accel                                     float   10.4
+auto_sync_ang_energy_variance                           float   1.0
+auto_sync_accel_confidence                              float   1.0
+auto_sync_mag_confidence                                float   0.0
+auto_sync_gyro_confidence                               float   0.0
+auto_sync_accel_variance                                float   1000000.0
+auto_sync_mag_variance                                  float   12000.0
+auto_sync_gyro_variance                                 float   1.0
+auto_sync_variance_samples                              int     32      # Number of samples to compute variance on. Set to 0 to use static variance values above
+auto_sync_p_threshold                                   float   0.5
+auto_sync_p_uniqueness_threshold                        float   0.35
+auto_sync_max_pos_difference                            float   100     # Measured in DSP units from frame to frame
+auto_sync_max_rot_difference                            float   0.1     # Measured in radians from DSP from frame to frame
+#auto_sync_mag_confidence_step                           float   0.0    # Change in confidence when ambiguous sync, all configs currently use 0.0 to turn it off, use 0.01 to turn it on
+stem_imu_rot_proportional_gain                          double  0.5
+stem_imu_rot_A_proportional_gain                        double  3.0
+stem_imu_rot_W_proportional_gain                        double  3.0
+stem_imu_rot_integral_gain                              double  0.0
+stem_imu_rot_sample_freq                                double  240.0
+stem_imu_rot_accel_variance                             double  0.01
+stem_imu_rot_mag_variance                               double  20000.0
+stem_imu_gravity_fusion_type                            int     2
+stem_imu_gravity_use_dmp                                bool    true
+write_log_on_init                                       int     0
+write_full_log_on_init                                  int     0
+maw_filter_min_window					int	6
+maw_filter_max_window					int	12
+stem_raw_log_file                                       bool    false
+stem_write_em_freqs_enabled                             bool    true
+#stem_baud_rate                                          int     230400
+#stem_hands_baud_rate                                    int     460800
+stem_gravity_correction_matrix_tx_0_0                   float   1.0
+stem_gravity_correction_matrix_tx_0_1                   float   0.0
+stem_gravity_correction_matrix_tx_0_2                   float   0.0
+stem_gravity_correction_matrix_tx_0_3                   float   0.0
+stem_gravity_correction_matrix_tx_1_0                   float   0.0
+stem_gravity_correction_matrix_tx_1_1                   float   1.0
+stem_gravity_correction_matrix_tx_1_2                   float   0.0
+stem_gravity_correction_matrix_tx_1_3                   float   0.0
+stem_gravity_correction_matrix_tx_2_0                   float   0.0
+stem_gravity_correction_matrix_tx_2_1                   float   0.0
+stem_gravity_correction_matrix_tx_2_2                   float   1.0
+stem_gravity_correction_matrix_tx_2_3                   float   0.0
+stem_gravity_correction_matrix_tx_3_0                   float   0.0
+stem_gravity_correction_matrix_tx_3_1                   float   0.0
+stem_gravity_correction_matrix_tx_3_2                   float   0.0
+stem_gravity_correction_matrix_tx_3_3                   float   1.0
+stem_gravity_correction_matrix_rx_0_0                   float   1.0
+stem_gravity_correction_matrix_rx_0_1                   float   0.0
+stem_gravity_correction_matrix_rx_0_2                   float   0.0
+stem_gravity_correction_matrix_rx_0_3                   float   0.0
+stem_gravity_correction_matrix_rx_1_0                   float   0.0
+stem_gravity_correction_matrix_rx_1_1                   float   1.0
+stem_gravity_correction_matrix_rx_1_2                   float   0.0
+stem_gravity_correction_matrix_rx_1_3                   float   0.0
+stem_gravity_correction_matrix_rx_2_0                   float   0.0
+stem_gravity_correction_matrix_rx_2_1                   float   0.0
+stem_gravity_correction_matrix_rx_2_2                   float   1.0
+stem_gravity_correction_matrix_rx_2_3                   float   0.0
+stem_gravity_correction_matrix_rx_3_0                   float   0.0
+stem_gravity_correction_matrix_rx_3_1                   float   0.0
+stem_gravity_correction_matrix_rx_3_2                   float   0.0
+stem_gravity_correction_matrix_rx_3_3                   float   1.0
+
+# Extents of a rectangular region in wich autosync validation is valid for a stem controller
+# This is measured in mm from the TX coil.
+#stem_auto_sync_validation_zone_enabled                  bool    false     JOKER_CONFIG and HUMAN_TORCH_CONFIG use true
+stem_auto_sync_validation_zone_x                        float   1200.0
+stem_auto_sync_validation_zone_y                        float   1000.0
+stem_auto_sync_validation_zone_z                        float   800.0
+
+dropped_packets_period                                  float   5000.0  # time in ms
+
+hid_multiplex_num_devices                               int     2
