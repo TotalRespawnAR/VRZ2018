@@ -440,7 +440,6 @@ public class TestGUI : MonoBehaviour
 
         GUILayout.Label("All Trackers");
 
-        SixenseCore.Device.IMURotationEnabled = GUILayout.Toggle(SixenseCore.Device.IMURotationEnabled, "IMU Rotation");
         SixenseCore.Device.DistortionCorrectionEnabled = GUILayout.Toggle(SixenseCore.Device.DistortionCorrectionEnabled, "Distortion Correction");
 
         bool filtering = GUILayout.Toggle(SixenseCore.Device.FilterMovingAverageEnabled, "Moving Average Filter");
@@ -837,36 +836,6 @@ public class TestGUI : MonoBehaviour
                     GUILayout.Label("x " + (xyz.x).ToString("0.00") + ",", GUILayout.Width(w / 6 - 1));
                     GUILayout.Label("y " + (xyz.y).ToString("0.00") + ",", GUILayout.Width(w / 6 - 1));
                     GUILayout.Label("z " + (-xyz.z).ToString("0.00"), GUILayout.Width(w / 6 - 1));
-                }
-                GUILayout.EndHorizontal();
-
-                GUILayout.BeginHorizontal();
-                {
-                    GUILayout.Label("   imu acc:", GUILayout.Width(2 * w / 6 - 1));
-                    var xyz = con.IMUAcc;
-                    GUILayout.Label("x " + (xyz.x).ToString("0.") + ",", GUILayout.Width(w / 6 - 1));
-                    GUILayout.Label("y " + (xyz.y).ToString("0.") + ",", GUILayout.Width(w / 6 - 1));
-                    GUILayout.Label("z " + (-xyz.z).ToString("0."), GUILayout.Width(w / 6 - 1));
-                }
-                GUILayout.EndHorizontal();
-
-                GUILayout.BeginHorizontal();
-                {
-                    GUILayout.Label("   imu gyro:", GUILayout.Width(2 * w / 6 - 1));
-                    var xyz = con.IMUGyro;
-                    GUILayout.Label("x " + (xyz.x).ToString("0.") + ",", GUILayout.Width(w / 6 - 1));
-                    GUILayout.Label("y " + (xyz.y).ToString("0.") + ",", GUILayout.Width(w / 6 - 1));
-                    GUILayout.Label("z " + (-xyz.z).ToString("0."), GUILayout.Width(w / 6 - 1));
-                }
-                GUILayout.EndHorizontal();
-
-                GUILayout.BeginHorizontal();
-                {
-                    GUILayout.Label("   imu mag:", GUILayout.Width(2 * w / 6 - 1));
-                    var xyz = con.IMUMag;
-                    GUILayout.Label("x " + (xyz.x).ToString("0.") + ",", GUILayout.Width(w / 6 - 1));
-                    GUILayout.Label("y " + (xyz.y).ToString("0.") + ",", GUILayout.Width(w / 6 - 1));
-                    GUILayout.Label("z " + (-xyz.z).ToString("0."), GUILayout.Width(w / 6 - 1));
                 }
                 GUILayout.EndHorizontal();
             }
