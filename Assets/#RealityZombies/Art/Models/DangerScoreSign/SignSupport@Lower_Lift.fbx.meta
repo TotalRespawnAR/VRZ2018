@@ -1,0 +1,405 @@
+fileFormatVersion: 2
+guid: 33d92917cf1f51447b62364c347b1e8a
+timeCreated: 1540313774
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Basejoint
+    100002: BasejointCtrl
+    100004: BasejointCtrlGrp
+    100006: locator1
+    100008: locator10
+    100010: locator11
+    100012: locator12
+    100014: locator13
+    100016: locator14
+    100018: locator15
+    100020: locator16
+    100022: locator2
+    100024: locator2_
+    100026: locator3
+    100028: locator3_1
+    100030: locator4
+    100032: locator4_
+    100034: locator5
+    100036: locator6
+    100038: locator7
+    100040: locator8
+    100042: locator9
+    100044: Locators
+    100046: LowerArmjoint
+    100048: LowerArmjoint1
+    100050: LowerArmjoint1Ctrl
+    100052: LowerArmjoint1CtrlGrp
+    100054: LowerArmjoint2
+    100056: LowerArmjoint2Ctrl
+    100058: LowerArmjoint2CtrlGrp
+    100060: LowerArmjoint3
+    100062: LowerArmjoint3Ctrl
+    100064: LowerArmjoint3CtrlGrp
+    100066: LowerArmjointCtrl
+    100068: LowerArmjointCtrlGrp
+    100070: MountingPointjoint
+    100072: MountingPointJointCtrl
+    100074: MountingPointJointCtrlGrp
+    100076: PistonThrusterjoint
+    100078: PistonThrusterjoint1
+    100080: PistonThrusterjoint1Ctrl
+    100082: PistonThrusterjoint1CtrlGrp
+    100084: PistonThrusterjoint2
+    100086: PistonThrusterjoint2Ctrl
+    100088: PistonThrusterjoint2CtrlGrp
+    100090: PistonThrusterjointCtrl
+    100092: PistonThrusterjointCtrlGrp
+    100094: SignAimjoint
+    100096: SignAimjointCtrl
+    100098: SignAimjointCtrlGrp
+    100100: //RootNode
+    100102: SignSupportGroup_inSitu2
+    100104: UpperArmAjoint
+    100106: UpperArmAjoint1
+    100108: UpperArmAjoint1Ctrl
+    100110: UpperArmAjoint1CtrlGrp
+    100112: UpperArmAjointCtrl
+    100114: UpperArmAjointCtrlGrp
+    100116: UpperArmBJoint
+    100118: UpperArmBJoint1
+    100120: VSupportAimjoint
+    100122: VSupportAimjointCtrl
+    100124: VSupportAimjointCtrlGrp
+    100126: VSupportJoint
+    100128: VSupportJoint1
+    100130: VSupportJointCtrl
+    100132: VSupportJointCtrlGrp
+    400000: Basejoint
+    400002: BasejointCtrl
+    400004: BasejointCtrlGrp
+    400006: locator1
+    400008: locator10
+    400010: locator11
+    400012: locator12
+    400014: locator13
+    400016: locator14
+    400018: locator15
+    400020: locator16
+    400022: locator2
+    400024: locator2_
+    400026: locator3
+    400028: locator3_1
+    400030: locator4
+    400032: locator4_
+    400034: locator5
+    400036: locator6
+    400038: locator7
+    400040: locator8
+    400042: locator9
+    400044: Locators
+    400046: LowerArmjoint
+    400048: LowerArmjoint1
+    400050: LowerArmjoint1Ctrl
+    400052: LowerArmjoint1CtrlGrp
+    400054: LowerArmjoint2
+    400056: LowerArmjoint2Ctrl
+    400058: LowerArmjoint2CtrlGrp
+    400060: LowerArmjoint3
+    400062: LowerArmjoint3Ctrl
+    400064: LowerArmjoint3CtrlGrp
+    400066: LowerArmjointCtrl
+    400068: LowerArmjointCtrlGrp
+    400070: MountingPointjoint
+    400072: MountingPointJointCtrl
+    400074: MountingPointJointCtrlGrp
+    400076: PistonThrusterjoint
+    400078: PistonThrusterjoint1
+    400080: PistonThrusterjoint1Ctrl
+    400082: PistonThrusterjoint1CtrlGrp
+    400084: PistonThrusterjoint2
+    400086: PistonThrusterjoint2Ctrl
+    400088: PistonThrusterjoint2CtrlGrp
+    400090: PistonThrusterjointCtrl
+    400092: PistonThrusterjointCtrlGrp
+    400094: SignAimjoint
+    400096: SignAimjointCtrl
+    400098: SignAimjointCtrlGrp
+    400100: //RootNode
+    400102: SignSupportGroup_inSitu2
+    400104: UpperArmAjoint
+    400106: UpperArmAjoint1
+    400108: UpperArmAjoint1Ctrl
+    400110: UpperArmAjoint1CtrlGrp
+    400112: UpperArmAjointCtrl
+    400114: UpperArmAjointCtrlGrp
+    400116: UpperArmBJoint
+    400118: UpperArmBJoint1
+    400120: VSupportAimjoint
+    400122: VSupportAimjointCtrl
+    400124: VSupportAimjointCtrlGrp
+    400126: VSupportJoint
+    400128: VSupportJoint1
+    400130: VSupportJointCtrl
+    400132: VSupportJointCtrlGrp
+    2100000: lambert2SG1
+    4300000: SignSupportGroup_inSitu2
+    7400000: Lower_Lift
+    7400002: Lower
+    7400004: Lift
+    7400006: Lowered
+    7400008: Lifted
+    7400010: Lowered_Shake
+    9500000: //RootNode
+    13700000: SignSupportGroup_inSitu2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2SG1
+    second: {fileID: 2100000, guid: 0a0c1fa18fdd48a49b813d6b8b66e520, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths:
+    - Basejoint/LowerArmjoint/LowerArmjoint1/MountingPointjoint
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Lower_Lift
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lower
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 1
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lift
+      takeName: Take 001
+      firstFrame: 39
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lowered
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 1
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lifted
+      takeName: Take 001
+      firstFrame: 6
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lowered_Shake
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 1
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
