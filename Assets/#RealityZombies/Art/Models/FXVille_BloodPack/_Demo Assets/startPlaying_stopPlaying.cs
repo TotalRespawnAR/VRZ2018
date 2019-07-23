@@ -1,0 +1,38 @@
+﻿//#define ENABLE_KEYBORADINPUTS
+using UnityEngine;
+using System.Collections;
+
+public class startPlaying_stopPlaying : MonoBehaviour 
+{
+	public Animator anim;
+	public bool armed = false;
+	
+	void OnTriggerEnter(Collider other)
+	{
+		armed = true;
+	}	
+	
+	void OnTriggerExit(Collider other)
+	{
+		armed = false;
+	}
+#if ENABLE_KEYBORADINPUTS
+	void Update () 
+	{
+		if(armed && Input.GetKeyDown(KeyCode.Escape))
+		{
+			StartPlaying ();
+		}
+	}
+#endif
+
+	void StartPlaying ()
+	{
+		anim.speed = 1f;
+	}
+
+	void StopPlaying ()
+	{
+		anim.speed = 0f;
+	}
+}

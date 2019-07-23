@@ -407,29 +407,6 @@ namespace SixenseCore
         }
 
         /// <summary>
-        /// Host gravity
-        /// </summary>
-        public static bool IMURotationEnabled
-        {
-            get
-            {
-                if (!ms_initialized)
-                    return false;
-
-                int e = 0;
-                Plugin.sxCoreGetFilterEnabled((uint)Filter.IMU_ROTATION, out e);
-                return e != 0;
-            }
-            set
-            {
-                if (!ms_initialized)
-                    return;
-
-                Plugin.sxCoreSetFilterEnabled((uint)Filter.IMU_ROTATION, value ? 1 : 0);
-            }
-        }
-
-        /// <summary>
         /// Enable network bridge for mobile developement.
         /// </summary>
         public static bool NetworkBridgeEnabled
@@ -589,6 +566,27 @@ namespace SixenseCore
             Plugin.sxCoreSetHemisphereTrackingInitVector(tracker_id, v.x, v.y, v.z);
         }
         #endregion
+        #region Extended for ARZ
+        public void ForceUpdateTrackers()
+        {
+            if (!ms_initialized)
+                return;
+
+            ms_driverDistortionCorrection = true;
+            ms_activeTrackers = Plugin.sxCoreGetNumConnectedTrackedDevices();
+
+            for (int i = 0; i < ms_maxTrackers; i++)
+            {
+                if (ms_Trackers[i] != null)
+                {
+                    if (!m_fixedUpdate)
+                        ms_Trackers[i].PreUpdate();
+
+                    ms_Trackers[i].Update(); // get absolute latest for rendering
+                }
+            }
+        }
+        #endregion
 
         #region Script Events
         /// <summary>
@@ -612,7 +610,7 @@ namespace SixenseCore
                 if (Plugin.sxCoreInit() == PluginTypes.Result.SUCCESS)
                 {
                     string version = SixenseCore.Device.APIVersion;
-                    Debug.Log("Sixense Core Init: Version "+version, gameObject);
+                    // Debug.Log("Sixense Core Init: Version " +version, gameObject);
 
                     m_driverInitialized = true;
                     ms_globalInitialized = true;
@@ -847,11 +845,6 @@ namespace SixenseCore
             public static extern PluginTypes.Result sxCoreGetFilterParams(uint filter_type, out JitterFilterParams filter_params);     // get application controllable filter parameters, "filter_params" can be NULL for filters that don't use it
             [DllImport(module)]
             public static extern PluginTypes.Result sxCoreSetFilterParams(uint filter_type, ref JitterFilterParams filter_params);     // set application controllable filter parameters, "filter_params" can be NULL for filters that don't use it
-
-            [DllImport(module)]
-            public static extern PluginTypes.Result sxCoreGetDockSyncLocation(uint tracker_id, out float pos_x, out float pos_y, out float pos_z, out float rot_x, out float rot_y, out float rot_z, out float rot_w);   // get the dock sync location for a sync id
-            [DllImport(module)]
-            public static extern PluginTypes.Result sxCoreSetDockSyncLocation(uint tracker_id, float pos_x, float pos_y, float pos_z, float rot_x, float rot_y, float rot_z, float rot_w);                               // set the dock sync location for a sync id
 
             [DllImport(module)]
             public static extern PluginTypes.Result sxCoreGetHemisphereTrackingInitVector(uint tracked_id, out float x, out float y, out float z);   // get the hemisphere tracking init vector for a sync id

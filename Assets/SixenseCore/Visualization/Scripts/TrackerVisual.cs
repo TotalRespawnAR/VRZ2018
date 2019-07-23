@@ -37,7 +37,9 @@ namespace SixenseCore
         #endregion
 
         #region Properties
-        
+
+       
+
         public Tracker Input
         {
             get
@@ -90,6 +92,14 @@ namespace SixenseCore
             {
                 m_model.enabled = true;
             }
+
+            //if (m_trackerBind == TrackerID.PACK_LEFT)
+            //{
+            //tm.text= m_controller.GetVibration().ToString();
+            //  }
+
+       
+            
         }
     }
 }

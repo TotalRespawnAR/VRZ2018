@@ -1,0 +1,33 @@
+﻿//#define ENABLE_KEYBORADINPUTS
+using UnityEngine;
+using System.Collections;
+
+public class effectSpawnVolume : MonoBehaviour 
+{
+	public Transform effectToSpawn;
+	public Vector3 spawnPosition = Vector3.zero;
+	public Vector3 spawnRotation = Vector3.zero;
+	public bool armed = false;
+
+
+	void OnTriggerEnter(Collider other)
+	{
+		armed = true;
+	}	
+
+	void OnTriggerExit(Collider other)
+	{
+		armed = false;
+	}
+
+    // Update is called once per frame
+#if ENABLE_KEYBORADINPUTS
+	void Update () 
+	{
+		if(armed && Input.GetKeyDown(KeyCode.Space))
+		{
+			Instantiate (effectToSpawn, transform.position + spawnPosition, Quaternion.Euler(spawnRotation));
+		}
+	}
+#endif
+}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ovr_Gun_P90
+  m_Controller: {fileID: 9100000, guid: 8fca09b89032afc49a1d4dff8a2ab568, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9bcc4b9e7bf1ece47801da8c889f29fa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 280c0109f4df70f4497113480cf46343, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 54adf6f42fc58894cbedc0a3e909566d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3c340453eb2397b488fa510625421749, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fbaf0fb58454b3046b585422f972e3c8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 502c7cc7753704049a734cd522e533d5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3cbe8f824c666ed48b00601e15cb7d42, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 502c7cc7753704049a734cd522e533d5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b0ce2345d2a4a874ba4b61ca91943d49, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 60b3473349c1ea548baf0b0fabbab070, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2d06bbedeabc231478ee67a2113dfabb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8cfc7d88035e82048bdfe8d8dda28dee, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f3bf9a2d0b66c504eb5ad71ceb08036f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dff9e323f46317b4794d42c53edbd74b, type: 2}

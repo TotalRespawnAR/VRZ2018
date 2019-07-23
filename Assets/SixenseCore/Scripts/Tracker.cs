@@ -86,21 +86,6 @@ namespace SixenseCore
         public Vector3 LocalGravity { get { return m_Gravity; } }
 
         /// <summary>
-        /// IMU Acc
-        /// </summary>
-        public Vector3 IMUAcc { get { return m_IMUAcc; } }
-
-        /// <summary>
-        /// IMU Gyro
-        /// </summary>
-        public Vector3 IMUGyro { get { return m_IMUGyro; } }
-
-        /// <summary>
-        /// IMU Mag
-        /// </summary>
-        public Vector3 IMUMag { get { return m_IMUMag; } }
-
-        /// <summary>
         /// Hardware version number
         /// </summary>
         public string HardwareVersion { get { return m_Hardware; } }
@@ -450,6 +435,32 @@ namespace SixenseCore
             }
         }
 
+
+
+        //public float GetVibration() {
+
+        //    float vib = 0.0f;
+        //     if (m_Connected && m_Index >= 0)
+        //    {
+        //         Plugin.sxCoreGetVibration((uint)m_Index, 0, out vib);
+        //    }
+        //    Debug.Log(vib);
+        //    return vib;
+        //}
+        public void GetVibration()
+        {
+            if (m_Connected && m_Index >= 0)
+            {
+
+                float f = -0.2f;
+                Plugin.sxCoreGetVibration((uint)m_Index, 1, out f);
+                if (f > 0.1f)
+                {
+                    Debug.Log("heard float viber was set " + f + " " + m_Index);
+                }
+            }
+        }
+
         /// <summary>
         /// Get device info
         /// </summary>
@@ -519,19 +530,6 @@ namespace SixenseCore
                 Plugin.sxCoreSetDeviceTypeExtendedToNVRAM((uint)m_Index, device_type_extended);
             }
         }
-
-        public void SetFastIMURate(uint tracked_device_index, byte rate)
-        {
-            if ((HardwareType == SixenseCore.Hardware.STEM_CONTROLLER) || (HardwareType == SixenseCore.Hardware.STEM_PACK))
-            {
-                byte[] command_data = new byte[32];
-                command_data[1] = (byte)((HardwareType == SixenseCore.Hardware.STEM_CONTROLLER) ? 0x1E : 0x2E);
-                command_data[2] = 0x05;
-                command_data[5] = 0x2C;
-                command_data[12] = rate;
-                Plugin.sxCoreWriteToDevice(tracked_device_index, command_data, 32);
-            }
-        }
         #endregion
 
         #region Input Processing
@@ -569,6 +567,8 @@ namespace SixenseCore
 
         internal void ProcessData(PluginTypes.TrackedDeviceData data)
         {
+
+            this.GetVibration();
             float scale = 0.001f;
             if (m_device != null)
                 scale = 1.0f / m_device.m_worldUnitScaleInMillimeters;
@@ -607,10 +607,9 @@ namespace SixenseCore
             //m_Rotation.Set(data.tracker_rot_quat[0], data.tracker_rot_quat[1], -data.tracker_rot_quat[2], -data.tracker_rot_quat[3]);
             m_Position.Set(data.pos[0] * scale, data.pos[1] * scale, -data.pos[2] * scale);
             m_Rotation.Set(data.rot_quat[0], data.rot_quat[1], -data.rot_quat[2], -data.rot_quat[3]);
-            m_Gravity.Set(data.imu_gravity[0], data.imu_gravity[1], -data.imu_gravity[2]);
-            m_IMUAcc.Set((float)data.imu_acc[0], (float)data.imu_acc[1], (float)data.imu_acc[2]);
-            m_IMUGyro.Set((float)data.imu_gyro[0], (float)data.imu_gyro[1], (float)data.imu_gyro[2]);
-            m_IMUMag.Set((float)data.imu_mag[0], (float)data.imu_mag[1], (float)data.imu_mag[2]);
+
+            if (data.imu_gravity[0] != 0 && data.imu_gravity[1] != 0 && data.imu_gravity[2] != 0)
+                m_Gravity.Set(data.imu_gravity[0], data.imu_gravity[1], -data.imu_gravity[2]);
 
             if (!m_hasInfo)
             {
@@ -622,6 +621,8 @@ namespace SixenseCore
             {
                 m_LastPacketDT = dt;
             }
+
+           
         }
 
         /// <summary>
@@ -629,6 +630,8 @@ namespace SixenseCore
         /// </summary>
         public void FixedUpdate()
         {
+
+            GetVibration();
             if (m_Index < 0)
                 return;
 
@@ -673,6 +676,8 @@ namespace SixenseCore
             var data = m_pastData[m_pastDataCursor--];
 
             ProcessData(data);
+
+           
         }
 
         /// <summary>
@@ -707,6 +712,7 @@ namespace SixenseCore
         /// </summary>
         public void Update()
         {
+            GetVibration();
             m_firstUpdate = true;
 
             if (m_Index < 0)
@@ -725,8 +731,14 @@ namespace SixenseCore
             PluginTypes.TrackedDeviceData d;
             UnityEngine.Profiling.Profiler.BeginSample("Sixense Driver");
             {
-                if (Plugin.sxCoreGetData((uint)m_Index, out d) == PluginTypes.Result.SUCCESS)
+                //if (Plugin.sxCoreGetData((uint)m_Index, out d) == PluginTypes.Result.SUCCESS)
+                //    ProcessData(d);
+
+                if (Plugin.sxCoreGetDataPrevious((uint)m_Index, 0, out d) == PluginTypes.Result.SUCCESS)
+                {
                     ProcessData(d);
+           
+                }
             }
             UnityEngine.Profiling.Profiler.EndSample();
         }
@@ -751,9 +763,6 @@ namespace SixenseCore
         private Vector3 m_Position = Vector3.zero;
         private Quaternion m_Rotation = Quaternion.identity;
         private Vector3 m_Gravity = Vector3.zero;
-        private Vector3 m_IMUAcc = Vector3.zero;
-        private Vector3 m_IMUGyro = Vector3.zero;
-        private Vector3 m_IMUMag = Vector3.zero;
         private string m_Hardware = "0";
         private string m_Firmware = "0";
         private string m_Runtime = "0";
@@ -819,11 +828,6 @@ namespace SixenseCore
             public static extern PluginTypes.Result sxCoreSetVibration(uint tracked_device_index, uint motor_index, float magnitude); // set device rumble vibration, per motor, to a set magnitude 0.0-1.0
 
             [DllImport(module)]
-            public static extern PluginTypes.Result sxCoreGetLEDs(uint tracked_device_index, out int leds_override_enabled, out byte leds_override, out byte leds_internal); // get device leds override mode, override leds, and internal leds
-            [DllImport(module)]
-            public static extern PluginTypes.Result sxCoreSetLEDs(uint tracked_device_index, int leds_override_enabled, byte leds_override); // set device leds override mode and override leds
-
-            [DllImport(module)]
             public static extern PluginTypes.Result sxCoreSetDeviceFilterEnabled(uint filter_type, uint tracked_device_index, int on_or_off);      // enable/disable application controllable filters
             [DllImport(module)]
             public static extern PluginTypes.Result sxCoreGetDeviceFilterEnabled(uint filter_type, uint tracked_device_index, out int on_or_off);     // enable/disable application controllable filters
@@ -863,9 +867,6 @@ namespace SixenseCore
 
             [DllImport(module)]
             public static extern PluginTypes.Result sxCoreSetDeviceTypeExtendedToNVRAM(uint tracked_id, byte device_type_extended);
-
-            [DllImport(module)]
-            public static extern PluginTypes.Result sxCoreWriteToDevice(uint tracked_device_index, [MarshalAs(UnmanagedType.LPArray)] byte[] data, uint length);
         }
         #endregion
     }

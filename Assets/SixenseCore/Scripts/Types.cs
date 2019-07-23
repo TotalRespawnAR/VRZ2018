@@ -25,8 +25,6 @@ namespace SixenseCore
         PROTOTYPE_01 = (0x01 << 5),
         PROTOTYPE_02 = (0x01 << 6),
         STEM_HANDS   = (0x01 << 7),
-        STEM_MVI       = (0x01 << 8),
-        STEM_MVI_REV_B = (0x01 << 9),
     }
 
     internal enum BaseStatus
@@ -65,39 +63,6 @@ namespace SixenseCore
         // STEM Hands
         STEM_HANDS_CONTROLLER      = 15,
         STEM_HANDS_DAUGHTERBOARD   = 16,
-    }
-
-    /// <summary>
-    /// Hardware Revision
-    /// </summary>
-    public enum HardwareRevision
-    {
-        NONE                            = 0x00,
-        C2                              = 0xBA,
-        HYDRA                           = 0xAE,
-        STEM_CONTROLLER_CES             = 0x08,
-        STEM_CONTROLLER_BETA            = 0x09,
-        STEM_PACK_BETA                  = 0x0A,
-        STEM_PROTOTYPE_01_CONTROLLER    = 0x0B,
-        STEM_BASE_BETA                  = 0x0C,
-        STEM_CONTROLLER                 = 0x10,
-        STEM_PACK                       = 0x11,
-        STEM_STICK                      = 0x12,
-        STEM_STICK_HT                   = 0x13,
-        STEM_STICK_PARKER               = 0x14,
-        STEM_STICK_2TX                  = 0x15,
-        STEM_WSM                        = 0x16,
-        STEM_WSM_REV_B                  = 0x17,
-        STEM_STICK_HT_REV_B             = 0x18,
-        STEM_BASE                       = 0x20,
-        STEM_BASE_HT                    = 0x21,
-        STEM_BASE_PARKER                = 0x22,
-        STEM_BASE_2TX                   = 0x23,
-        STEM_BASE_WTM                   = 0x24,
-        STEM_BASE_PARKER_2              = 0x25,
-        STEM_BASE_WTM_REV_B             = 0x26,
-        STEM_HANDS_DAUGHTERBOARD        = 0x30,
-        STEM_HANDS_CONTROLLER           = 0x31,
     }
 
     /// <summary>
@@ -160,8 +125,6 @@ namespace SixenseCore
         MOVING_AVERAGE_WINDOW                   = 9,
         CORRECT_COIL_OFFSET                     = 10,
         DOUBLE_MOVING_AVERAGE_WINDOW            = 11,
-        CORRECT_GRAVITY                         = 12,
-        IMU_ROTATION                            = 13,
     }
 
     /// <summary>
@@ -200,32 +163,11 @@ namespace SixenseCore
     }
 
     /// <summary>
-    /// LEDs Control Byte, bits 7-5 = LEDs mode, bits 4-0 = LEDs control (0 = ON, 1 = OFF)
-    /// </summary>
-    public enum LEDs
-    {
-        LED_MODE_CONTROL_ON_OFF      = 0x00,
-        LED_MODE_SLOW_ROTATE_ALL     = 0x20,
-        LED_MODE_FAST_ROTATE_ALL     = 0x40,
-        LED_MODE_SLOW_FLASH_SELECTED = 0x60,
-        LED_MODE_FAST_FLASH_SELECTED = 0x80,
-        LED_CONTROL_ALL_ON           = 0x00,
-        LED_CONTROL_ALL_OFF          = 0x1F,
-        LED_CONTROL_1                = 0x1E,
-        LED_CONTROL_2                = 0x1D,
-        LED_CONTROL_3                = 0x1B,
-        LED_CONTROL_4                = 0x17,
-        LED_CONTROL_5                = 0x0F,
-        LED_SLOW_FLASH_ALL           = 0x60,
-        LED_FAST_FLASH_ALL           = 0x80,
-    }
-
-    /// <summary>
     /// Parameters for the moving average filter
     /// 
     /// TODO: explain parameters
     /// </summary>
-        [Serializable]
+    [Serializable]
     [StructLayout(LayoutKind.Sequential)]
     public struct MovingAverageFilterParams
     {
@@ -285,49 +227,6 @@ namespace SixenseCore
 
         public float PosExp;
         public float RawPosExp;
-    }
-
-    /// <summary>
-    /// Parameters for the Auto Hemi filter
-    /// 
-    /// TODO: explain parameters
-    /// </summary>
-    [Serializable]
-    [StructLayout(LayoutKind.Sequential)]
-    public struct AutoHemiParams
-    {
-        public double maxVelocity;
-        public double MinCorrelative;
-        public double MinCorrelativeDerivative;
-        public double MaxCorrelativeStddev;
-        public double MaxCorrelativeDvStddev;
-        public int BufferSize;
-    }
-
-    /// <summary>
-    /// Parameters for the IMU Rotation filter
-    /// 
-    /// TODO: explain parameters
-    /// </summary>
-    [Serializable]
-    [StructLayout(LayoutKind.Sequential)]
-    public struct IMURotationParams
-    {
-        public double ProportionalGain;
-        public double IntegralGain;
-        public double SampleFreq;
-    }
-
-    /// <summary>
-    /// Parameters for the Distortion Correction filter
-    /// 
-    /// TODO: explain parameters
-    /// </summary>
-    [Serializable]
-    [StructLayout(LayoutKind.Sequential)]
-    public struct DistortionCorrectionParams
-    {
-        public float CorrectionFactor;
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -409,7 +308,7 @@ namespace SixenseCore
             public float battery_voltage;
             public byte imu_calibration_status;
             public byte dsp_gain_mode;
-            public byte battery_state_of_charge;
+            public byte active_matrix_set;
             public byte debug_info;
             public byte mcu_build;
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)]
