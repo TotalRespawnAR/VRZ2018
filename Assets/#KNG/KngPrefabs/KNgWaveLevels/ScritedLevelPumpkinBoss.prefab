@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1442978701119746}
+  m_IsPrefabParent: 1
+--- !u!1 &1442978701119746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4447093058824014}
+  - component: {fileID: 114592913869598952}
+  m_Layer: 0
+  m_Name: ScritedLevelPumpkinBoss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4447093058824014
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442978701119746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114592913869598952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442978701119746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da102f4368689684bb0b184ecd1f89ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelTickerOverride: 0
+  LevelTime: 60
+  LevelNumber: 1
+  LevelHP: 20
+  LevelMaxEnemiesOnScreen: 18
+  LevelBaseAgro: 2
+  LevelGun_MAIN: 5
+  LevelGun_SCONDARY: 4
+  ListSpawnPointIds: 08000000090000000a0000000b0000000c0000000d000000
+  ListGravePointIds: 2000000022000000
+  ListTunnelSpawnPointIds: 0000000001000000
+  SpawnRate: 5
+  GraveRate: 5
+  Time_StartGrave: 1
+  Time_IncreaseAgro: 20
+  BossHP: 1000
+  BossSpawnNodeId: 3
+  ReplenishAllSpawnsOnAllDied: 1
