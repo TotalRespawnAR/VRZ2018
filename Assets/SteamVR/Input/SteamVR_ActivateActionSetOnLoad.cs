@@ -1,7 +1,6 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 
 using UnityEngine;
-using System.Collections;
 
 namespace Valve.VR
 {
@@ -24,7 +23,7 @@ namespace Valve.VR
         {
             if (actionSet != null && activateOnStart)
             {
-                //Debug.Log(string.Format("[SteamVR] Activating {0} action set.", actionSet.fullPath));
+                Debug.Log(string.Format("[SteamVR] Activating {0} action set.", actionSet.fullPath));
                 actionSet.Activate(forSources, 0, disableAllOtherActionSets);
             }
         }

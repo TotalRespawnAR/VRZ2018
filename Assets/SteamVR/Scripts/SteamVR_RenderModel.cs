@@ -3,12 +3,11 @@
 // Purpose: Render model of associated tracked object
 //
 //=============================================================================
-
-using UnityEngine;
+//#define DoRender
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Valve.VR;
+using UnityEngine;
 
 namespace Valve.VR
 {
@@ -326,11 +325,17 @@ namespace Valve.VR
                         models[renderModelName] = model;
                     }
 
-                    gameObject.AddComponent<MeshFilter>().mesh = model.mesh;
+#if DoRender
+                   gameObject.AddComponent<MeshFilter>().mesh = model.mesh;
                     MeshRenderer newRenderer = gameObject.AddComponent<MeshRenderer>();
                     newRenderer.sharedMaterial = model.material;
                     meshRenderers.Add(newRenderer);
                     return true;
+#else
+                    return false;
+#endif
+
+
                 }
             }
 
@@ -633,6 +638,8 @@ namespace Valve.VR
             modelSkinSettingsHaveChangedAction = SteamVR_Events.SystemAction(EVREventType.VREvent_ModelSkinSettingsHaveChanged, OnModelSkinSettingsHaveChanged);
         }
 
+
+
         void OnEnable()
         {
 #if UNITY_EDITOR
@@ -673,6 +680,7 @@ namespace Valve.VR
 #endif
         void Update()
         {
+
 #if UNITY_EDITOR
             if (!Application.isPlaying)
             {
