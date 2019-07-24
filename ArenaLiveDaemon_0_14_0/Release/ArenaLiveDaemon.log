@@ -1,0 +1,677 @@
+﻿2019-07-24 10:37:06,425 [1] INFO  App - Starting ArenaLiveDaemon 0.0.0.0
+2019-07-24 10:37:07,366 [6] DEBUG Database - Add Daemon{127.0.0.1:49587}
+2019-07-24 10:37:07,370 [6] INFO  Channel - Queue connect to 127.0.0.1:49587
+2019-07-24 10:37:07,374 [8] INFO  Network - Connected 127.0.0.1:49587
+2019-07-24 10:37:07,374 [8] INFO  Channel - Connected 127.0.0.1:49587
+2019-07-24 10:37:07,375 [6] DEBUG Network - Recv 127.0.0.1:49587 Msg{{}, 31[EA,00,0B,00,00,00,00,00,01,00,...]}
+2019-07-24 10:37:07,375 [8] INFO  MessageHandler - Daemon{127.0.0.1:49587} connected
+2019-07-24 10:37:07,387 [6] DEBUG Channel - Queue recv 127.0.0.1:49587 Msg{Daemon{}, Payload{Version=1, ProjectName=GDC, OpCode=Authenticate, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:07,389 [6] DEBUG Channel - Queue recv 127.0.0.1:49587 Msg{Daemon{}, Payload{Name=COM6, BaundRate=0, OpCode=ConnectToBlasterHub, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:07,390 [8] INFO  MessageHandler - Daemon{127.0.0.1:49587} incoming message Msg{Daemon{}, Payload{Version=1, ProjectName=GDC, OpCode=Authenticate, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:07,391 [8] INFO  MessageHandler - Daemon{127.0.0.1:49587} incoming message Msg{Daemon{}, Payload{Name=COM6, BaundRate=0, OpCode=ConnectToBlasterHub, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:07,399 [8] DEBUG Database - Add BlasterHub{COM6}
+2019-07-24 10:37:07,399 [8] INFO  Channel - Queue connect to COM6
+2019-07-24 10:37:07,423 [9] INFO  SerialPort - Connected COM6
+2019-07-24 10:37:07,424 [9] INFO  Channel - Connected COM6
+2019-07-24 10:37:07,426 [9] INFO  MessageHandler - BlasterHub{COM6} connected
+2019-07-24 10:37:07,440 [6] DEBUG Database - Add Game{ID=2, NumberOfPlayers=0}
+2019-07-24 10:37:07,440 [6] INFO  Channel - Queue connect to 127.0.0.1:49588
+2019-07-24 10:37:07,440 [11] INFO  Network - Connected 127.0.0.1:49588
+2019-07-24 10:37:07,440 [11] INFO  Channel - Connected 127.0.0.1:49588
+2019-07-24 10:37:07,440 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 379[A0,01,78,00,00,00,00,FF,00,01,...]}
+2019-07-24 10:37:07,442 [11] INFO  MessageHandler - Game{ID=2, NumberOfPlayers=0} connected
+2019-07-24 10:37:07,442 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=255}, Payload{Version=1, ProjectName=Unity3D API, NumberOfPlayers=1, HapticStorage=353[02,00,02,00,13,00,00,00,04,10,...], OpCode=InitGame, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:07,443 [11] INFO  MessageHandler - Game{ID=2, NumberOfPlayers=0} incoming message Msg{Game{PlayerID=255}, Payload{Version=1, ProjectName=Unity3D API, NumberOfPlayers=1, HapticStorage=353[02,00,02,00,13,00,00,00,04,10,...], OpCode=InitGame, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:07,448 [11] DEBUG Database - Update Game{ID=2, Unity3D API, NumberOfPlayers=1}
+2019-07-24 10:37:07,450 [11] DEBUG Channel - Queue send 127.0.0.1:49587 Msg{Daemon{}, Payload{GameID=2, Name=Unity3D API, NumberOfPlayers=1, OpCode=GameConnected, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:07,462 [8] DEBUG Network - Send 127.0.0.1:49587 Msg{{}, 23[E4,00,14,00,00,00,00,00,02,00,...]}
+2019-07-24 10:37:07,846 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:07,849 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 0[]}
+2019-07-24 10:37:07,861 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 9[02,C3,00,04,00,00,DD,4E,05]}
+2019-07-24 10:37:07,869 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:07,870 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:07,874 [9] WARN  MessageHandler - BlasterHub{COM6} failed: DatabaseException{Database, Key GameSlot{00-13-A2-00-41-5A-79-A3} not found}
+2019-07-24 10:37:08,662 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:08,662 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Magic=55, OpCode=Announce, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:08,663 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Magic=55, OpCode=Announce, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:08,663 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Magic=77, OpCode=ServerResponse, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:08,666 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,00,00,13,A2,00,41,...]}
+2019-07-24 10:37:08,854 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 20[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:08,870 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 2[4E,07]}
+2019-07-24 10:37:08,870 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:08,870 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:08,870 [9] WARN  MessageHandler - BlasterHub{COM6} failed: DatabaseException{Database, Key GameSlot{00-13-A2-00-41-5A-79-A3} not found}
+2019-07-24 10:37:09,863 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:09,863 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:09,863 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:09,863 [9] WARN  MessageHandler - BlasterHub{COM6} failed: DatabaseException{Database, Key GameSlot{00-13-A2-00-41-5A-79-A3} not found}
+2019-07-24 10:37:10,869 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:10,869 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 0[]}
+2019-07-24 10:37:10,884 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 9[00,C3,00,04,00,00,DF,4E,05]}
+2019-07-24 10:37:10,884 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:10,884 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:10,884 [9] WARN  MessageHandler - BlasterHub{COM6} failed: DatabaseException{Database, Key GameSlot{00-13-A2-00-41-5A-79-A3} not found}
+2019-07-24 10:37:11,653 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,2D,80,00,13,A2]}
+2019-07-24 10:37:11,669 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 42[00,41,5A,79,A3,19,00,B1,00,1F,...]}
+2019-07-24 10:37:11,669 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Version=1, Compatible=True, Name=310055002081525154555752, OpCode=RequestConnect, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,670 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Version=1, Compatible=True, Name=310055002081525154555752, OpCode=RequestConnect, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,674 [9] DEBUG Database - Add Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:11,674 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=ConfirmConnect, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,674 [9] DEBUG Channel - Queue send 127.0.0.1:49587 Msg{Daemon{}, Payload{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6, Name=310055002081525154555752, OpCode=BlasterConnected, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,674 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,01,00,13,A2,00,41,...]}
+2019-07-24 10:37:11,675 [8] DEBUG Network - Send 127.0.0.1:49587 Msg{{}, 49[E2,00,2E,00,00,00,00,00,08,00,...]}
+2019-07-24 10:37:11,685 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,01,00,75]}
+2019-07-24 10:37:11,689 [6] DEBUG Network - Recv 127.0.0.1:49587 Msg{{}, 20[E6,00,11,00,00,00,00,00,02,00,...]}
+2019-07-24 10:37:11,694 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=1}}
+2019-07-24 10:37:11,694 [6] DEBUG Channel - Queue recv 127.0.0.1:49587 Msg{Daemon{}, Payload{Address=00-13-A2-00-41-5A-79-A3, GameID=2, PlayerID=0, OpCode=BindAddressToPlayer, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,694 [8] INFO  MessageHandler - Daemon{127.0.0.1:49587} incoming message Msg{Daemon{}, Payload{Address=00-13-A2-00-41-5A-79-A3, GameID=2, PlayerID=0, OpCode=BindAddressToPlayer, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,698 [8] DEBUG Database - Add Slot{GameID=2, PlayerID=0, Address=00-13-A2-00-41-5A-79-A3}
+2019-07-24 10:37:11,700 [8] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:11,700 [8] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{OpCode=ConfirmBinding, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,702 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 8[38,00,05,00,00,00,00,00]}
+2019-07-24 10:37:11,717 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 15[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:11,722 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 10[B5,00,07,00,00,00,00,00,00,21]}
+2019-07-24 10:37:11,722 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[00,21], OpCode=ChangeMode, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,722 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=2[00,21], OpCode=ChangeMode, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,722 [7] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 9[B9,00,06,00,00,00,00,00,FE]}
+2019-07-24 10:37:11,722 [7] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,733 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 6[00,03,00,00,00,C4]}
+2019-07-24 10:37:11,733 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=ConfirmEnterStandby, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,733 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[00,21], OpCode=ChangeMode, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,733 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,733 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,734 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=ConfirmEnterStandby, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,734 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:11,734 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=ConfirmEnterStandby, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,734 [9] DEBUG SerialPort - Send COM6 Msg{{}, 22[7E,00,12,00,02,00,13,A2,00,41,...]}
+2019-07-24 10:37:11,734 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[34,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:11,746 [9] DEBUG SerialPort - Send COM6 Msg{{}, 21[7E,00,11,00,03,00,13,A2,00,41,...]}
+2019-07-24 10:37:11,749 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,02,00,74]}
+2019-07-24 10:37:11,749 [7] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 8[B7,00,05,00,00,00,00,00]}
+2019-07-24 10:37:11,749 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=2}}
+2019-07-24 10:37:11,749 [7] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=0[], OpCode=RequestHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,749 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=0[], OpCode=RequestHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,749 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=0[], OpCode=RequestHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,757 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,04,00,13,A2,00,41,...]}
+2019-07-24 10:37:11,765 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 10[7E,00,03,89,03,00,73,7E,00,03]}
+2019-07-24 10:37:11,765 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=3}}
+2019-07-24 10:37:11,781 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 9[89,04,00,72,7E,00,11,80,00]}
+2019-07-24 10:37:11,781 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=4}}
+2019-07-24 10:37:11,797 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 16[13,A2,00,41,5A,79,A3,19,00,BF,...]}
+2019-07-24 10:37:11,797 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=ReportHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,797 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=ReportHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,797 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:11,797 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=ReportHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,797 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[BF,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:11,800 [7] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 26[B3,00,17,00,00,00,00,00,00,01,...]}
+2019-07-24 10:37:11,800 [7] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Version=1, ProjectName=Unity3D API, DebugMode=False, InitialModeID=33, OpCode=InitBlaster, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,800 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Version=1, ProjectName=Unity3D API, DebugMode=False, InitialModeID=33, OpCode=InitBlaster, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,801 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Version=1, DebugMode=False, NumMessages=5, TotalSize=353, OpCode=InitTransfer, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,802 [9] DEBUG SerialPort - Send COM6 Msg{{}, 27[7E,00,17,00,05,00,13,A2,00,41,...]}
+2019-07-24 10:37:11,829 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,05,00,71]}
+2019-07-24 10:37:11,829 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=5}}
+2019-07-24 10:37:11,845 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:11,845 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=0, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,845 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=0, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,845 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:11,846 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=0, Data=75[02,00,02,00,13,00,00,00,04,10,...], OpCode=TransferHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,847 [9] DEBUG SerialPort - Send COM6 Msg{{}, 97[7E,00,5D,00,06,00,13,A2,00,41,...]}
+2019-07-24 10:37:11,877 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 15[7E,00,03,89,06,00,70,7E,00,12,...]}
+2019-07-24 10:37:11,877 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=6}}
+2019-07-24 10:37:11,893 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 14[41,5A,79,A3,19,00,C3,00,04,00,...]}
+2019-07-24 10:37:11,893 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,893 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,893 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:11,893 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:11,894 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DF,4E]}
+2019-07-24 10:37:11,925 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:11,925 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=1, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,926 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=1, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,926 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:11,926 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=1, Data=75[02,00,02,00,13,00,00,00,04,10,...], OpCode=TransferHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:11,926 [9] DEBUG SerialPort - Send COM6 Msg{{}, 97[7E,00,5D,00,07,00,13,A2,00,41,...]}
+2019-07-24 10:37:11,957 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,07,00,6F]}
+2019-07-24 10:37:11,957 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=7}}
+2019-07-24 10:37:12,005 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:12,005 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=2, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,005 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=2, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,005 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:12,005 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=2, Data=75[02,00,02,00,13,00,00,00,04,10,...], OpCode=TransferHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,005 [9] DEBUG SerialPort - Send COM6 Msg{{}, 97[7E,00,5D,00,08,00,13,A2,00,41,...]}
+2019-07-24 10:37:12,037 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,08,00,6E]}
+2019-07-24 10:37:12,037 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=8}}
+2019-07-24 10:37:12,085 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:12,085 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=3, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,085 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=3, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,085 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:12,085 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=3, Data=75[02,00,02,00,13,00,00,00,04,10,...], OpCode=TransferHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,085 [9] DEBUG SerialPort - Send COM6 Msg{{}, 97[7E,00,5D,00,09,00,13,A2,00,41,...]}
+2019-07-24 10:37:12,117 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,09,00,6D]}
+2019-07-24 10:37:12,117 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=9}}
+2019-07-24 10:37:12,166 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:12,166 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=4, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,166 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=4, OpCode=ReqHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,166 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:12,166 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{MessageIndex=4, Data=53[02,00,02,00,13,00,00,00,04,10,...], OpCode=TransferHapticMessage, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:12,166 [9] DEBUG SerialPort - Send COM6 Msg{{}, 75[7E,00,47,00,0A,00,13,A2,00,41,...]}
+2019-07-24 10:37:12,197 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,0A,00,6C]}
+2019-07-24 10:37:12,198 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=10}}
+2019-07-24 10:37:12,373 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:12,373 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=ReportHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,373 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=ReportHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,373 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:12,373 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=ReportHapticStatus, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,373 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[BF,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:12,388 [7] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 8[B8,00,05,00,00,00,00,00]}
+2019-07-24 10:37:12,388 [7] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=0[], OpCode=RequestEnterGame, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,389 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=0[], OpCode=RequestEnterGame, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,389 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=0[], OpCode=RequestEnterGame, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,389 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,0B,00,13,A2,00,41,...]}
+2019-07-24 10:37:12,405 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,0B,00,6B]}
+2019-07-24 10:37:12,405 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=11}}
+2019-07-24 10:37:12,421 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:12,421 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=ConfirmEnterGame, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,421 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=ConfirmEnterGame, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,421 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:12,422 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=ConfirmEnterGame, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,422 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[33,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:12,439 [7] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 10[B5,00,07,00,00,00,00,00,00,21]}
+2019-07-24 10:37:12,439 [7] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[00,21], OpCode=ChangeMode, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,439 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=2[00,21], OpCode=ChangeMode, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,439 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 9[B9,00,06,00,00,00,00,00,FE]}
+2019-07-24 10:37:12,440 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,440 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[00,21], OpCode=ChangeMode, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,440 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,440 [9] DEBUG SerialPort - Send COM6 Msg{{}, 22[7E,00,12,00,0C,00,13,A2,00,41,...]}
+2019-07-24 10:37:12,440 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,451 [9] DEBUG SerialPort - Send COM6 Msg{{}, 21[7E,00,11,00,0D,00,13,A2,00,41,...]}
+2019-07-24 10:37:12,453 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,0C,00,6A]}
+2019-07-24 10:37:12,453 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=12}}
+2019-07-24 10:37:12,469 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,0D,00,69]}
+2019-07-24 10:37:12,470 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=13}}
+2019-07-24 10:37:12,886 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 11[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:12,902 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 11[A3,19,00,C3,00,04,00,00,DF,4E,...]}
+2019-07-24 10:37:12,902 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,902 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,902 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:12,902 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DF,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:12,903 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DF,4E]}
+2019-07-24 10:37:13,110 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:13,110 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[00,21], OpCode=ModeChangeComplete, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:13,110 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[00,21], OpCode=ModeChangeComplete, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:13,110 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:13,110 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[00,21], OpCode=ModeChangeComplete, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:13,110 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[12,00,07,00,00,00,00,00,00,21]}
+2019-07-24 10:37:13,895 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:13,895 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:13,895 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:13,895 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:13,895 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:13,895 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DD,4E]}
+2019-07-24 10:37:14,903 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:14,904 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:14,904 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:14,904 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:14,904 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:14,904 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DD,4E]}
+2019-07-24 10:37:15,911 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:15,912 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:15,912 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:15,912 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:15,912 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DD,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:15,912 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DD,4E]}
+2019-07-24 10:37:16,039 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 6[7E,00,11,80,00,13]}
+2019-07-24 10:37:16,056 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 15[A2,00,41,5A,79,A3,34,00,BC,00,...]}
+2019-07-24 10:37:16,056 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:16,056 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:16,056 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:16,056 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=DaemonPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:16,056 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,0E,00,13,A2,00,41,...]}
+2019-07-24 10:37:16,072 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,0E,00,68]}
+2019-07-24 10:37:16,072 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=14}}
+2019-07-24 10:37:16,920 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:16,921 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:16,921 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:16,921 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:16,921 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:16,921 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:17,929 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:17,929 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:17,929 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:17,930 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:17,930 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:17,930 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:18,938 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:18,938 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:18,938 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:18,938 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:18,938 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:18,938 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:19,082 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:19,082 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:19,083 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:19,083 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:19,083 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=DaemonPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:19,083 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,0F,00,13,A2,00,41,...]}
+2019-07-24 10:37:19,099 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,0F,00,67]}
+2019-07-24 10:37:19,099 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=15}}
+2019-07-24 10:37:19,178 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:19,179 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,179 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,179 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:19,179 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,179 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:19,199 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:19,199 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,199 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,199 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,200 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,10,00,13,A2,00,41,...]}
+2019-07-24 10:37:19,211 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,10,00,66]}
+2019-07-24 10:37:19,211 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=16}}
+2019-07-24 10:37:19,354 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:19,354 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,354 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,354 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:19,354 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,354 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:19,947 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:19,947 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,947 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,948 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:19,948 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:19,948 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:20,235 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:20,235 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,235 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,235 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:20,235 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,236 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:20,258 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:20,258 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,258 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,258 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,258 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,11,00,13,A2,00,41,...]}
+2019-07-24 10:37:20,283 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,11,00,65]}
+2019-07-24 10:37:20,283 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=17}}
+2019-07-24 10:37:20,380 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:20,380 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,380 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,380 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:20,380 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,380 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:20,763 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 14[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:20,779 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[C0,00,03,00,00,01,30]}
+2019-07-24 10:37:20,779 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,779 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,779 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:20,779 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,780 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:20,804 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:20,804 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,804 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,805 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,805 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,12,00,13,A2,00,41,...]}
+2019-07-24 10:37:20,827 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,12,00,64]}
+2019-07-24 10:37:20,828 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=18}}
+2019-07-24 10:37:20,940 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:20,956 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 30[00,C3,00,04,00,00,DA,4E,04,7E,...]}
+2019-07-24 10:37:20,956 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,956 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,956 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,956 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:20,956 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,956 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,956 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:20,956 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:20,956 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:20,956 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:21,419 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:21,419 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,419 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,420 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:21,420 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,420 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:21,451 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:21,451 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,451 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,451 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,451 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,13,00,13,A2,00,41,...]}
+2019-07-24 10:37:21,467 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,13,00,63]}
+2019-07-24 10:37:21,468 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=19}}
+2019-07-24 10:37:21,820 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 15[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:21,836 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 6[00,03,00,00,00,31]}
+2019-07-24 10:37:21,836 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,836 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,836 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:21,836 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,836 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:21,948 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:21,964 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 1[07]}
+2019-07-24 10:37:21,964 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,964 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,964 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:21,964 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:21,964 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:22,220 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:22,220 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,220 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,221 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:22,221 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,221 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:22,246 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:22,246 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,246 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,246 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,246 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,14,00,13,A2,00,41,...]}
+2019-07-24 10:37:22,269 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,14,00,62]}
+2019-07-24 10:37:22,269 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=20}}
+2019-07-24 10:37:22,395 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 9[B9,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:22,395 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,395 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,395 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,395 [9] DEBUG SerialPort - Send COM6 Msg{{}, 21[7E,00,11,00,15,00,13,A2,00,41,...]}
+2019-07-24 10:37:22,412 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,15,00,61]}
+2019-07-24 10:37:22,412 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=21}}
+2019-07-24 10:37:22,941 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:22,941 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,941 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,941 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:22,941 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,941 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:22,957 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:22,957 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,957 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,957 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:22,957 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:22,957 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:23,837 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:23,838 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[20], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:23,838 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[20], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:23,838 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:23,838 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[20], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:23,838 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,20]}
+2019-07-24 10:37:23,965 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:23,965 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:23,965 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:23,965 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:23,966 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:23,966 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:24,126 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 19[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:24,142 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 2[00,2E]}
+2019-07-24 10:37:24,142 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,142 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,142 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:24,142 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,142 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:24,168 [6] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,05,...]}
+2019-07-24 10:37:24,168 [6] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,05,01,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,168 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,05,01,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,168 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,05,01,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,168 [7] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 9[B9,00,06,00,00,00,00,00,FE]}
+2019-07-24 10:37:24,168 [7] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,168 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,168 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,168 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,16,00,13,A2,00,41,...]}
+2019-07-24 10:37:24,180 [9] DEBUG SerialPort - Send COM6 Msg{{}, 21[7E,00,11,00,17,00,13,A2,00,41,...]}
+2019-07-24 10:37:24,190 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 14[7E,00,03,89,16,00,60,7E,00,03,...]}
+2019-07-24 10:37:24,190 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=22}}
+2019-07-24 10:37:24,190 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=23}}
+2019-07-24 10:37:24,975 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:24,975 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,975 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,975 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:24,975 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:24,975 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:25,423 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 20[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:25,439 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 1[2A]}
+2019-07-24 10:37:25,439 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,439 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,439 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:25,439 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,439 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:25,460 [13] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:25,460 [13] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,460 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,460 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,460 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,18,00,13,A2,00,41,...]}
+2019-07-24 10:37:25,471 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,18,00,5E]}
+2019-07-24 10:37:25,471 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=24}}
+2019-07-24 10:37:25,615 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:25,615 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,615 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,615 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:25,615 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,615 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:25,983 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:25,983 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,983 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,983 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:25,983 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:25,983 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4E]}
+2019-07-24 10:37:26,223 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:26,223 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,223 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,223 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:26,223 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,223 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:26,255 [13] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:26,255 [13] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,255 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,255 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,255 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,19,00,13,A2,00,41,...]}
+2019-07-24 10:37:26,271 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,19,00,5D]}
+2019-07-24 10:37:26,271 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=25}}
+2019-07-24 10:37:26,319 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:26,335 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 8[00,C0,00,03,00,00,00,2E]}
+2019-07-24 10:37:26,335 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,335 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,335 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:26,335 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,335 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:26,672 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:26,672 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,672 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,672 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:26,672 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,672 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:26,702 [13] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:26,702 [13] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,703 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,703 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,703 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,1A,00,13,A2,00,41,...]}
+2019-07-24 10:37:26,712 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 5[7E,00,03,89,1A]}
+2019-07-24 10:37:26,712 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 0[]}
+2019-07-24 10:37:26,728 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 2[00,5C]}
+2019-07-24 10:37:26,728 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=26}}
+2019-07-24 10:37:26,792 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 8[7E,00,11,80,00,13,A2,00]}
+2019-07-24 10:37:26,807 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 13[41,5A,79,A3,27,00,C0,00,03,00,...]}
+2019-07-24 10:37:26,807 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,807 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,807 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:26,807 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,808 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:26,984 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:26,984 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,984 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,984 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:26,984 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D7,4E], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:26,984 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D7,4E]}
+2019-07-24 10:37:27,016 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:27,016 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,016 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,016 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:27,016 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,016 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:27,034 [13] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,FF,...]}
+2019-07-24 10:37:27,034 [13] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,034 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,034 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,FF,00,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,034 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,1B,00,13,A2,00,41,...]}
+2019-07-24 10:37:27,048 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,1B,00,5B]}
+2019-07-24 10:37:27,048 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=27}}
+2019-07-24 10:37:27,713 [13] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 9[B9,00,06,00,00,00,00,00,01]}
+2019-07-24 10:37:27,713 [13] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,713 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=1[01], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,713 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[01], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,713 [9] DEBUG SerialPort - Send COM6 Msg{{}, 21[7E,00,11,00,1C,00,13,A2,00,41,...]}
+2019-07-24 10:37:27,736 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,1C,00,5A]}
+2019-07-24 10:37:27,736 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=28}}
+2019-07-24 10:37:27,992 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:27,992 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D5,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,992 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D5,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,992 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:27,992 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D5,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:27,993 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D5,4F]}
+2019-07-24 10:37:28,169 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:28,169 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:28,169 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:28,169 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:28,169 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:28,169 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:29,001 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:29,001 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,001 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,001 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:29,001 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,001 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4F]}
+2019-07-24 10:37:29,081 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 20[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:29,098 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 1[0E]}
+2019-07-24 10:37:29,098 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[20], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,098 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[20], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,098 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:29,098 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[20], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,098 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,20]}
+2019-07-24 10:37:29,481 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:29,481 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,481 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,481 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:29,481 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[00], OpCode=BlasterButtonEvents, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,481 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 9[C0,00,06,00,00,00,00,00,00]}
+2019-07-24 10:37:29,502 [13] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 13[B4,00,0A,00,00,00,00,00,00,05,...]}
+2019-07-24 10:37:29,502 [13] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=5[00,05,01,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,502 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=5[00,05,01,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,502 [7] DEBUG Network - Recv 127.0.0.1:49588 Msg{{}, 9[B9,00,06,00,00,00,00,00,FE]}
+2019-07-24 10:37:29,502 [7] DEBUG Channel - Queue recv 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,502 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=5[00,05,01,00,00], OpCode=PlayHaptic, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,502 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} incoming message Msg{Game{PlayerID=0}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,502 [11] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=1[FE], OpCode=M4_Buttons, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:29,502 [9] DEBUG SerialPort - Send COM6 Msg{{}, 25[7E,00,15,00,1D,00,13,A2,00,41,...]}
+2019-07-24 10:37:29,513 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 3[7E,00,03]}
+2019-07-24 10:37:29,514 [9] DEBUG SerialPort - Send COM6 Msg{{}, 21[7E,00,11,00,1E,00,13,A2,00,41,...]}
+2019-07-24 10:37:29,529 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 11[89,1D,00,59,7E,00,03,89,1E,00,...]}
+2019-07-24 10:37:29,529 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=29}}
+2019-07-24 10:37:29,530 [12] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=30}}
+2019-07-24 10:37:30,010 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:30,010 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:30,010 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:30,010 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:30,010 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:30,010 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D7,4F]}
+2019-07-24 10:37:31,018 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 22[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:31,019 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D5,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:31,019 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D5,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:31,019 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:31,019 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D5,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:31,019 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D5,4F]}
+2019-07-24 10:37:32,011 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 4[7E,00,12,80]}
+2019-07-24 10:37:32,027 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 18[00,13,A2,00,41,5A,79,A3,16,00,...]}
+2019-07-24 10:37:32,027 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:32,027 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:32,027 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:32,027 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:32,027 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4F]}
+2019-07-24 10:37:32,540 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 21[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:32,540 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:32,540 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:32,540 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:32,540 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=DaemonPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:32,540 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,1F,00,13,A2,00,41,...]}
+2019-07-24 10:37:32,556 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,1F,00,57]}
+2019-07-24 10:37:32,556 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=31}}
+2019-07-24 10:37:33,020 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:33,036 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 9[00,C3,00,04,00,00,D7,4F,0D]}
+2019-07-24 10:37:33,036 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:33,036 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:33,037 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:33,037 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:33,037 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D7,4F]}
+2019-07-24 10:37:34,025 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:34,025 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 0[]}
+2019-07-24 10:37:34,040 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 9[00,C3,00,04,00,00,D7,4F,0C]}
+2019-07-24 10:37:34,041 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:34,041 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:34,041 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:34,041 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:34,041 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D7,4F]}
+2019-07-24 10:37:35,033 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 20[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:35,049 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 2[4F,0D]}
+2019-07-24 10:37:35,049 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:35,049 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:35,049 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:35,049 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:35,049 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D7,4F]}
+2019-07-24 10:37:35,561 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,11,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:35,561 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 0[]}
+2019-07-24 10:37:35,575 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 8[00,BC,00,03,00,00,00,3A]}
+2019-07-24 10:37:35,575 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:35,576 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:35,576 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:35,576 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=DaemonPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:35,576 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,20,00,13,A2,00,41,...]}
+2019-07-24 10:37:35,591 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,20,00,56]}
+2019-07-24 10:37:35,592 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=32}}
+2019-07-24 10:37:36,039 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:36,039 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 0[]}
+2019-07-24 10:37:36,055 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 9[00,C3,00,04,00,00,DD,4F,06]}
+2019-07-24 10:37:36,055 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:36,055 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DD,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:36,055 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:36,055 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DD,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:36,055 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DD,4F]}
+2019-07-24 10:37:37,045 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 13[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:37,045 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 0[]}
+2019-07-24 10:37:37,061 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 9[00,C3,00,04,00,00,DA,4F,09]}
+2019-07-24 10:37:37,061 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:37,061 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:37,061 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:37,061 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[DA,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:37,061 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,DA,4F]}
+2019-07-24 10:37:38,053 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 20[7E,00,12,80,00,13,A2,00,41,5A,...]}
+2019-07-24 10:37:38,069 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 2[4F,0D]}
+2019-07-24 10:37:38,069 [4] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:38,069 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:38,069 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:38,069 [9] DEBUG Channel - Queue send 127.0.0.1:49588 Msg{Game{PlayerID=0}, Payload{Data=2[D7,4F], OpCode=BlasterDiagnostics, Proxied=True, Confirmable=False}}
+2019-07-24 10:37:38,069 [11] DEBUG Network - Send 127.0.0.1:49588 Msg{{}, 10[C3,00,07,00,00,00,00,00,D7,4F]}
+2019-07-24 10:37:38,598 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 5[7E,00,11,80,00]}
+2019-07-24 10:37:38,614 [12] DEBUG SerialPort - Recv COM6 Msg{{}, 16[13,A2,00,41,5A,79,A3,19,00,BC,...]}
+2019-07-24 10:37:38,614 [12] DEBUG Channel - Queue recv COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:38,614 [9] INFO  MessageHandler - BlasterHub{COM6} incoming message Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=BlasterPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:38,614 [9] DEBUG Database - Update Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:38,614 [9] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=DaemonPing, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:38,614 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,21,00,13,A2,00,41,...]}
+2019-07-24 10:37:38,630 [4] DEBUG SerialPort - Recv COM6 Msg{{}, 7[7E,00,03,89,21,00,55]}
+2019-07-24 10:37:38,630 [4] WARN  Channel - Error COM6 NetworkException{InputOutput, TXStatus{SUCCESS, Success, Frame=33}}
+2019-07-24 10:37:38,735 [7] DEBUG Network - Recv 127.0.0.1:49587 Msg{{}, 13[E1,00,0A,00,00,00,00,00,04,43,...]}
+2019-07-24 10:37:38,735 [7] DEBUG Channel - Queue recv 127.0.0.1:49587 Msg{Daemon{}, Payload{Name=COM6, OpCode=DisconnectFromBlasterHub, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:38,735 [8] INFO  MessageHandler - Daemon{127.0.0.1:49587} incoming message Msg{Daemon{}, Payload{Name=COM6, OpCode=DisconnectFromBlasterHub, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:38,736 [8] DEBUG Channel - Queue send COM6 Msg{Blaster{00-13-A2-00-41-5A-79-A3}, Payload{OpCode=RequestDisconnect, Proxied=False, Confirmable=False}}
+2019-07-24 10:37:38,737 [9] DEBUG SerialPort - Send COM6 Msg{{}, 20[7E,00,10,00,22,00,13,A2,00,41,...]}
+2019-07-24 10:37:38,737 [13] INFO  Network - Connection lost 127.0.0.1:49587
+2019-07-24 10:37:38,737 [7] INFO  Network - Connection lost 127.0.0.1:49588
+2019-07-24 10:37:38,737 [13] WARN  Channel - Error 127.0.0.1:49587 NetworkException{ConnectionLost, Connection lost}
+2019-07-24 10:37:38,738 [7] WARN  Channel - Error 127.0.0.1:49588 NetworkException{ConnectionLost, Connection lost}
+2019-07-24 10:37:38,738 [11] INFO  Channel - Disconnected 127.0.0.1:49588
+2019-07-24 10:37:38,738 [8] DEBUG Database - Remove BlasterHub{COM6}
+2019-07-24 10:37:38,740 [8] DEBUG Database - Remove Blaster{Address=00-13-A2-00-41-5A-79-A3, BlasterHub=COM6}
+2019-07-24 10:37:38,743 [8] DEBUG Database - Remove Slot{GameID=2, PlayerID=0, Address=00-13-A2-00-41-5A-79-A3}
+2019-07-24 10:37:38,744 [8] INFO  Channel - Queue disconnect from COM6
+2019-07-24 10:37:38,744 [8] INFO  Channel - Disconnected 127.0.0.1:49587
+2019-07-24 10:37:38,745 [8] INFO  MessageHandler - Daemon{127.0.0.1:49587} disconnected
+2019-07-24 10:37:38,746 [8] DEBUG Database - Remove Daemon{127.0.0.1:49587}
+2019-07-24 10:37:38,747 [11] INFO  MessageHandler - Game{ID=2, Unity3D API, NumberOfPlayers=1} disconnected
+2019-07-24 10:37:38,757 [11] DEBUG Database - Remove Game{ID=2, Unity3D API, NumberOfPlayers=1}
+2019-07-24 10:37:38,859 [9] INFO  SerialPort - Closed COM6
+2019-07-24 10:37:38,859 [9] INFO  Channel - Disconnected COM6
+2019-07-24 10:37:38,859 [9] WARN  MessageHandler - BlasterHub{COM6} failed: DatabaseException{Database, Key BlasterHub{COM6} not found}
+2019-07-24 10:37:43,753 [1] INFO  App - Exiting ArenaLiveDaemon

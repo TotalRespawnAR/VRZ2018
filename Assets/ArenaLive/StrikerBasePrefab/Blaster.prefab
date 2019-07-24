@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6830611070868208967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6830611070868208964}
+  - component: {fileID: 6830611070868208965}
+  - component: {fileID: 6830611070868208966}
+  - component: {fileID: 6830611070868208963}
+  - component: {fileID: 6830611070868208962}
+  m_Layer: 0
+  m_Name: Blaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6830611070868208964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830611070868208967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6830611070868208965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830611070868208967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1870085163, guid: 9e63ec9c018e62949bd698b26905f7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialBehaviour: {fileID: 6830611070868208963}
+  PlayerID: 0
+--- !u!114 &6830611070868208966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830611070868208967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1870085163, guid: 9e63ec9c018e62949bd698b26905f7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialBehaviour: {fileID: 6830611070868208963}
+  PlayerID: 0
+--- !u!114 &6830611070868208963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830611070868208967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d3a625fcab22c40a8bebef500a1732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialModeId: 33
+  FireRate: 0.13
+  MaxAmmo: 10
+  Ammo: 0
+  InitialDelay: 0.01
+  blaster: {fileID: 6830611070868208965}
+  NextBehaviour: {fileID: 6830611070868208962}
+--- !u!114 &6830611070868208962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830611070868208967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d3a625fcab22c40a8bebef500a1732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialModeId: 19
+  FireRate: 0.15
+  MaxAmmo: 10
+  Ammo: 0
+  InitialDelay: 0.01
+  blaster: {fileID: 6830611070868208965}
+  NextBehaviour: {fileID: 6830611070868208963}

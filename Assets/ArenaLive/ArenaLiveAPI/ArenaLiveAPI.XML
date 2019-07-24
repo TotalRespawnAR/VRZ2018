@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ArenaLiveAPI</name>
+    </assembly>
+    <members>
+        <member name="T:ArenaLiveAPI.Blaster">
+            <summary>
+            This class is programmable embodiment of physical blaster device
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.Blaster.IsConnected">
+            <summary>
+            Is this blaster is connected to network
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.Blaster.Behaviour">
+            <summary>
+            Set a new behaviour for this Blaster
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.HapticEventPointArgs">
+            <summary>
+            Information about event point
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.HapticEventPointArgs.ModeID">
+            <summary>
+            The id of haptic mode
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.HapticEventPointArgs.HapticID">
+            <summary>
+            The id (index) of haptic in the haptic data array
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.HapticEventPointArgs.EventType">
+            <summary>
+            The type of event
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.BlasterBehaviour">
+            <summary>
+            Base class to inheriting from to create a new types of blaster behaviours
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterBehaviour.BlasterInput">
+            <summary>
+            Used for getting input from blaster
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.BlasterBehaviour.IsConnected">
+            <summary>
+            Is this blaster is connected to network
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.OnEventPointReached(ArenaLiveAPI.HapticEventPointArgs)">
+            <summary>
+            Called when haptic player reach some event point while playing
+            </summary>
+            <param name="args">Information about event point</param>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.OnActivated">
+            <summary>
+            Called when behaviour is activated
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.OnDeactivated">
+            <summary>
+            Called when behaviour is deactivated
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.PlayModeSlot(System.Int32)">
+            <summary>
+            Play haptic in defined slot
+            </summary>
+            <param name="slotIndex">Slot index</param>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.SetUserConditions(ArenaLiveAPI.BlasterUserConditions)">
+            <summary>
+            Set user conditions for Finite State Machine
+            </summary>
+            <param name="userConditions">Conditions used in FSM transitions</param>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.ChangeMode(System.Int32)">
+            <summary>
+            Change the mode for this behaviour
+            </summary>
+            <param name="modeID">The ID of mode</param>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.PlayFire">
+            <summary>
+            Play Fire haptic in slot 0. Equal to PlayModeSlot(0)
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.PlayReload">
+            <summary>
+            Play Reload haptic in slot 1. Equal to PlayModeSlot(1)
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.PlayOutOfAmmo">
+            <summary>
+            Play OutOfAmmo haptic in slot 2. Equal to PlayModeSlot(2)
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterBehaviour.StopPlaying(System.Boolean)">
+            <summary>
+            Stop playing haptic
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.BlasterUserConditions">
+            <summary>
+            Used in FSM transitions
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterUserConditions.OutOfAmmo">
+            <summary>
+            OutOfAmmo condition
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.BlasterButtons">
+            <summary>
+            Indicates states of blaster buttons
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.Trigger">
+            <summary>
+            Trigger button
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.LeftFront">
+            <summary>
+            Left Front button
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.RightFront">
+            <summary>
+            Right Front button
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.LeftBack">
+            <summary>
+            Left Back button
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.RightBack">
+            <summary>
+            Right Back button
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.Bottom">
+            <summary>
+            Bottom button
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.LeftTouchpadAsButton">
+            <summary>
+            Left touchpad touch sense (not the underlying button)
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterButtons.RightTouchpadAsButton">
+            <summary>
+            Right touchpad touch sense (not the underlying button)
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.BlasterTouchpad">
+            <summary>
+            Define the touchpad on blaster
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterTouchpad.Right">
+            <summary>
+            Right touchpad
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterTouchpad.Left">
+            <summary>
+            Left touchpad
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.BlasterInput">
+            <summary>
+            Interface into Blaster Input system
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterInput.GetTouchpadData(ArenaLiveAPI.BlasterTouchpad)">
+            <summary>
+            Get data from touchpad
+            </summary>
+            <param name="touchpad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterInput.GetButton(ArenaLiveAPI.BlasterButtons)">
+            <summary>
+            Returns true while the button is held down
+            </summary>
+            <param name="button"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterInput.GetButtonUp(ArenaLiveAPI.BlasterButtons)">
+            <summary>
+            Returns true the first frame the button is held down
+            </summary>
+            <param name="button"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterInput.GetButtonDown(ArenaLiveAPI.BlasterButtons)">
+            <summary>
+            Returns true during the frame the button is held down
+            </summary>
+            <param name="button"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterInput.GetIsTouchingTouchpad(ArenaLiveAPI.BlasterTouchpad)">
+            <summary>
+            Returns true while the touchpad is being touched
+            </summary>
+            <param name="touchpad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterInput.GetTouchpadTouchdown(ArenaLiveAPI.BlasterTouchpad)">
+            <summary>
+            Returns true during the first frame that the touchpad is touched
+            </summary>
+            <param name="touchpad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterInput.GetTouchpadTouchUp(ArenaLiveAPI.BlasterTouchpad)">
+            <summary>
+            Returns true during the first frame that the touchpad is no longer touched
+            </summary>
+            <param name="touchpad"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ArenaLiveAPI.BlasterTouchpadData">
+            <summary>
+            Structure describing the status of a touchpad.
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.BlasterTouchpadData.Pressure">
+            <summary>
+            The current amount of pressure being applied to a touch.
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.BlasterTouchpadData.Position">
+            <summary>
+            The position of the touch.
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.BlasterManager">
+            <summary>
+            Used for storing all in-game blasters and used to connect/disconnect and enumerate blasters
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.BlasterManager.Instance">
+            <summary>
+            Singleton of BlasterManager
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterManager.DataFileName">
+            <summary>
+            File name (local path) of binary haptic data file
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterManager.ProjectName">
+            <summary>
+            This name is displayed in the Operator GUI
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterManager.DaemonHostName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterManager.AutoConnect">
+            <summary>
+            Should the BlasterManager be connected to Operator on start.
+            </summary>
+        </member>
+        <member name="E:ArenaLiveAPI.BlasterManager.SpawnBlasters">
+            <summary>
+            Used for spawning blasters on game start
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.BlasterManager.Blasters">
+            <summary>
+            List of connected blasters
+            </summary>
+        </member>
+        <member name="F:ArenaLiveAPI.BlasterManager.MaxNumberOfBlasters">
+            <summary>
+            Maximum amount of blasters supported by game
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterManager.Connect">
+            <summary>
+            Manually connect game to the network
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.BlasterManager.Disconnect">
+            <summary>
+            Disconnect game from network
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.DaemonControlling.DaemonController.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of DaemonController
+            </summary>
+            <param name="projectName">Project name</param>
+            <param name="filePath">File path to the daemon executable</param>
+            <param name="manualUpdate">Whether events are fired during Update() call or asynchronous</param>
+        </member>
+        <member name="T:ArenaLiveAPI.Internal.BlasterEventStates">
+            <summary>
+            Used for identifying the type of button event
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.Internal.BlasterHapticPlayer">
+            <summary>
+            Used for playing haptic events
+            </summary>
+        </member>
+        <member name="E:ArenaLiveAPI.Internal.BlasterHapticPlayer.EventPointReached">
+            <summary>
+            Called when a haptic event point is reached during playing
+            </summary>
+        </member>
+        <member name="T:ArenaLiveAPI.Internal.BlasterHapticStorage">
+            <summary>
+            Used for holding and caching blaster haptic modes
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.Internal.BlasterHapticStorage.IsLoaded">
+            <summary>
+            Is binary file was successfully loaded
+            </summary>
+        </member>
+        <member name="P:ArenaLiveAPI.Internal.BlasterHapticStorage.Bytes">
+            <summary>
+            Binary file bytes
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.Internal.BlasterHapticStorage.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:ArenaLiveAPI.Internal.BlasterHapticStorage.Load(System.String)">
+            <summary>
+            Load the blaster haptic modes from file
+            </summary>
+            <param name="filePath">Path to the binary file</param>
+        </member>
+        <member name="M:ArenaLiveAPI.Internal.BlasterHapticStorage.GetModeById(System.Int32)">
+            <summary>
+            Get the haptic mode by mode id
+            </summary>
+            <param name="modeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArenaLiveAPI.Internal.BlasterHapticStorage.GetHapticById(System.Int32)">
+            <summary>
+            Get the haptic by haptic id
+            </summary>
+            <param name="hapticID">Id of haptic (index in haptic data array)</param>
+            <returns>Return null if there is no haptic with this id</returns>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryHapticData">
+            <summary>
+            Contains all haptic modes and haptics
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticData.Version">
+            <summary>
+            Binary file version
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticData.Modes">
+            <summary>
+            All available modes from data file
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticData.Haptics">
+            <summary>
+            All available haptics from data file
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryBlasterMode">
+            <summary>
+            Contains the information about id's of haptics and Finite State Machine
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryBlasterMode.ID">
+            <summary>
+            Id of mode
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryBlasterMode.Index">
+            <summary>
+            Index of mode in modes array
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryBlasterMode.ModeSlots">
+            <summary>
+            Mode slots
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryBlasterModeSlot">
+            <summary>
+            Contains the information about mode slot
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryBlasterModeSlot.HapticID">
+            <summary>
+            For single haptic, if no FSM
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryBlasterModeSlot.BFSM">
+            <summary>
+            Finite State Machine for a complex haptic
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryBlasterHaptic">
+            <summary>
+            Contains the information about haptic
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryBlasterHaptic.Points">
+            <summary>
+            Points of a haptic
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryBlasterHaptic.EventPoints">
+            <summary>
+            Event points of a haptic
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryHapticPoint">
+            <summary>
+            Contains the information about haptic point
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticPoint.Delay">
+            <summary>
+            The time of a point on haptic timeline
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticPoint.SliderPosition">
+            <summary>
+            Slider value (Y) of a point
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticPoint.Type">
+            <summary>
+            The type of a point
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticPoint.IsImpactPoint">
+            <summary>
+            Is this is a impact point
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticPoint.SpecialData">
+            <summary>
+            Contains the information of special points
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryHapticPointSpecialData">
+            <summary>
+            Contains the information of special points
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticPointSpecialData.Parameter1">
+            <summary>
+            This can be a Frequency or Count parameter of special segment
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticPointSpecialData.Parameter2">
+            <summary>
+            Can be a Amplitude parameter of special segment
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryHapticEventPoint">
+            <summary>
+            Contains the information about event point
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticEventPoint.Time">
+            <summary>
+            The time of the event point on haptic timeline
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryHapticEventPoint.EventType">
+            <summary>
+            The type of haptic event
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryFSM">
+            <summary>
+            Contains the information about Finite State Machine for a complex haptic
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSM.HapticsIDs">
+            <summary>
+            Id's of haptics (indicies) in BinaryHapticModeData Haptics array
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSM.States">
+            <summary>
+            Finite State Machine states
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryFSMState">
+            <summary>
+            Contains the information about FSM state
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMState.StateID">
+            <summary>
+            The Id of a state
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMState.HasHaptic">
+            <summary>
+            Is this haptic set
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMState.HapticIndex">
+            <summary>
+            The Id of a haptic
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMState.RepeatingHaptic">
+            <summary>
+            Is this haptic should be repeating
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMState.ReverseHaptic">
+            <summary>
+            Is this haptic should be playing in reverse
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMState.Transitions">
+            <summary>
+            Transitions to other states
+            </summary>
+        </member>
+        <member name="T:ArenaLiveLibrary.BinaryFSMStateTransition">
+            <summary>
+            Contains the information about FSM transition
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMStateTransition.TargetStateID">
+            <summary>
+            The target state id for transiting to
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMStateTransition.PointToPointTransition">
+            <summary>
+            Transition in any moment of time
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMStateTransition.EventMask">
+            <summary>
+            The event mask of thatsition
+            </summary>
+        </member>
+        <member name="F:ArenaLiveLibrary.BinaryFSMStateTransition.EventStates">
+            <summary>
+            The event states for check
+            </summary>
+        </member>
+    </members>
+</doc>
