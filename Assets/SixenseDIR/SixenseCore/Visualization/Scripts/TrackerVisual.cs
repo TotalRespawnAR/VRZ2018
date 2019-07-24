@@ -7,7 +7,6 @@
 //
 
 using UnityEngine;
-using System.Collections;
 
 namespace SixenseCore
 {
@@ -38,7 +37,7 @@ namespace SixenseCore
 
         #region Properties
 
-       
+
 
         public Tracker Input
         {
@@ -74,23 +73,23 @@ namespace SixenseCore
 
             var bases = FindObjectsOfType<BaseVisual>();
 
-            foreach(var b in bases)
+            foreach (var b in bases)
             {
-                if(b.RegisterTracker(this))
+                if (b.RegisterTracker(this))
                 {
                     m_base = b;
                     break;
                 }
             }
 
-            if(m_base == null)
+            if (m_base == null)
             {
                 m_model.enabled = false;
                 m_controller = null;
             }
             else
             {
-                m_model.enabled = true;
+                m_model.enabled = false;  //NAbil Here Maketrackers invisible
             }
 
             //if (m_trackerBind == TrackerID.PACK_LEFT)
@@ -98,8 +97,8 @@ namespace SixenseCore
             //tm.text= m_controller.GetVibration().ToString();
             //  }
 
-       
-            
+
+
         }
     }
 }
