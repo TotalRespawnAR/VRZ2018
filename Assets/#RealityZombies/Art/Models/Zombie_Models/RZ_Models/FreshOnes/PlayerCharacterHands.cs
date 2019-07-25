@@ -114,6 +114,8 @@ public class PlayerCharacterHands : MonoBehaviour
         HeadHeightCheck = curHeadHeightWithoffset;
         //ChestBone.localRotation = ChestTarget.rotation;
         animator.SetFloat("HeadHeight", curHeadHeightWithoffset);
+        animator.SetFloat("Xval", _headTransTarg.position.x);
+        animator.SetFloat("Yval", _headTransTarg.position.z);
 
         transform.position = new Vector3(_headTransTarg.position.x, 0, _headTransTarg.position.z);
         //ChestBone.Rotate(0, -90, 0);
