@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 3c309002c2e43dd429469baf8f8ae612
+  productGUID: 00000000000000000000000000000000
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -25,13 +25,13 @@ PlayerSettings:
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
-  m_SplashScreenBackgroundLandscapeAspect: 1
+  m_SplashScreenBackgroundLandscapeAspect: 0.7460197
   m_SplashScreenBackgroundPortraitAspect: 1
   m_SplashScreenBackgroundLandscapeUvs:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.99999994
     height: 1
   m_SplashScreenBackgroundPortraitUvs:
     serializedVersion: 2
@@ -40,7 +40,8 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: a6edd250bfef1e3489843d6e9bfaf0c5,
+    type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -77,7 +78,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 0
+  bakeCollisionMeshes: 1
   forceSingleInstance: 0
   resizableWindow: 1
   useMacAppStoreValidation: 0
@@ -105,7 +106,7 @@ PlayerSettings:
   xboxOneLoggingLevel: 1
   xboxOneDisableEsram: 0
   xboxOnePresentImmediateThreshold: 0
-  switchQueueCommandMemory: 0
+  switchQueueCommandMemory: 1048576
   switchQueueControlMemory: 16384
   switchQueueComputeMemory: 262144
   switchNVNShaderPoolsGranularity: 33554432
@@ -118,13 +119,278 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
-  preloadedAssets: []
+  bundleVersion: 1.0
+  preloadedAssets:
+  - {fileID: 2100000, guid: b6a8ceaf7e26b5a4bb1c6cb0a8b723c5, type: 2}
+  - {fileID: 2100000, guid: fcdf1269399ffa34d97b5b445a3260f0, type: 2}
+  - {fileID: 4800000, guid: 8917c54e896fc89488f635aa76c5a080, type: 3}
+  - {fileID: 2800000, guid: fb550b727c06da7408f99badc625671b, type: 3}
+  - {fileID: 2800000, guid: e84f3ae333ca7ce41a92bbae92ed4890, type: 3}
+  - {fileID: 2800000, guid: 91b3e810f724b7a4c9e97308f8f3b2b8, type: 3}
+  - {fileID: 2800000, guid: 03a50a45608d2ea40926fa1f783318d4, type: 3}
+  - {fileID: 2800000, guid: 902a6539b1e0ded408c37f8ae8367027, type: 3}
+  - {fileID: 2800000, guid: a01d16dacdac8b046aba2bc041bcb460, type: 3}
+  - {fileID: 2800000, guid: f5756d998fc79b746b2ab76fa8035616, type: 3}
+  - {fileID: 2800000, guid: 764c8f172300d1749a229b19179856e9, type: 3}
+  - {fileID: 2800000, guid: c55454b2d7f6e6a48aaef310a124512d, type: 3}
+  - {fileID: 2800000, guid: be503950190bdf545812c46549eb9d9f, type: 3}
+  - {fileID: 2800000, guid: 2b39ca62ad8b9ca489b8bca8e30ecee5, type: 3}
+  - {fileID: 2800000, guid: e10aa9870ade61e498730908aebd593b, type: 3}
+  - {fileID: 2800000, guid: 2f660daa28bac044f9142441863238a8, type: 3}
+  - {fileID: 2800000, guid: 9c1f9afba46a28745911468390af8cee, type: 3}
+  - {fileID: 2800000, guid: e054b9b6c7c60a449be6fc963897df17, type: 3}
+  - {fileID: 2800000, guid: 0fa2985e6e55d384e822d97a9b2651f3, type: 3}
+  - {fileID: 2800000, guid: 66f50206ab3e9874dbb2cfa8ea7d7a42, type: 3}
+  - {fileID: 2800000, guid: f88670b0bd471674199dc23ed6d49f83, type: 3}
+  - {fileID: 2800000, guid: 3718f590e53850241a66668d8b3267a2, type: 3}
+  - {fileID: 2800000, guid: d3fb77773f975684fafddeccd64aa2a1, type: 3}
+  - {fileID: 2800000, guid: 1636c9ffba92a2740af5399025e0e82d, type: 3}
+  - {fileID: 2800000, guid: ecf256e8341e3e249bb2126e62bc49d0, type: 3}
+  - {fileID: 2800000, guid: a4ffeab29c54c7b498cfeb6796bfa179, type: 3}
+  - {fileID: 2800000, guid: 5b59fd05399301c44b03134375e56781, type: 3}
+  - {fileID: 2800000, guid: 3bd7cff43c4e2a843a914abbd6cfec4a, type: 3}
+  - {fileID: 2800000, guid: 596e02b7dabae5140ac23df3a2f7042d, type: 3}
+  - {fileID: 2800000, guid: 2413442eced342b44a665a67f7a99819, type: 3}
+  - {fileID: 2800000, guid: 89595db76064b2441aff4538a29b6f76, type: 3}
+  - {fileID: 2800000, guid: b2b337ff276d2d64c99086b8c141c98b, type: 3}
+  - {fileID: 2800000, guid: b316d4bd0ce31914198e8d46e40b4b48, type: 3}
+  - {fileID: 2800000, guid: bd8d468ff16b7824cb6ab30903d34b0a, type: 3}
+  - {fileID: 2800000, guid: 21e8777c1c9dc3c418d600423ab6c662, type: 3}
+  - {fileID: 2800000, guid: a53cec59175ca3e4f9c1fa74bca3bda9, type: 3}
+  - {fileID: 2800000, guid: fce522a7a59a68643929f8fbf69d14c0, type: 3}
+  - {fileID: 2800000, guid: 7a5107cdb11f1be4085c2daa78a43ba5, type: 3}
+  - {fileID: 2800000, guid: 29eb91fc36df0ca4783d62396a118b2f, type: 3}
+  - {fileID: 2800000, guid: 47c6a543cfeca1046900892fc6a8afaf, type: 3}
+  - {fileID: 2800000, guid: 1fc0a47b38d7e6240b0f5dbeed08521c, type: 3}
+  - {fileID: 2800000, guid: 0806022af86d7f9499e630bbb19b46f7, type: 3}
+  - {fileID: 2800000, guid: 5b7921226a6b5e54a8a8329e77bc6486, type: 3}
+  - {fileID: 2800000, guid: 72d344b13b4922242901808fe9ffde85, type: 3}
+  - {fileID: 2800000, guid: 2de4b93597c748e4b912d7115e0008a4, type: 3}
+  - {fileID: 2800000, guid: 92ae1c0052a67b745bbd5330ba2e6045, type: 3}
+  - {fileID: 2800000, guid: 32c67158dd717f14d9c3f19f9c80e996, type: 3}
+  - {fileID: 2800000, guid: 5fb0137fab73ffc4bb3c6d7812ac468e, type: 3}
+  - {fileID: 2800000, guid: 7eefaa839f89a7a45aaa98e6821436a5, type: 3}
+  - {fileID: 2800000, guid: deb3607af607d0a489819cd6898d0257, type: 3}
+  - {fileID: 2800000, guid: 53bd2ed6bdb0e4c4f89a27ed6e1e4341, type: 3}
+  - {fileID: 2800000, guid: 8b21575b4ddf7244893741ef64cf9ee9, type: 3}
+  - {fileID: 2800000, guid: afd1fe18728ae234dacff38fbb72bb29, type: 3}
+  - {fileID: 2800000, guid: 5acebd6996300a24887195af78ba4ab9, type: 3}
+  - {fileID: 2800000, guid: 47e7a96759444804e9a4b1739be4d8d4, type: 3}
+  - {fileID: 2800000, guid: 944d0874f7013854395cbc05b3b720c0, type: 3}
+  - {fileID: 2800000, guid: 2935d99831a89e742829545de06e05e5, type: 3}
+  - {fileID: 2800000, guid: 17c5daef086f5f54396a352949709c5b, type: 3}
+  - {fileID: 2800000, guid: 73fb955b44f5e3647adaac6886cdc877, type: 3}
+  - {fileID: 2800000, guid: f5eb8d5e9b1b12e4d8ce6ff83a8ea5ae, type: 3}
+  - {fileID: 2800000, guid: 11afc7a16ac48244f9a15bf8d5f83d83, type: 3}
+  - {fileID: 2800000, guid: a5cbb08726d4b174893acc0f51f91cdf, type: 3}
+  - {fileID: 2800000, guid: c70eaccd00800304e91bf88bbac48dee, type: 3}
+  - {fileID: 2800000, guid: 9d11353d42376fb43a7564ed1eb3d586, type: 3}
+  - {fileID: 2800000, guid: ca239bfb509b71a4eb7058ec1306013f, type: 3}
+  - {fileID: 2800000, guid: bf8794ddc27e57842b168f34ed364ca8, type: 3}
+  - {fileID: 2800000, guid: 2b7d14d83cc7d2949bdbcbc616480d17, type: 3}
+  - {fileID: 2800000, guid: f00de941f691eb04eae37c7f4863fa39, type: 3}
+  - {fileID: 2800000, guid: 8150c1063129f974d81fb52336268293, type: 3}
+  - {fileID: 2800000, guid: 3d4ecf3d9bd7005409365020c1874be7, type: 3}
+  - {fileID: 2800000, guid: 508d6617bd30e0441b3e4c8e0fd55097, type: 3}
+  - {fileID: 2800000, guid: 054215582484f45438de8641502e50a3, type: 3}
+  - {fileID: 2800000, guid: 0ec42c29dbb88d24fb9fc2c85e324b0b, type: 3}
+  - {fileID: 2800000, guid: 556312842d874354592ee09870bbdc74, type: 3}
+  - {fileID: 2800000, guid: c38f6c316ce17af4c8026ebdbf1b9587, type: 3}
+  - {fileID: 2800000, guid: f3f6051a57ae9bb4f9dcd1903220f957, type: 3}
+  - {fileID: 2800000, guid: 8a2f7139cdd2ad34baeafa95d710e037, type: 3}
+  - {fileID: 2800000, guid: 21e7499723b0a3f4498ffd7b1b3746c6, type: 3}
+  - {fileID: 2800000, guid: c8a533d7b0fce4e418b4e9a183419e83, type: 3}
+  - {fileID: 2800000, guid: 3de794dbeb614a24d82afeac2761f61f, type: 3}
+  - {fileID: 2800000, guid: fa964e1ad1811124abcc0ddca1b55ba4, type: 3}
+  - {fileID: 2800000, guid: 8e7f8d74f58fe8c43b637afa6b53a20b, type: 3}
+  - {fileID: 2800000, guid: b0d0924bec4a427409cab85687274624, type: 3}
+  - {fileID: 2800000, guid: 34ae2c5a4de814b4ca452b3c24222323, type: 3}
+  - {fileID: 2800000, guid: 6cf1780d7d2025e458eadfe95806cbbf, type: 3}
+  - {fileID: 2800000, guid: a733c004c7a0d0b4bb961c87fab125c8, type: 3}
+  - {fileID: 2800000, guid: 2b47bc65b7b68374cb6424cfab7eaa75, type: 3}
+  - {fileID: 2800000, guid: 5e981e814a7b998499e21fe93b4af5ee, type: 3}
+  - {fileID: 2800000, guid: 9ea4b7ec48289ac4d9f551713484b68d, type: 3}
+  - {fileID: 2800000, guid: d750b40332bac7f47a1365b10ffc7397, type: 3}
+  - {fileID: 2800000, guid: 821a480be08ac6347ae1ada2846fe7fa, type: 3}
+  - {fileID: 2800000, guid: 23b3e9741b28abf408aa18e9f2241931, type: 3}
+  - {fileID: 2800000, guid: 29ddb0fe82766064186a21f376a0920a, type: 3}
+  - {fileID: 2800000, guid: 26fbaa68ec8007d45bc2ffc0bca8cf6b, type: 3}
+  - {fileID: 2800000, guid: 06e0086c276b2fd4995983e10b546eb1, type: 3}
+  - {fileID: 2800000, guid: 04d6bce851b2d25429d860914aebb48d, type: 3}
+  - {fileID: 2800000, guid: 27964b73f9f8f834cbdf00f49c2e47e7, type: 3}
+  - {fileID: 2800000, guid: 19fd76e5f79abf140bd611ad18acc334, type: 3}
+  - {fileID: 2800000, guid: d9db7bff639e765419e5ef16b2cbb3bf, type: 3}
+  - {fileID: 2800000, guid: 1f7296a6d0fd0b643a3df1d98fbba440, type: 3}
+  - {fileID: 2800000, guid: c38a9d2a53e076c4fbef31341d2657c0, type: 3}
+  - {fileID: 2800000, guid: 6e28adf808760b24b8a90e2b0ea591ae, type: 3}
+  - {fileID: 2800000, guid: 876afbde546a5d84d8260f904f530759, type: 3}
+  - {fileID: 2800000, guid: a4080f5a1bb88fa45ab11773d21a93de, type: 3}
+  - {fileID: 2800000, guid: 0eb279de6ce88e7419ba62de8290d97b, type: 3}
+  - {fileID: 2800000, guid: ea4aa01cacf0fd84aade6fd05639aef9, type: 3}
+  - {fileID: 2800000, guid: bcbee7a1b03c8554d913b5bba284f064, type: 3}
+  - {fileID: 2800000, guid: c79224e6034b8ad499be4a3784223f02, type: 3}
+  - {fileID: 2800000, guid: b0df0f08e8763d74e901c5a38fdf27ee, type: 3}
+  - {fileID: 2800000, guid: e64e810f138144d4aaace033f9480b61, type: 3}
+  - {fileID: 2800000, guid: ed21a03605e6e5644bf01da79807874c, type: 3}
+  - {fileID: 2800000, guid: cb54fe7a606ecfb4d94ff7903cfd8d85, type: 3}
+  - {fileID: 2800000, guid: 1741a2467af847e40bdbe11ab5ab3084, type: 3}
+  - {fileID: 2800000, guid: 9aa234b02be6d2c4d922bba7d3ab1136, type: 3}
+  - {fileID: 2800000, guid: 15f42d600c7470445a8f4a7122dc3b9b, type: 3}
+  - {fileID: 2800000, guid: 44c7da03ee388374fb8497bcf1a30431, type: 3}
+  - {fileID: 2800000, guid: 3ea90b935f2c5d0468ed8573a7378ec2, type: 3}
+  - {fileID: 2800000, guid: 700f649f55669b94cb532ae5951e9379, type: 3}
+  - {fileID: 2800000, guid: 58332293047148345ba54323b4989bf1, type: 3}
+  - {fileID: 2800000, guid: d0b9ac2af8eb0694ea95634773cc4a29, type: 3}
+  - {fileID: 2800000, guid: 414c1e0df03f41e4eb896253662ccb7a, type: 3}
+  - {fileID: 2800000, guid: 3d2ff2b14e92abb4a8f6025085d791cf, type: 3}
+  - {fileID: 2800000, guid: 9adcb8da5d730e641913ee7d87160f85, type: 3}
+  - {fileID: 2800000, guid: 6babaea56bf14bc48867b1dccd770c0b, type: 3}
+  - {fileID: 2800000, guid: c2db2bb22439af34bb8cac422e6716f9, type: 3}
+  - {fileID: 2800000, guid: 7aca818b54e6f9245a9195082b2411c3, type: 3}
+  - {fileID: 2800000, guid: a76f163971ee8ef4d8ffbb9842c4e9c4, type: 3}
+  - {fileID: 2800000, guid: fac9557b46ec43b45b540954e3c7894e, type: 3}
+  - {fileID: 2800000, guid: a423ad93261892f49bc7f876bfe1241f, type: 3}
+  - {fileID: 2800000, guid: c80ecb40b2998e54c86675f349aa7d87, type: 3}
+  - {fileID: 2800000, guid: dfcfcfbc621e50940a7ac5f8bcf090ec, type: 3}
+  - {fileID: 2800000, guid: 3f1123310fd61d949bfcb32120a832dc, type: 3}
+  - {fileID: 2800000, guid: 769b578c64b7de94fa5bc6f0ae5ce2c2, type: 3}
+  - {fileID: 2800000, guid: 64da195f030a41049b30f689865a961f, type: 3}
+  - {fileID: 2800000, guid: 35b08f4733ce0524f88fbb4ec3d3de94, type: 3}
+  - {fileID: 2800000, guid: b1de9c86bf8a4ed498e246e99232d8ee, type: 3}
+  - {fileID: 2800000, guid: 1b05fb97271200e4d9bc6ce5e4dc4b67, type: 3}
+  - {fileID: 2800000, guid: 9cff9bfde0b19f24296094a77235b8f6, type: 3}
+  - {fileID: 2800000, guid: ac53c984c0956414aa690b602848b4d8, type: 3}
+  - {fileID: 2800000, guid: 505758942eecb234b9f637afe539207c, type: 3}
+  - {fileID: 2800000, guid: ea399bb4be78add4a8fa1bc98443d959, type: 3}
+  - {fileID: 2800000, guid: 3fb3504d2f8ae5246881a2b5b6d539df, type: 3}
+  - {fileID: 2800000, guid: 7a6ee70494963784985e01a3e0ee5b00, type: 3}
+  - {fileID: 2800000, guid: 7675cead539fe5e4d957311a8d155127, type: 3}
+  - {fileID: 2800000, guid: 122cd7bac02d41b4da984a8504914b2e, type: 3}
+  - {fileID: 2800000, guid: f04e6ee6d449ccb46a11a39ac1d83d10, type: 3}
+  - {fileID: 2800000, guid: 3463719174ade9345ab730071662183b, type: 3}
+  - {fileID: 2800000, guid: 1ca2756e9f3ed3d43a27ef4eddf3277a, type: 3}
+  - {fileID: 2800000, guid: 4afa46b670e835849be74a97407f6cc0, type: 3}
+  - {fileID: 2800000, guid: a36dc20d5f6bc964f87f726fcdeabd19, type: 3}
+  - {fileID: 2800000, guid: f053a80261a53f642a24369744d4bd94, type: 3}
+  - {fileID: 2800000, guid: cb3b2097cef41594c8d45df0201cd793, type: 3}
+  - {fileID: 2800000, guid: dc50894dbd56d6446ae44195d65e5c29, type: 3}
+  - {fileID: 2800000, guid: 2424ea6cbc836b74bb0fd8fc99249e83, type: 3}
+  - {fileID: 2800000, guid: 56808e95320432b4caebef2fe4ef9c7c, type: 3}
+  - {fileID: 2800000, guid: 3968780f8cb31684f89549ecae2e6eb8, type: 3}
+  - {fileID: 2800000, guid: 7893a203e50bd8f4a9edc744828432eb, type: 3}
+  - {fileID: 2800000, guid: 41cd175653036544b93e8e532c452928, type: 3}
+  - {fileID: 2100000, guid: 27a23d139bd7ccd4ba812ed19bd00296, type: 2}
+  - {fileID: 2100000, guid: 89d653c36b8309241940722fc14739d3, type: 2}
+  - {fileID: 2100000, guid: 69f757930772d1446a699baad2e42d27, type: 2}
+  - {fileID: 2100000, guid: c19bbd383cb4ff34e81eb2670ace4147, type: 2}
+  - {fileID: 2100000, guid: 59220ccfc0619ec4a9196413c76dc4f9, type: 2}
+  - {fileID: 2100000, guid: 2aefbd561d77e9c4cad8d2383aeeffd7, type: 2}
+  - {fileID: 2100000, guid: 460177e4682ed25418c81cd52687f082, type: 2}
+  - {fileID: 2100000, guid: 1656b939faaaa5449a537ce4abf91abf, type: 2}
+  - {fileID: 2100000, guid: 6499ea57e58a1ca45aaa600e091c6035, type: 2}
+  - {fileID: 2100000, guid: 5efd89093a0524d499cfc2c91c69116d, type: 2}
+  - {fileID: 2100000, guid: 3154227062d6fa245af8f7d6ebd29932, type: 2}
+  - {fileID: 2100000, guid: 905e73bf113f58444b6d8cabdda7ed33, type: 2}
+  - {fileID: 2100000, guid: 0d2a23c4318c2d94db62b30cc6112fc6, type: 2}
+  - {fileID: 2100000, guid: 5043ab5d32adc424789db8cc7dc574b2, type: 2}
+  - {fileID: 2100000, guid: 637c526286f2ec84cbb8d70cc0e487f3, type: 2}
+  - {fileID: 2100000, guid: c02356a7c2a756048a576b4133e7bc4d, type: 2}
+  - {fileID: 2100000, guid: 3ce1c44ea05f39849a9536832104eb12, type: 2}
+  - {fileID: 2100000, guid: e5d89eb97d03e0046aeb36039ddd470d, type: 2}
+  - {fileID: 2100000, guid: c8c3e23e7d1d4dd4daa9067450edb25f, type: 2}
+  - {fileID: 2100000, guid: 170eefa83bfadf449b964f5d73e2b3e5, type: 2}
+  - {fileID: 2100000, guid: 42a5679539b9c65449c5068ccc9c4e6e, type: 2}
+  - {fileID: 2100000, guid: a5338e12222aa704780b2de4a2d605c2, type: 2}
+  - {fileID: 2100000, guid: 6cadcb2e5d6d9554b80d65d18e232030, type: 2}
+  - {fileID: 2100000, guid: d363bc6de3a18c54d9c3990142d2f654, type: 2}
+  - {fileID: 2100000, guid: 7c1f43032778ca6489e4d981b79565f3, type: 2}
+  - {fileID: 2100000, guid: de39c63189d517d4a9f14abd2c0a956b, type: 2}
+  - {fileID: 2100000, guid: 8b1d1b5ed81e92d4cab861630db7dbb1, type: 2}
+  - {fileID: 2100000, guid: b4ac0e3b64c599c44af39ba8e8cb66c4, type: 2}
+  - {fileID: 2100000, guid: ea0ba458d8b18684e8ef7cb8114d2b4e, type: 2}
+  - {fileID: 2100000, guid: 86b88512f0454204aac6ced9d1ec2b8c, type: 2}
+  - {fileID: 2100000, guid: cb3dd1ca85d841044ad8fe4ac7667ac8, type: 2}
+  - {fileID: 2100000, guid: 9f0a043f40fffc7408d0836c2a460453, type: 2}
+  - {fileID: 2100000, guid: 1a341e259535c0545b1a8e2540550147, type: 2}
+  - {fileID: 2100000, guid: b71057bb8a07a984f84a8aa2506b7098, type: 2}
+  - {fileID: 2100000, guid: bfe4b87ec972b4044b43d543077a46f4, type: 2}
+  - {fileID: 2100000, guid: 91e5117edfb824a448b461bf79e7de4d, type: 2}
+  - {fileID: 2100000, guid: eeedb574b0b9f534ea8ed1c358ef0469, type: 2}
+  - {fileID: 2100000, guid: 8fc30ea5b08348c46bba38d3e73a7d7f, type: 2}
+  - {fileID: 2100000, guid: 8309997e318cebb4bb22ff3431c0290f, type: 2}
+  - {fileID: 2100000, guid: bfc8a4978f9517848a3df486a9077d61, type: 2}
+  - {fileID: 2100000, guid: 7f6f89781a60d774c96adbca6f66596f, type: 2}
+  - {fileID: 2100000, guid: b4590c21dfc48f746a009e77479ccc08, type: 2}
+  - {fileID: 2100000, guid: 777833cf9d3f4f8419e63bf2884b9f40, type: 2}
+  - {fileID: 2100000, guid: c06a33d127c264f459950bb99ddcf64f, type: 2}
+  - {fileID: 2100000, guid: 66597abb1507182438d0fa21aca4cf6a, type: 2}
+  - {fileID: 2100000, guid: 46531168bd162ff49b4087889af47c36, type: 2}
+  - {fileID: 2100000, guid: a669c4720581d764d85c48f7b3844ae2, type: 2}
+  - {fileID: 2100000, guid: fde62d50610e2564995c2af29a4aee9b, type: 2}
+  - {fileID: 2100000, guid: 072134aaa24d00c40867d1f246e0679e, type: 2}
+  - {fileID: 2100000, guid: 28101198de46d0a4db2859bd2bddb3b1, type: 2}
+  - {fileID: 2100000, guid: 4c6ca0572d80dd04ab8e51416407518f, type: 2}
+  - {fileID: 2100000, guid: c97c47286c8fb3b48a928905c31dc046, type: 2}
+  - {fileID: 2100000, guid: 015b89243aaf6ea4ba8a3fb668db469e, type: 2}
+  - {fileID: 2100000, guid: a1b478fbe11f5a545a06436eeae353b5, type: 2}
+  - {fileID: 2100000, guid: 1e27ba5b1f0cfb548908cddad2be151b, type: 2}
+  - {fileID: 2100000, guid: 223f8e0a3d4d1c64a80d504181c1d986, type: 2}
+  - {fileID: 2100000, guid: 8c28183a1ab8cdc448c6fd8db0c27934, type: 2}
+  - {fileID: 2100000, guid: 1a595ca11eeb6054fb016c08af97acec, type: 2}
+  - {fileID: 2100000, guid: 9a6d9ce232a747e4588420a4cca9838a, type: 2}
+  - {fileID: 2100000, guid: f40eccd77247d384994bc0836ca7d35d, type: 2}
+  - {fileID: 2100000, guid: fc493e0c323aa8b468000535086ca79f, type: 2}
+  - {fileID: 2100000, guid: 842c0436afb5c0a4197efbf5a2210b13, type: 2}
+  - {fileID: 2100000, guid: 492a2a8a1ed5c5c4dbb161f56c8f8427, type: 2}
+  - {fileID: 2100000, guid: 568a0d7a35f0add40bf3bfc9937a5978, type: 2}
+  - {fileID: 2100000, guid: 91735f4463a7474409a88d6196094290, type: 2}
+  - {fileID: 2100000, guid: eecc0042154f1aa4cb4418d37bbe4e31, type: 2}
+  - {fileID: 2100000, guid: 4f8721dec3d5e3645b2aef57cc56c6df, type: 2}
+  - {fileID: 2100000, guid: 68d8a7f96287e0643b9e4fd9be46a92f, type: 2}
+  - {fileID: 2100000, guid: 525221d9aac4e0f4da169222b427f38a, type: 2}
+  - {fileID: 2100000, guid: c5d5ff037f27a6e4d8547de599772f09, type: 2}
+  - {fileID: 2100000, guid: a16fdf05ba8410c4280a3ab8cc201cd8, type: 2}
+  - {fileID: 2100000, guid: f8df4a0a7076eb142b6aaff884f84be5, type: 2}
+  - {fileID: 2100000, guid: 654dc2c92b2272241a87b1a91498bc54, type: 2}
+  - {fileID: 2100000, guid: 69114a720126f784dadf34ecc8a7040d, type: 2}
+  - {fileID: 2100000, guid: c05327315be64764585e77439f7c37f1, type: 2}
+  - {fileID: 2100000, guid: dcfbe263906cd03439e5d4bff06ed1f5, type: 2}
+  - {fileID: 2100000, guid: 7612463be499f034d8742424575d5c82, type: 2}
+  - {fileID: 2100000, guid: 538ae9a544af77a4591c72cb53265fc2, type: 2}
+  - {fileID: 1468284784923118, guid: c1fba3f0d8d19854b8deebf13e403b41, type: 3}
+  - {fileID: 1783835575610170, guid: 4be055e6a5320334cb477cacfcbacf4f, type: 3}
+  - {fileID: 1248376836852790, guid: 5e789f27f7fd18a4f951b7decc3a8fcd, type: 3}
+  - {fileID: 1040722904320532, guid: 3c369e346090f014396fcf4fb3204eb4, type: 3}
+  - {fileID: 1471910229978728, guid: 768a8d011374a0e49bead5ea4f54c5ef, type: 3}
+  - {fileID: 1174336192435190, guid: 93d2e75b22266b441b142667a872d3c4, type: 3}
+  - {fileID: 1939677491357314, guid: 509471f6a57ada64888286dd9524d0aa, type: 3}
+  - {fileID: 1629801760675062, guid: adf714b37aecb554790b701254b9f1a4, type: 3}
+  - {fileID: 1036572614356716, guid: 4355e8f607724ca42a312beeefc60509, type: 3}
+  - {fileID: 1382687562028412, guid: c0b33bf1dea2f464695ec42f46852d71, type: 3}
+  - {fileID: 1075796403594436, guid: 16f6f73a57f04ad4397fc7e9eb0de56c, type: 3}
+  - {fileID: 1336660783157248, guid: 510a252da9e121c43ba3b023e38202f4, type: 3}
+  - {fileID: 1200330225960692, guid: 81281b075ac5eac4794ffdf4995e86ca, type: 3}
+  - {fileID: 1327923652816816, guid: c065aefd3ed754746835b8b5db547e86, type: 3}
+  - {fileID: 1417068841233318, guid: 0aff31d345586094dbb7c53280481167, type: 3}
+  - {fileID: 1880216986848962, guid: 75c954a57778013449a65580e02a06e4, type: 3}
+  - {fileID: 1306483699565300, guid: cafea54100c575e4c84fac36dbd29f93, type: 3}
+  - {fileID: 1405192265667052, guid: b559a26fbf26957409e0ac973692d88b, type: 3}
+  - {fileID: 1768372742152250, guid: 6337e13245e0fb741a7e4a6dad98fe10, type: 3}
+  - {fileID: 1736765671277206, guid: 60367cee65c1c1b438021da0b8d6b173, type: 3}
+  - {fileID: 1578917131660802, guid: 7c182988038f26945bc33e4dcec2e4dc, type: 3}
+  - {fileID: 1889254020996908, guid: 8ac1886f6efb2eb45a3206bdfc8adc24, type: 3}
+  - {fileID: 1303357929547748, guid: a1b5c3561a822754c93365e400a299ca, type: 3}
+  - {fileID: 1363277412494856, guid: b9157bc7f72d07d49953bacc3fb4cd4b, type: 3}
+  - {fileID: 1478439170403772, guid: db35074fe41626743bb31ca102e27edc, type: 3}
+  - {fileID: 2100000, guid: 5a65c3b73e6425849ae6a2bc76902354, type: 2}
+  - {fileID: 2100000, guid: 11e28a36bb58f7740928ebbe8829a26e, type: 2}
+  - {fileID: 2100000, guid: cafd63dfe8bf05f47b335b63a877a984, type: 2}
+  - {fileID: 2100000, guid: 96a47e0db28b2ae4aab5840496389e16, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
-  xboxOneDisableKinectGpuReservation: 1
-  xboxOneEnable7thCore: 1
+  xboxOneDisableKinectGpuReservation: 0
+  xboxOneEnable7thCore: 0
   isWsaHolographicRemotingEnabled: 0
   vrSettings:
     cardboard:
@@ -141,8 +407,8 @@ PlayerSettings:
       depthFormat: 1
       depthBufferSharingEnabled: 1
     oculus:
-      sharedDepthBuffer: 1
-      dashSupport: 1
+      sharedDepthBuffer: 0
+      dashSupport: 0
     enable360StereoCapture: 0
   protectGraphicsMemory: 0
   enableFrameTimingStats: 0
@@ -166,7 +432,7 @@ PlayerSettings:
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
-  keepLoadedShadersAlive: 0
+  keepLoadedShadersAlive: 1
   StripUnusedMeshComponents: 1
   VertexChannelCompressionMask: 4054
   iPhoneSdkVersion: 988
@@ -237,9 +503,9 @@ PlayerSettings:
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
-  clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
-  templatePackageId: com.unity.template.3d@1.3.0
-  templateDefaultScene: Assets/Scenes/SampleScene.unity
+  clonedFromGUID: ba0f82c9f1268b64292c1c687826c876
+  templatePackageId: 
+  templateDefaultScene: 
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -259,42 +525,67 @@ PlayerSettings:
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons: []
   m_BuildTargetPlatformIcons: []
-  m_BuildTargetBatching:
-  - m_BuildTarget: Standalone
-    m_StaticBatching: 1
-    m_DynamicBatching: 0
-  - m_BuildTarget: tvOS
-    m_StaticBatching: 1
-    m_DynamicBatching: 0
-  - m_BuildTarget: Android
-    m_StaticBatching: 1
-    m_DynamicBatching: 0
-  - m_BuildTarget: iPhone
-    m_StaticBatching: 1
-    m_DynamicBatching: 0
-  - m_BuildTarget: WebGL
-    m_StaticBatching: 0
-    m_DynamicBatching: 0
+  m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs:
-  - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b00000008000000
-    m_Automatic: 1
-  - m_BuildTarget: iOSSupport
-    m_APIs: 10000000
-    m_Automatic: 1
-  - m_BuildTarget: AppleTVSupport
-    m_APIs: 10000000
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 02000000
     m_Automatic: 0
-  - m_BuildTarget: WebGLSupport
-    m_APIs: 0b000000
-    m_Automatic: 1
+  - m_BuildTarget: MacStandaloneSupport
+    m_APIs: 1000000011000000
+    m_Automatic: 0
+  - m_BuildTarget: LinuxStandaloneSupport
+    m_APIs: 1100000015000000
+    m_Automatic: 0
   m_BuildTargetVRSettings:
+  - m_BuildTarget: Metro
+    m_Enabled: 0
+    m_Devices: []
   - m_BuildTarget: Standalone
     m_Enabled: 1
     m_Devices:
-    - Oculus
     - OpenVR
-  m_BuildTargetEnableVuforiaSettings: []
+  - m_BuildTarget: Android
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: WebGL
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: Tizen
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: PSP2
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: PS4
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: PSM
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: XboxOne
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: N3DS
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: WiiU
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: tvOS
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: iOS
+    m_Enabled: 0
+    m_Devices: []
+  m_BuildTargetEnableVuforiaSettings:
+  - m_BuildTarget: Metro
+    m_Enabled: 0
+  - m_BuildTarget: Android
+    m_Enabled: 0
+  - m_BuildTarget: iOS
+    m_Enabled: 0
+  - m_BuildTarget: Standalone
+    m_Enabled: 0
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   m_TemplateCustomTags: {}
@@ -302,7 +593,13 @@ PlayerSettings:
     Android: 1
     iPhone: 1
     tvOS: 1
-  m_BuildTargetGroupLightmapEncodingQuality: []
+  m_BuildTargetGroupLightmapEncodingQuality:
+  - m_BuildTarget: Standalone
+    m_EncodingQuality: 1
+  - m_BuildTarget: XboxOne
+    m_EncodingQuality: 1
+  - m_BuildTarget: PS4
+    m_EncodingQuality: 1
   m_BuildTargetGroupLightmapSettings: []
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
@@ -511,13 +808,14 @@ PlayerSettings:
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 0}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 55a4e8b54328df64abab544b8337da83,
+    type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
   webGLMemorySize: 256
   webGLExceptionSupport: 1
   webGLNameFilesAsHashes: 0
-  webGLDataCaching: 1
+  webGLDataCaching: 0
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
@@ -528,36 +826,45 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   scriptingDefineSymbols:
-    1: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
-    7: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    1: CROSS_PLATFORM_INPUT;VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT;VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT;VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     13: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    14: VRTK_DEFINE_SDK_WINDOWSMR
+    17: MOBILE_INPUT;VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    18: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     19: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    20: MOBILE_INPUT;VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     21: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    23: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
+    24: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     25: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     26: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     27: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
-    28: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Metro: 2
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 1
-  apiCompatibilityLevelPerPlatform: {}
+  scriptingRuntimeVersion: 0
+  apiCompatibilityLevelPerPlatform:
+    Metro: 3
+    Standalone: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template_3D
-  metroPackageVersion: 
-  metroCertificatePath: 
+  metroPackageName: kngmay19v20scopes
+  metroPackageVersion: 1.0.0.0
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Template_3D
+  metroCertificateSubject: Total Respawn
+  metroCertificateIssuer: Total Respawn
+  metroCertificateNotAfter: 00b3d8984bebd401
+  metroApplicationDescription: better
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: RZ_Jun2018max
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -570,7 +877,33 @@ PlayerSettings:
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  platformCapabilities: {}
+  platformCapabilities:
+    WindowsStoreApps:
+      AllJoyn: False
+      BlockedChatMessages: False
+      Bluetooth: False
+      Chat: False
+      CodeGeneration: False
+      EnterpriseAuthentication: False
+      HumanInterfaceDevice: False
+      InputInjectionBrokered: False
+      InternetClient: True
+      InternetClientServer: True
+      Location: False
+      Microphone: False
+      MusicLibrary: False
+      Objects3D: False
+      PhoneCall: False
+      PicturesLibrary: False
+      PrivateNetworkClientServer: True
+      Proximity: False
+      RemovableStorage: False
+      SharedUserCertificates: False
+      SpatialPerception: True
+      UserAccountInformation: False
+      VideosLibrary: False
+      VoipCall: False
+      WebCam: False
   metroTargetDeviceFamilies: {}
   metroFTAName: 
   metroFTAFileTypes: []
@@ -594,20 +927,19 @@ PlayerSettings:
   XboxOneCapability: []
   XboxOneGameRating: {}
   XboxOneIsContentPackage: 0
-  XboxOneEnableGPUVariability: 1
+  XboxOneEnableGPUVariability: 0
   XboxOneSockets: {}
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   XboxOneXTitleMemory: 8
-  xboxOneScriptCompiler: 1
+  xboxOneScriptCompiler: 0
   XboxOneOverrideIdentityName: 
   vrEditorSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled:
-    UNet: 1
+  cloudServicesEnabled: {}
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -626,7 +958,7 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 6
+  apiCompatibilityLevel: 2
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   projectName: 
@@ -634,4 +966,4 @@ PlayerSettings:
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
-  legacyClampBlendShapeWeights: 0
+  legacyClampBlendShapeWeights: 1

@@ -4,8 +4,58 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - SpatialMesh
+  - Interactive
+  - Ammo
+  - HotSpotTag
+  - MetalTag
+  - GridPoint
+  - ShootyHand
+  - LoadyHand
+  - GunMagTag
+  - GunSliderFront
+  - GunSliderBack
+  - ZombieTag
+  - CursorTag
+  - TutorialStateTag
+  - AlphaTag
+  - BravoTag
+  - MeshGeoTag
+  - MeshHoloTag
+  - TutoTarget1
+  - TutoTarget2
+  - PowerUp_Reciever
+  - RootAncObjTag
+  - AncChildObjTag
+  - ZHeadTag
+  - ZChestTag
+  - ZPelvisTag
+  - ZArmTag
+  - ZLegTag
+  - BrickWallTag
+  - Fire
   - BlasterTag
-  - Ground
+  - AncTag
+  - GridMaker
+  - ZspawnTag
+  - WayPointTag
+  - CrateTag
+  - BaseBoxTag
+  - ScoreboardTag
+  - PillarTag
+  - GspawnTag
+  - FspawnTag
+  - ArenaTag
+  - StemTag
+  - FlyTag
+  - EnemyProjectile
+  - Indicator
+  - AlphaHealthTag
+  - BravoHealthTag
+  - DebugLineTag
+  - ZNoneTag
+  - TerrainTag
+  - RockTag
   layers:
   - Default
   - TransparentFX
@@ -15,30 +65,30 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - VRUtils
+  - GridMap
+  - Enemy
+  - MoveColider
+  - Player
+  - Barrier
+  - Pickup
+  - phys
+  - GunLighting
+  - SightHelper
+  - Target
+  - FreeLimb
+  - Grenade
+  - FireLayer
+  - WorldAnchor
+  - Walls
+  - ZombieMeshes
+  - LightSecondary
+  - Coliseum
+  - Tunnels
+  - DebugLines
+  - StencilLayer1
+  - CrossHair
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - SpatialMapping
   m_SortingLayers:
   - name: Default
     uniqueID: 0
