@@ -10,18 +10,26 @@ public class PlayerCharacterHands : MonoBehaviour
 
     public Transform ChestBone;
     public Transform ChestTarget;
-    public Transform HeadPos;
+    Transform _headTransTarg;
 
     public Animator animator;
-
+    public Transform StemHead;
+    public Transform SphereHead;
     public bool ikActive = true;
 
+    float originalHeightWithoffset;
+    float offest = 1.071649f;
+    float curHeadHeightWithoffset;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (useStemHead) { _headTransTarg = StemHead; } else { _headTransTarg = SphereHead; }
+        Angle = 90;
         animator = GetComponent<Animator>();
         ChestBone = animator.GetBoneTransform(HumanBodyBones.Spine);
+        originalHeightWithoffset = _headTransTarg.transform.position.y - offest;
+        curHeadHeightWithoffset = originalHeightWithoffset;
     }
 
     //a callback for calculating IK
@@ -90,16 +98,24 @@ public class PlayerCharacterHands : MonoBehaviour
         animator.SetIKRotation(AvatarIKGoal.RightHand, HandTargetRight.rotation);
     }
     public int Xyz;
-    public bool neg;
-    public bool uselookat;
+    public bool neg = true;
+    public bool uselookat = true;
     float multiplyer = 1f;
     public float Angle = 90;
+    public float HeadHeightCheck;
+    public bool useStemHead;
 
     // Update is called once per frame
     void LateUpdate()
     {
-        //ChestBone.localRotation = ChestTarget.rotation;
+        curHeadHeightWithoffset = _headTransTarg.transform.position.y - offest;
 
+
+        HeadHeightCheck = curHeadHeightWithoffset;
+        //ChestBone.localRotation = ChestTarget.rotation;
+        animator.SetFloat("HeadHeight", curHeadHeightWithoffset);
+
+        transform.position = new Vector3(_headTransTarg.position.x, 0, _headTransTarg.position.z);
         //ChestBone.Rotate(0, -90, 0);
         if (uselookat)
         {

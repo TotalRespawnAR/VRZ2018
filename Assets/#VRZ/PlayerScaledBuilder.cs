@@ -10,8 +10,14 @@ public class PlayerScaledBuilder : MonoBehaviour
 
     public GameObject PlayerCharacter;
 
+    bool hasBeenInstanciated;
 
+    void poof()
+    {
+        PlayerCharacter.transform.localScale = new Vector3(1f, 1f, 1f) * 1f;
 
+        PlayerCharacter.SetActive(true);
+    }
 
 
     // Update is called once per frame
@@ -45,6 +51,13 @@ public class PlayerScaledBuilder : MonoBehaviour
         {
             Debug.DrawRay(Head.transform.position, Head.transform.TransformDirection(Vector3.down) * 1000, Color.white);
             Debug.Log("Did not Hit");
+        }
+
+        if (hasBeenInstanciated) return;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            poof();
+            hasBeenInstanciated = true;
         }
     }
 }
