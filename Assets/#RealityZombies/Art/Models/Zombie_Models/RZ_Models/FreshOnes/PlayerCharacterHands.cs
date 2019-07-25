@@ -82,10 +82,10 @@ public class PlayerCharacterHands : MonoBehaviour
 
     void OnAnimatorIK(int layerIndex)
     {
-        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
-        animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
-        animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
-        animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
+        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, Magnetizm);
+        animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, Magnetizm);
+        animator.SetIKPositionWeight(AvatarIKGoal.RightHand, MagnetizmR);
+        animator.SetIKRotationWeight(AvatarIKGoal.RightHand, MagnetizmR);
 
 
 
@@ -104,7 +104,36 @@ public class PlayerCharacterHands : MonoBehaviour
     public float Angle = 90;
     public float HeadHeightCheck;
     public bool useStemHead;
+    float curdistToGun = 10f;
+    public float ShowCurDist;
+    public float Magnetizm = 0;
+    public float MagnetizmR = 0;
+    private void Update()
+    {
+        curdistToGun = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(HandTargetRight.position.x, 0, HandTargetRight.position.z));
+        ShowCurDist = curdistToGun;
 
+        if (curdistToGun > 2.5f)
+        {
+            Magnetizm = 0;
+        }
+        else if (curdistToGun < 2.5f && curdistToGun > .5f)
+        {
+            Magnetizm = ((2f - (curdistToGun - 2f))) - 2f;
+
+        }
+        else
+      if (curdistToGun < 0.5f)
+        {
+            Magnetizm = 1f;
+        }
+
+        MagnetizmR = Magnetizm;
+        if (MagnetizmR > 0.6f) MagnetizmR = 0.6f;
+
+        // Magnetizm = 0.5f;
+
+    }
     // Update is called once per frame
     void LateUpdate()
     {
