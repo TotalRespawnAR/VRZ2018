@@ -21,7 +21,7 @@ public class AudioSourceCTRL : MonoBehaviour
 
 
     IEnemyEntityComp m_ieec;
-
+    AudioSource[] AttachedSources;
 
     void LoadTypeBasedAudio(EnemySpeakerTypes argspeakertype)
     {
@@ -48,7 +48,25 @@ public class AudioSourceCTRL : MonoBehaviour
     }
 
 
+    private void Awake()
+    {
+        // AttachedSources = new List<AudioSource>();
+        AttachedSources = GetComponents<AudioSource>();
 
+        AudioFootStep = AttachedSources[0];
+        AudioHeadShot = AttachedSources[1];
+        AudioBodyShot = AttachedSources[2];
+        AudioSmallGrowl = AttachedSources[3];
+        AudioBigGrowl = AttachedSources[4];
+        AudioSmallMoan = AttachedSources[5];
+        AudioBigMoan = AttachedSources[6];
+        AudioSmallHurt = AttachedSources[7];
+        AudioBigHurt = AttachedSources[8];
+        AudioSmallAttack = AttachedSources[9];
+        AudioBigAttack = AttachedSources[10];
+        AudioSmallDeath = AttachedSources[11];
+        AudioBigDeath = AttachedSources[12];
+    }
 
     private void Start()
     {
