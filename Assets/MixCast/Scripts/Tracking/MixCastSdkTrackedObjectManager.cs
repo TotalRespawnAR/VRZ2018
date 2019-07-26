@@ -60,7 +60,7 @@ namespace BlueprintReality.MixCast
                 return;
 
             UpdateObjectList();
-            UpdatePoses();
+          //  UpdatePoses();
 
             SendUpdateToService();
         }

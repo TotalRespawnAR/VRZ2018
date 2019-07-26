@@ -70,7 +70,7 @@ namespace BlueprintReality.MixCast
                 yield break;
             }
 
-            GameObject thriftRoot = new GameObject("Thrift") { hideFlags = HideFlags.HideInHierarchy };
+            GameObject thriftRoot = new GameObject("Thrift") { hideFlags = HideFlags.None };
             thriftRoot.transform.SetParent(transform);
             UnityThriftBase.GroupTransform = thriftRoot.transform;
 
