@@ -49,13 +49,13 @@ public class DynMesh : MonoBehaviour {
         AvailableShaders = new Shader[3] { Shader_Standard, shader_MobileBumpedSpecular, shader_LegacyDecal };
     }
 
-    //void Update()
-    //{
-    //    Cycle_MATS_single();
-    //    Cycle_SHADER_single();
-    //  //  switchShader();
-    //  //  switchMaterial();
-    //}
+    void Update()
+    {
+        Cycle_MATS_single();
+        Cycle_SHADER_single();
+      //  switchShader();
+      //  switchMaterial();
+    }
 
     #region cyclethrough
     int totalSingleMatShader;
