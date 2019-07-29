@@ -6,28 +6,17 @@ public class VRZPlayerAudio : MonoBehaviour
 {
 
 
-    public List<AudioClip> One2Nine;
-    public AudioClip Womp;
-    public AudioClip Womp2;
-    public AudioClip Gong;
-    public AudioClip Gong2;
-    public AudioClip Slow;
-    public AudioClip SlowOff;
-    public AudioClip HeartBeat;
-    public AudioClip BodyImpact;
-    public AudioClip HeadshotImpace;
-    public AudioClip Cheer200;
+    List<AudioClip> One2Nine;
 
-    public AudioClip Sudden;
 
-    public List<AudioClip> PainSounds;
-    public AudioClip GlassBreak;
+    List<AudioClip> PainSounds;
+
 
     // public AudioSource PlayerSource;
 
-    public AudioSource PainSource2D;
-    public AudioSource GAmeEventSource2D;
-    public AudioSource ImpactSource2D;
+    AudioSource PainSource2D;
+    AudioSource GAmeEventSource2D;
+    AudioSource ImpactSource2D;
 
 
     //// Use this for initialization
@@ -43,16 +32,53 @@ public class VRZPlayerAudio : MonoBehaviour
 
     //}
 
+    AudioSource[] SourcesOnMe;
+
+    private void Awake()
+    {
+
+        SourcesOnMe = GetComponents<AudioSource>();
+        Debug.Log("found " + SourcesOnMe.Length);
+        if (SourcesOnMe.Length > 2)
+        {
+            PainSource2D = SourcesOnMe[0];
+            // PainSource2D.clip = GameSettings.Instance.Squish0;
+            GAmeEventSource2D = SourcesOnMe[1];
+            //  GAmeEventSource2D.clip = GameSettings.Instance.Sudden;
+            ImpactSource2D = SourcesOnMe[2];
+            // ImpactSource2D.clip = GameSettings.Instance.HeadShotCrushclip;
+        }
+        One2Nine = new List<AudioClip>();
+        PainSounds = new List<AudioClip>();
+
+        One2Nine.Add(GameSettings.Instance.A_10);
+        One2Nine.Add(GameSettings.Instance.A_9);
+        One2Nine.Add(GameSettings.Instance.A_8);
+        One2Nine.Add(GameSettings.Instance.A_7);
+        One2Nine.Add(GameSettings.Instance.A_6);
+        One2Nine.Add(GameSettings.Instance.A_5);
+        One2Nine.Add(GameSettings.Instance.A_4);
+        One2Nine.Add(GameSettings.Instance.A_3);
+        One2Nine.Add(GameSettings.Instance.A_2);
+        One2Nine.Add(GameSettings.Instance.A_1);
+
+
+        PainSounds.Add(GameSettings.Instance.Squish0);
+        PainSounds.Add(GameSettings.Instance.Squish1);
+        PainSounds.Add(GameSettings.Instance.Squish2);
+
+    }
+
     public void PlayImpactHead()
     {
         ImpactSource2D.Stop();
-        ImpactSource2D.clip = HeadshotImpace;
+        ImpactSource2D.clip = GameSettings.Instance.HeadshotImpace;
         ImpactSource2D.Play(); ;
     }
     public void PlayImpactBody()
     {
         ImpactSource2D.Stop();
-        ImpactSource2D.clip = BodyImpact;
+        ImpactSource2D.clip = GameSettings.Instance.BodyImpact;
         ImpactSource2D.Play(); ;
     }
 
@@ -68,7 +94,7 @@ public class VRZPlayerAudio : MonoBehaviour
     public void PlayGong()
     {
         PainSource2D.Stop();
-        PainSource2D.clip = Gong;
+        PainSource2D.clip = GameSettings.Instance.Gong;
         PainSource2D.Play(); ;
     }
 
@@ -89,7 +115,7 @@ public class VRZPlayerAudio : MonoBehaviour
     public void PlayGlassBreak()
     {
         PainSource2D.Stop();
-        PainSource2D.clip = GlassBreak;
+        PainSource2D.clip = GameSettings.Instance.GlassBreakSmall;
         PainSource2D.Play();
     }
 
@@ -100,7 +126,7 @@ public class VRZPlayerAudio : MonoBehaviour
     public void PlaySlowTime()
     {
         GAmeEventSource2D.Stop();
-        GAmeEventSource2D.clip = Slow;
+        GAmeEventSource2D.clip = GameSettings.Instance.Slow;
         GAmeEventSource2D.Play();
 
     }
@@ -108,28 +134,28 @@ public class VRZPlayerAudio : MonoBehaviour
     public void PlaySlowTimeOff()
     {
         GAmeEventSource2D.Stop();
-        GAmeEventSource2D.clip = SlowOff;
+        GAmeEventSource2D.clip = GameSettings.Instance.Slow;
         GAmeEventSource2D.Play();
 
     }
     public void PlaySuddenDeath()
     {
         GAmeEventSource2D.Stop();
-        GAmeEventSource2D.clip = Sudden;
+        GAmeEventSource2D.clip = GameSettings.Instance.Sudden;
         GAmeEventSource2D.Play();
     }
 
     public void Play200Cheer()
     {
         GAmeEventSource2D.Stop();
-        GAmeEventSource2D.clip = Cheer200;
+        GAmeEventSource2D.clip = GameSettings.Instance.Buzz200Cheer;
         GAmeEventSource2D.Play();
     }
 
     public void PlayWomp()
     {
         GAmeEventSource2D.Stop();
-        GAmeEventSource2D.clip = Womp;
+        GAmeEventSource2D.clip = GameSettings.Instance.Womp;
         GAmeEventSource2D.Play();
     }
 

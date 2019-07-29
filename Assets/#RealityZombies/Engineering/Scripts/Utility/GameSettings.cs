@@ -114,12 +114,43 @@ public class GameSettings : MonoBehaviour
             Buzz125 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz125");
             Buzz150 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz150");
             Buzz175 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz175");
-            Buzz200 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz200");
+            Buzz200 = Resources.Load<AudioClip>("AudioClips/200of200GOODwithYAY");
             Buzz200Cheer = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz200Cheer");
             GlassBreakSmall = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/GlassBreakSmall");
             Impact_Metal_0 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_0");
             Impact_Metal_1 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_1");
             Impact_Metal_2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_2");
+
+
+
+            Womp = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/movieTrailerWomp");
+            Womp2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/angryBoat");
+            AirHorn = Resources.Load<AudioClip>("AudioClips/AirHorn");
+            Gong = Resources.Load<AudioClip>("AudioClips/DeskBell");
+            Gong2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_2");
+            Slow = Resources.Load<AudioClip>("AudioClips/PowerUp_SndFx_SlowTime_End");
+            SlowOff = Resources.Load<AudioClip>("AudioClips/SlowTimeStartAndSTop");
+            HeartBeat = Resources.Load<AudioClip>("AudioClips/HeavyBreathing");
+            BodyImpact = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_BodyFlesh_0");
+            HeadshotImpace = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_2");
+
+            GameOver = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/gameOver");
+            Sudden = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/suddendeath");
+
+            A_1 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_1_one");
+            A_2 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_2_two");
+            A_3 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_3_three");
+            A_4 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_4_four");
+            A_5 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_5_five");
+            A_6 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_6_six");
+            A_7 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_7_seven");
+            A_8 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_8_eight");
+            A_9 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_9_nine");
+            A_10 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_10_ten");
+
+            Squish0 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Squish_0");
+            Squish1 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Squish_1");
+            Squish2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Squish_2");
 
 
             //                             30
@@ -480,8 +511,34 @@ public class GameSettings : MonoBehaviour
     public AudioClip Buzz200Cheer;
 
 
+    public AudioClip Womp;
+    public AudioClip Womp2;
+    public AudioClip Gong;
+    public AudioClip Gong2;
+    public AudioClip Slow;
+    public AudioClip SlowOff;
+    public AudioClip HeartBeat;
+    public AudioClip BodyImpact;
+    public AudioClip HeadshotImpace;
+    public AudioClip Cheer200;
+    public AudioClip GameOver;
+    public AudioClip Sudden;
+    public AudioClip AirHorn;
+    public AudioClip A_1;
+    public AudioClip A_2;
+    public AudioClip A_3;
+    public AudioClip A_4;
+    public AudioClip A_5;
+    public AudioClip A_6;
+    public AudioClip A_7;
+    public AudioClip A_8;
+    public AudioClip A_9;
+    public AudioClip A_10;
 
 
+    public AudioClip Squish0;
+    public AudioClip Squish1;
+    public AudioClip Squish2;
 
 
 

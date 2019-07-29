@@ -25,7 +25,7 @@ public class SceneObjectsManager : MonoBehaviour
 
 
     public KNodeManager KnodesMNGR;
-    public StemTutoController StemTutoCTRL;
+    //public StemTutoController StemTutoCTRL;
     public StartButtonControle StartButtonCTRL;
     public RoomUiCTRL RoomUI_CTRL;
     public WallCtrl Wall_CTRL;
@@ -76,12 +76,12 @@ public class SceneObjectsManager : MonoBehaviour
     }
     public void Place_Missts()
     {
-        InSceneMists.transform.position = Mist_PlaceHolder.transform.position;
-        InSceneMists.transform.parent = Mist_PlaceHolder.transform;
+        //InSceneMists.transform.position = Mist_PlaceHolder.transform.position;
+        //InSceneMists.transform.parent = Mist_PlaceHolder.transform;
     }
     public void Place_Wall()
     {
-        InSceneRZwall.transform.position = Wall_PlaceHolder.transform.position;
-        InSceneRZwall.transform.parent = Wall_PlaceHolder.transform;
+        //InSceneRZwall.transform.position = Wall_PlaceHolder.transform.position;
+        //InSceneRZwall.transform.parent = Wall_PlaceHolder.transform;
     }
 }

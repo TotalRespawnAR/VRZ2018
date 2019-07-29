@@ -1,6 +1,5 @@
 ﻿// @Author Nabil Lamriben ©2018
 #define ENABLE_LOGS
-using System.Collections;
 using UnityEngine;
 
 public class HoloUiCTRL : MonoBehaviour
@@ -57,48 +56,45 @@ public class HoloUiCTRL : MonoBehaviour
     #endregion
 
     #region PublicMethods
-    public void DisplayBonusPointsAddedOrLostFor4Seconds(int argBonus, bool IsAdded)
-    {
-        string StrToDisplay;
-        if (IsAdded)
-        {
-            StrToDisplay = "WAVE BONUS \n " + argBonus.ToString();
-            StartCoroutine(ShowFor4SecondsThenClear(StrToDisplay));
-        }
-        else
-        {
-            StrToDisplay = "YOU DIED \n  POINTS LOST \n " + argBonus.ToString();
-            StartCoroutine(ShowFor4SecondsThenClear(StrToDisplay));
-        }
-    }
+    //public void DisplayBonusPointsAddedOrLostFor4Seconds(int argBonus, bool IsAdded)
+    //{
+    //    string StrToDisplay;
+    //    if (IsAdded)
+    //    {
+    //        StrToDisplay = "WAVE BONUS \n " + argBonus.ToString();
+    //        StartCoroutine(ShowFor4SecondsThenClear(StrToDisplay));
+    //    }
+    //    else
+    //    {
+    //        StrToDisplay = "YOU DIED \n  POINTS LOST \n " + argBonus.ToString();
+    //        StartCoroutine(ShowFor4SecondsThenClear(StrToDisplay));
+    //    }
+    //}
 
-    IEnumerator ShowFor4SecondsThenClear(string argPoints)
-    {
-        OnboardPointsUI.text = argPoints;
-        yield return new WaitForSeconds(6);
-        OnboardPointsUI.text = "";
-    }
+    //IEnumerator ShowFor4SecondsThenClear(string argPoints)
+    //{
+    //    OnboardPointsUI.text = argPoints;
+    //    yield return new WaitForSeconds(6);
+    //    OnboardPointsUI.text = "";
+    //}
 
-    public void PlayGameOverAudio()
-    {
-        // audioManager.PlayEvent("_Boat");
-    }
-    public void PlaySuddenDeathAudio()
-    {
-        // audioManager.PlayEvent("_SuddenDeath");
-    }
-    public void WaveStarted(string waveNum)
-    {
-        //we're getting a roman numeral here watch out 
-        if (waveNum == "I")
-        {
-            //  audioManager.PlayEvent("_Boat");
-        }
-        else
-        {
-            //  audioManager.PlayEvent("_Boom");
-        }
-    }
+
+    //public void PlaySuddenDeathAudio()
+    //{
+    //    // audioManager.PlayEvent("_SuddenDeath");
+    //}
+    //public void WaveStarted(string waveNum)
+    //{
+    //    //we're getting a roman numeral here watch out 
+    //    if (waveNum == "I")
+    //    {
+    //        //  audioManager.PlayEvent("_Boat");
+    //    }
+    //    else
+    //    {
+    //        //  audioManager.PlayEvent("_Boom");
+    //    }
+    //}
 
 
     public void DebugHP(float HP)

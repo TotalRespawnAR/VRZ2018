@@ -7,6 +7,7 @@ public class RzPlayerHealthTubeControllerComponent : MonoBehaviour
     public Transform Btrans;
     private void Awake()
     {
+        Debug.Log("MY HB" + gameObject.name);
         if (Instance == null)
         {
             Instance = this;

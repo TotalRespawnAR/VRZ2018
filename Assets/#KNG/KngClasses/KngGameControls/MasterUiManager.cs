@@ -45,7 +45,7 @@ public class MasterUiManager : MonoBehaviour
     public void OnblardDisplay_WaveBonus(int argWaveBonus, bool IsAdded)
     {
         //  UI_Holo.DisplayBonusPointsAddedOrLostFor4Seconds(argWaveBonus, IsAdded);
-        UI_Room.Set_3D_Title("wave bonus "+argWaveBonus.ToString(), false);
+        UI_Room.Set_3D_Title("wave bonus " + argWaveBonus.ToString(), false);
     }
 
     //  public void Run_TakeHit(HitType _argHitType) { UI_Holo.TakeHit(_argHitType); }
@@ -67,7 +67,7 @@ public class MasterUiManager : MonoBehaviour
     }
     public void Run_PlayGameOverAudio()
     {
-        UI_Holo.PlayGameOverAudio();
+        Debug.Log("GAME OVER NEEDED?");
     }
     // public void Run_ResetDamage() { UI_Holo.ResetDamage(); }
     public void Run_ResetWave() { UI_Room.Set_3D_Title("Respawning", false); }
@@ -96,7 +96,7 @@ public class MasterUiManager : MonoBehaviour
     void Run_SuddenDeath()
     {
         print("sudden death called");
-        UI_Holo.PlaySuddenDeathAudio();
+        //UI_Holo.PlaySuddenDeathAudio();
         UI_Room.Set_3D_Title("Sudden Death", false);
         UI_Room.ShowTextOnCanvas_thenFadeit_andPut3DTitle(" ", false);
     }

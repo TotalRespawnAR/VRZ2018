@@ -45,12 +45,12 @@ public class PlayerScaledBuilder : MonoBehaviour
         {
             Debug.DrawRay(Head.transform.position, Head.transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             HeadRayDownDist = hit.distance;
-            Debug.Log("Did Hit");
+            // Debug.Log("Did Hit");
         }
         else
         {
             Debug.DrawRay(Head.transform.position, Head.transform.TransformDirection(Vector3.down) * 1000, Color.white);
-            Debug.Log("Did not Hit");
+            //  Debug.Log("Did not Hit");
         }
 
         if (hasBeenInstanciated) return;

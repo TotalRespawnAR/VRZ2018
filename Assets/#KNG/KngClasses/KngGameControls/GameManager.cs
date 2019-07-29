@@ -195,12 +195,14 @@ public class GameManager : MonoBehaviour
 
 
 
-    int numberofbulbs=22;
+    int numberofbulbs = 22;
     bool hasplayedhorn = false;
-    public void AirHornEffect() {
+    public void AirHornEffect()
+    {
         if (hasplayedhorn) return;
         numberofbulbs--;
-        if (numberofbulbs <= 0) {
+        if (numberofbulbs <= 0)
+        {
             PlayHeadShotSound.Instance.PlayGongSound();
         }
     }
@@ -328,7 +330,7 @@ public class GameManager : MonoBehaviour
     SceneObjectsManager _sceneObjectMnger_Compo;
     ScoreManager _scoreManager_Compo;
     StreaksManager _streaksManager_Compo;
-    ScenarioManager _senarioManager_Compo;
+    // ScenarioManager _senarioManager_Compo;
     EnemiesManager _enemiesManager_Compo;
     EnemyBatchCrafter _batchCrafter_Compo;
     LevelManager _levelManager_Compo;
@@ -391,7 +393,7 @@ public class GameManager : MonoBehaviour
         _sceneObjectMnger_Compo = GetComponent<SceneObjectsManager>();
         _scoreManager_Compo = GetComponent<ScoreManager>();
         _streaksManager_Compo = GetComponent<StreaksManager>();
-        _senarioManager_Compo = GetComponent<ScenarioManager>();
+        // _senarioManager_Compo = GetComponent<ScenarioManager>();
         _enemiesManager_Compo = GetComponent<EnemiesManager>();
         _batchCrafter_Compo = GetComponent<EnemyBatchCrafter>();
         _levelManager_Compo = GetComponent<LevelManager>();
@@ -438,7 +440,7 @@ public class GameManager : MonoBehaviour
         {
 
 
-            _senarioManager_Compo.TutoCtrlObj.GetComponent<StemTutoController>().HideAll();
+            // _senarioManager_Compo.TutoCtrlObj.GetComponent<StemTutoController>().HideAll();
             StartCoroutine(HideAndCheckStart());
 
         }
@@ -711,28 +713,22 @@ public class GameManager : MonoBehaviour
         return this.transform.position;
     }
 
-    IEnumerator Wait5StartTuto(int secTostartTuto)
-    {
-        yield return new WaitForSeconds(secTostartTuto);
-        _senarioManager_Compo.RunScenarioTutorial();
-    }
-    void runScenarioIn5(int argsecTostartTuto)
-    {
-        StartCoroutine(Wait5StartTuto(argsecTostartTuto));
-    }
+    //IEnumerator Wait5StartTuto(int secTostartTuto)
+    //{
+    //    yield return new WaitForSeconds(secTostartTuto);
+    //    _senarioManager_Compo.RunScenarioTutorial();
+    //}
+    //void runScenarioIn5(int argsecTostartTuto)
+    //{
+    //    StartCoroutine(Wait5StartTuto(argsecTostartTuto));
+    //}
     void PREGAME_StartScenario()
     {
         print("AM I HERE ");
-        // _senarioMNGR.RunScenario0_autostart();
-        if (GameSettings.Instance.IsSkipPregameOn)
-        {
-            print("ORE HER E");
-            _senarioManager_Compo.RunScenario0_autostart();
-        }
-        else
-        {
-            runScenarioIn5(1);
-        }
+
+        CheckWav1Started();
+
+
     }
 
     public void CheckWav1Started()
@@ -815,7 +811,7 @@ public class GameManager : MonoBehaviour
         //disable game over tag along screen
         // youDiedScreen.SetActive(false);
         m_Master_UI_compo.Run_ResetWave();
-       
+
         WaveStartingGraphics();
 
         GameEventsManager.CALL_ToggleStemInput(true);
