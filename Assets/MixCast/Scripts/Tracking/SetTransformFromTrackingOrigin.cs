@@ -77,8 +77,8 @@ namespace BlueprintReality.MixCast.Tracking
                 return;
 
             lastRenderedFrameCount = Time.renderedFrameCount;
-           // UpdateTrackingSpaceOffset();
-          //UpdateTransform();
+            UpdateTrackingSpaceOffset();
+            UpdateTransform();
         }
 
         void Update()
@@ -95,7 +95,6 @@ namespace BlueprintReality.MixCast.Tracking
 
         void UpdateTransform()
         {
-            /*
             if (!Device.isPresent)
             {
                 ApplyTransformFromFirstRoom();
@@ -143,8 +142,6 @@ namespace BlueprintReality.MixCast.Tracking
             transform.position = mixcastTrackingOriginPos;
             transform.rotation = mixcastTrackingOriginRot;
             transform.localScale = Vector3.one * playerScale;
-
-            */
         }
 
         void ApplyTransformFromFirstRoom()
@@ -179,7 +176,6 @@ namespace BlueprintReality.MixCast.Tracking
 
         void UpdateTrackingSpaceOffset()
         {
-           
 #if MIXCAST_STEAMVR
             if (VRInfo.IsDeviceOpenVR())
             {
