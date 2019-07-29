@@ -12,7 +12,7 @@ namespace DigitalRuby.PyroParticles
         public float Seed = 100.0f;
 
         [Tooltip("Multiplier for light intensity.")]
-        public float IntensityModifier = 8.0f;
+        public float IntensityModifier = 2.0f;
 
         [SingleLine("Min and max intensity range.")]
         public RangeOfFloats IntensityMaxRange = new RangeOfFloats { Minimum = 0.0f, Maximum = 8.0f };
