@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerHudEffectsManagerComponent : MonoBehaviour
 {
 
-    HudQuadsManager QuadsManager;
+   public HudQuadsManager QuadsManager;
 
     //triger: trigHudAnim
     //public Animator AnimTorOVR_BearClawRL;
@@ -101,7 +101,7 @@ public class PlayerHudEffectsManagerComponent : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        QuadsManager = GetComponentInChildren<HudQuadsManager>();
+       // QuadsManager = GetComponentInChildren<HudQuadsManager>();
     }
     int hudeffectnum = 12;
     // Update is called once per frame

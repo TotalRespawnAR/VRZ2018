@@ -142,7 +142,7 @@ public class RzPlayerComponent : MonoBehaviour
     public Transform Get_PlayerHeadCamTrans() { return this.transform; }
     public void DamageHumanPlayer(TriggersDamageEffects argTrigDamEff, int argdamagevalue)
     {
-
+        print("ouch"+ argTrigDamEff.ToString());
         ip_dammage_Comp.TakeEnemyHit(argTrigDamEff, argdamagevalue);
         CalcBloodDencityEffects();
     }
