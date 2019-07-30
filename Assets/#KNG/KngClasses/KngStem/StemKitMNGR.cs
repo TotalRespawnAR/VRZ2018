@@ -15,7 +15,7 @@ public class StemKitMNGR : MonoBehaviour
     GameObject MNGR_MAIN_Hand;
     GameObject MNGR_OtherPlayer_Hand;
     //GameObject MNGR_OFF_Hand;
-    public bool useStem;
+    //  public bool useStem;
 
 
 
@@ -125,24 +125,24 @@ public class StemKitMNGR : MonoBehaviour
 
         _myHandsFactory = GetComponent<StemHandsFactory>();
         _playerHandsController = GetComponent<IPlayerHandsCTRL>();
-#if STRIKER_TEST
-        useStem = true;
-        StrikerModel.SetActive(true);
-        
-#else
-        useStem = GameSettings.Instance.IsUseHololens(); //settings must be in secene before load
-#endif
+        //#if STRIKER_TEST
+        //        useStem = true;
+        //        StrikerModel.SetActive(true);
+
+        //#else
+        //        useStem = GameSettings.Instance.IsUseHololens(); //settings must be in secene before load
+        //#endif
 
         if (GameSettings.Instance._controlertype == ARZControlerType.StemControlSystem)
         {
             StrikerModel.SetActive(false);
         }
         InitHandsBundles();
-        if (!useStem)
-        {
-            // this.transform.parent = Camera.main.transform;
-            // this.transform.localPosition -= new Vector3(2.1f, -2.6f, 2.20f);
-        }
+        //if (!useStem)
+        //{
+        //    // this.transform.parent = Camera.main.transform;
+        //    // this.transform.localPosition -= new Vector3(2.1f, -2.6f, 2.20f);
+        //}
     }
 
 

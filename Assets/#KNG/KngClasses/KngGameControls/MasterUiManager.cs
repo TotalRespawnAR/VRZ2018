@@ -30,11 +30,6 @@ public class MasterUiManager : MonoBehaviour
         GameEventsManager.OnOnBoardDisplay -= OnblardDisplay_WaveBonus;
     }
 
-    private void Awake()
-    {
-
-    }
-
     private void Start()
     {
         //Debug.Log("masterUI is on " + gameObject.name);
