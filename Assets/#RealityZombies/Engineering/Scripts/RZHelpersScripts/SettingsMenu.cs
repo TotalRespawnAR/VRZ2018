@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -31,28 +32,67 @@ public class SettingsMenu : MonoBehaviour
     float curXpos = 0;
     float curYpos = 0;
 
+    float Line1 = 10f;
+    float Line2 = 30f;
+    float Line3 = 50f;
+    float Line4 = 70f;
+    float Line5 = 90f;
+    float Line6 = 110f;
+    float Line7 = 130f;
+    float Line8 = 150f;
+    float Line9 = 170f;
+    float Line10 = 190f;
+
+    float Xplace1 = 10f;
+    float Xplace2 = 110f;
+    float Xplace3 = 210f;
+    float Xplace4 = 310f;
+    float Xplace5 = 410f;
     Rect ToggleVive;
     Rect ToggleNab;
+    Rect ToggleElevator;
+    Rect ToggleTestmode;
+
+    Rect ToggleBabyGun;
+    Rect TogglePlayer2;
+    Rect ToggleScopes;
+    Rect ToggleShowPlayer1;
+
     Rect GameTimeLable;
     Rect GameTimeBox;
+
+    Rect SuddTimeLable;
+    Rect SudTimeBox;
+
+    Rect AltGame;
+
+    Rect ButtonNext;
+
     private void OnEnable()
     {
-        curXpos = PosX;
-        curYpos = PosY;
-        ToggleVive = new Rect(curXpos, curYpos, TextBoxDimentionsWidth, ToggleDimentions);
-        curXpos += (Xspace + TextBoxDimentionsWidth);
-        ToggleNab = new Rect(curXpos, curYpos, TextBoxDimentionsWidth, ToggleDimentions);
 
-        curXpos = PosX; //reset cursor 
-        curYpos += (Yspace + TextBoxDimentionsHeight); //nextline
+        ToggleVive = new Rect(Xplace1, Line1, TextBoxDimentionsWidth, ToggleDimentions);
+        ToggleNab = new Rect(Xplace2, Line1, TextBoxDimentionsWidth, ToggleDimentions);
+        ToggleElevator = new Rect(Xplace3, Line1, TextBoxDimentionsWidth, ToggleDimentions);
+        ToggleTestmode = new Rect(Xplace4, Line1, TextBoxDimentionsWidth, ToggleDimentions);
 
-        GameTimeLable = new Rect(curXpos, curYpos, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
-        curXpos += (Xspace + TextBoxDimentionsWidth);
-        GameTimeBox = new Rect(curXpos, curYpos, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
 
-        curXpos = PosX; //reset cursor 
-        curYpos += (Yspace + TextBoxDimentionsHeight); //nextline
+        ToggleBabyGun = new Rect(Xplace1, Line2, TextBoxDimentionsWidth, ToggleDimentions);
+        TogglePlayer2 = new Rect(Xplace2, Line2, TextBoxDimentionsWidth, ToggleDimentions);
+        ToggleScopes = new Rect(Xplace3, Line2, TextBoxDimentionsWidth, ToggleDimentions);
+        ToggleShowPlayer1 = new Rect(Xplace4, Line2, TextBoxDimentionsWidth, ToggleDimentions);
 
+
+        GameTimeLable = new Rect(Xplace1, Line3, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+        GameTimeBox = new Rect(Xplace2, Line3, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+
+        SuddTimeLable = new Rect(Xplace4, Line3, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+        SudTimeBox = new Rect(Xplace5, Line3, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+
+
+        AltGame = new Rect(Xplace1, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+
+        ButtonNext = new Rect(Xplace3, Line8, TextBoxDimentionsWidth, ToggleDimentions);
     }
 
     private void OnDisable()
@@ -65,290 +105,30 @@ public class SettingsMenu : MonoBehaviour
     {
 
         GameSettings.Instance.UseVive = GUI.Toggle(ToggleVive, GameSettings.Instance.UseVive, "useVive");
-        GameSettings.Instance.NABILSETTINGSON = GUI.Toggle(ToggleNab, GameSettings.Instance.NABILSETTINGSON, "useNab");
-        //GameSettings.Instance.Global_Time_Apocalypse_GameEnds_600s_10m = 
+        GameSettings.Instance.UseNab = GUI.Toggle(ToggleNab, GameSettings.Instance.UseNab, "useNab");
 
-
+        GameSettings.Instance.UseElevator = GUI.Toggle(ToggleElevator, GameSettings.Instance.UseElevator, "elevator");
+        GameSettings.Instance.UseTestmode = GUI.Toggle(ToggleTestmode, GameSettings.Instance.UseTestmode, "testmode");
+        GameSettings.Instance.UseBabyGun = GUI.Toggle(ToggleBabyGun, GameSettings.Instance.UseBabyGun, "babygun");
+        GameSettings.Instance.UsePlayer2 = GUI.Toggle(TogglePlayer2, GameSettings.Instance.UsePlayer2, "player2");
+        GameSettings.Instance.UseScopes = GUI.Toggle(ToggleScopes, GameSettings.Instance.UseScopes, "scopes");
+        GameSettings.Instance.UseShowPlayer = GUI.Toggle(ToggleShowPlayer1, GameSettings.Instance.UseShowPlayer, "showP1");
         GameSettings.Instance.Set_GlobalTimer(GUI.TextField(GameTimeBox, GameSettings.Instance.Global_Time_Apocalypse_GameEnds_600s_10m.ToString()));
         GUI.TextArea(GameTimeLable, "gameTime");
-    }
+        GameSettings.Instance.Set_SuddenDeathTimer(GUI.TextField(SudTimeBox, GameSettings.Instance.Global_Time_SuddenDeath_300s_5min.ToString()));
+        GUI.TextArea(SuddTimeLable, "SuddenDeath");
 
-    void GuiDoToggle(string argTogleName, bool argInitialGuiVal, float argYOffset, float argXoffset)
+        GameSettings.Instance.UseAltGame = GUI.Toggle(AltGame, GameSettings.Instance.UseAltGame, "alt");
+
+
+        if (GUI.Button(ButtonNext, "next")) GoToScene();
+
+
+    }
+    void GoToScene()
     {
 
-        GameSettings.Instance.UseVive = GUI.Toggle(ToggleVive, argInitialGuiVal, argTogleName);
-
+        SceneManager.LoadScene("Init");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    void GuiDo()
-    {
-        if (!aTexture)
-        {
-            Debug.LogError("Please assign a texture in the inspector.");
-            return;
-        }
-
-        toggleTxt = GUI.Toggle(new Rect(10, 10, 150, 30), toggleTxt, "12345678901234567890");
-        toggleImg = GUI.Toggle(new Rect(10, 50, 50, 50), toggleImg, aTexture);
-    }
-
-    public Texture aTexture;
-
-    private bool toggleTxt = false;
-    private bool toggleImg = false;
-
-
-
-
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public Text AlphaBravo;
-//public Toggle blood;
-//public Toggle holo;
-//public Toggle rightHanded;
-//public Toggle tournament;
-//public Toggle reloadModeEasy;
-//public Toggle defaultScanMesh;
-//public Toggle useStem;
-//public Toggle useStiker;
-//public Toggle testMode;
-//public InputField gameLength;
-//public Toggle playSingle;
-//public Toggle playUdp;
-//public Toggle playMultiplayerCoop;
-//public InputField oppenentIP;
-//public InputField serverIP;
-
-//public Text Placeholder_GameLength;
-//public Text Placeholder_OpponentIP;
-//public Text Placeholder_ServerIP;
-
-
-//public void Start()
-//{
-//CalculatedLocalIP = ;
-//  Debug.Log("I am On --------------" + gameObject.name);
-//if (GameSettings.Instance.GameMode == ARZGameModes.GameLeft) { AlphaBravo.text = "alpha"; }
-//else
-// if (GameSettings.Instance.GameMode == ARZGameModes.GameRight) { AlphaBravo.text = "bravo"; }
-//else
-//{
-//    AlphaBravo.text = "NA!!";
-//}
-
-//blood.isOn = GameSettings.Instance.IsBloodOn;
-//rightHanded.isOn = GameSettings.Instance.IsRightHandedPlayer;
-//tournament.isOn = GameSettings.Instance.IsTournamentModeOn;
-//reloadModeEasy.isOn = (GameSettings.Instance.ReloadDifficulty == ARZReloadLevel.EASY) ? true : false;
-//defaultScanMesh.isOn = GameSettings.Instance.IsUseDefaultScanMesh;
-//useStem.isOn = GameSettings.Instance.IsUseStemSystem;
-//useStiker.isOn = GameSettings.Instance.IsUseStrikerVr;
-//playSingle.isOn = GameSettings.Instance.IsSinglePlayer;
-//playUdp.isOn = GameSettings.Instance.IsUdpPlayer;
-//playMultiplayerCoop.isOn = GameSettings.Instance.IsMultiPlayer;
-//testMode.isOn = GameSettings.Instance.IsTestModeON;
-//Placeholder_GameLength.text = GameSettings.Instance.GlobalGameMasterTime.ToString();// ?  "240" : "120";
-//holo.isOn = GameSettings.Instance.IsUseHololens;
-
-//}
-
-
-
-//[SerializeField]
-//private string _uiRemote_IP_Alpha;
-//[SerializeField]
-//private string _uiRemote_IP_Bravo;
-//[SerializeField]
-//private string _uiRemote_IP_AudioServer;
-//[SerializeField]
-//private string _uiRemote_Port_Alpha;
-//[SerializeField]
-//private string _uiRemote_Port_Bravo;
-//[SerializeField]
-//private string _uiRemote_Port_AudioServer;
-//[SerializeField]
-//private string _uiLocal_IP;
-//[SerializeField]
-//private string _uiLocal_ListenPort;
-
-//private bool toggleUpdate = false;
-//private bool toggleFixed = false;
-//private bool toggleLate = false;
-
-
-
-//string btn_AlphaSet = "set A";
-//string btn_BravoSet = "set B";
-//string btn_LocalSet = "set me";
-//string btn_AudioDerverSet = "set au";
-
-
-//bool UdpSceneOn = false;
-//string CalculatedLocalIP;
-
-
-//private void OnGUI()
-//{
-//    GUI.TextArea(new Rect(10, 10, 100, 20), "yo");
-//    GUI.Toggle(new Rect(20, 20, 40, 40), false, "useVive");
-//    //_uiRemote_IP_Alpha = GUI.TextField(new Rect(10, 10, 200, 30), _uiRemote_IP_Alpha, 25);
-//    //_uiRemote_IP_Bravo = GUI.TextField(new Rect(10, 50, 200, 30), _uiRemote_IP_Bravo, 25);
-//    //_uiLocal_IP = GUI.TextField(new Rect(10, 90, 200, 30), CalculatedLocalIP, 25);
-//    //_uiRemote_IP_AudioServer = GUI.TextField(new Rect(10, 130, 200, 30), _uiRemote_IP_AudioServer, 25);
-
-
-//    //_uiRemote_Port_Alpha = GUI.TextField(new Rect(210, 10, 90, 30), _uiRemote_Port_Alpha, 25);
-//    //_uiRemote_Port_Bravo = GUI.TextField(new Rect(210, 50, 90, 30), _uiRemote_Port_Bravo, 25);
-//    //_uiLocal_ListenPort = GUI.TextField(new Rect(210, 90, 90, 30), _uiLocal_ListenPort, 25);
-//    //_uiRemote_Port_AudioServer = GUI.TextField(new Rect(210, 130, 90, 30), _uiRemote_Port_AudioServer, 25);
-//    ////_uiRemote_Port_AudioServer = GUI.TextField(new Rect(210, 130, 90, 30), CalculatedLocalIP, 25);//
-
-
-//    //if (GUI.Button(new Rect(300, 10, 100, 30), btn_AlphaSet)) { Debug.Log(btn_AlphaSet); }
-//    //if (GUI.Button(new Rect(300, 50, 100, 30), btn_BravoSet)) { Debug.Log(btn_BravoSet); }
-//    //if (GUI.Button(new Rect(300, 90, 100, 30), btn_LocalSet)) { Debug.Log(btn_LocalSet); }
-//    //if (GUI.Button(new Rect(300, 130, 100, 30), btn_AudioDerverSet))
-//    //{
-
-//    //}
-
-
-//    //if (GUI.Button(new Rect(300, 170, 100, 30), "check"))
-//    //{
-
-//    //}
-//    //if (GUI.Button(new Rect(400, 170, 100, 30), "setall"))
-//    //{
-
-//    //}
-
-
-//    //if (GUI.Button(new Rect(10, 210, 100, 30), "start")) { }
-
-//    //if (GUI.Button(new Rect(110, 210, 100, 30), "restart")) { }
-//    //if (GUI.Button(new Rect(220, 210, 100, 30), "stop")) { }
-
-
-
-
-
-
-
-
-//}
-//public void Set_Alpha()
-//{
-
-//    GameSettings.Instance.GameMode = ARZGameModes.GameLeft_Alpha;
-
-//}
-//public void Set_Bravo()
-//{
-
-//    GameSettings.Instance.GameMode = ARZGameModes.GameRight_Bravo;
-//}
-
-//public void Set_TestMode()
-//{
-//    if (testMode.isOn) { GameSettings.Instance.IsTestModeON = true; }
-//    else
-//        GameSettings.Instance.IsTestModeON = false;
-//}
-
-//public void Set_RightHanded()
-//{
-//    if (rightHanded.isOn)
-//    {
-//        GameSettings.Instance.PlayerLeftyRight = ARZPlayerLeftyRighty.RightyPlayer;
-//    }
-//    else
-//    {
-//        GameSettings.Instance.PlayerLeftyRight = ARZPlayerLeftyRighty.LeftyPlayer;
-//    }
-//}
-
-//public void Set_Blood()
-//{
-//    if (blood.isOn) { GameSettings.Instance.IsBloodOn = true; }
-//    else
-//        GameSettings.Instance.IsBloodOn = false;
-//}
-
-
-//public void Set_Tournament()
-//{
-//    if (tournament.isOn) { GameSettings.Instance.IsTournamentModeOn = true; }
-//    else
-//        GameSettings.Instance.IsTournamentModeOn = false;
-//}
-
-
-
-//public void GoTOCalibtaion()
-//{
-//    if (GameSettings.Instance.GameMode == ARZGameModes.GameLeft_Alpha)
-//        SceneManager.LoadScene("CalibrateLeft");
-//    else
-//        SceneManager.LoadScene("CalibrateRight");
-
-//}
-
-//public void DoSetGameLength(Text argTxtbox)
-//{
-//    Debug.Log("enetered + " + argTxtbox.text);
-
-//    int val = int.Parse(argTxtbox.text);
-//    if (val > 60 && val < 300)
-//    {
-//        float timefloat = (float)val;
-//        GameSettings.Instance.Set_GlobalTimer(timefloat);
-//        Placeholder_GameLength.text = GameSettings.Instance.Global_Time_Apocalypse_GameEnds_600s_10m.ToString();
-//    }
-//}

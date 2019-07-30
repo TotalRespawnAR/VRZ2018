@@ -16,7 +16,7 @@ public class GameSettings : MonoBehaviour
         return has_waveLevelSettingsFile;
     }
 
-    public bool NABILSETTINGSON;
+
 
     private void Awake()
     {
@@ -592,7 +592,14 @@ public class GameSettings : MonoBehaviour
 
     }
 
+    public void Set_SuddenDeathTimer(string argtime)
+    {
 
+        float FloatTime = float.Parse(argtime);
+
+        Global_Time_SuddenDeath_300s_5min = FloatTime;
+
+    }
 
 
     #region GamePlaySettings
@@ -633,8 +640,16 @@ public class GameSettings : MonoBehaviour
         //set { _gameVersion = value; }
     }
 
-
+    public bool UseNab = false;
     public bool UseVive = true;
+
+    public bool UseElevator = false;
+    public bool UseTestmode = false;
+    public bool UseBabyGun = false;
+    public bool UsePlayer2 = false;
+    public bool UseScopes = false;
+    public bool UseShowPlayer = false;
+    public bool UseAltGame = false;
     //Not selectable via 3d menu
     public bool IsUseHololens() { return _isNOTEditor; } //in gamemanager, if usedDevroom and useHolo, then do the 2 anchor placement system
     public bool IsTournamentModeOn = false;

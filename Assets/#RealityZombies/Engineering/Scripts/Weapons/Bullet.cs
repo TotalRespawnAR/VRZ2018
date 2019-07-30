@@ -167,7 +167,7 @@ public class Bullet : MonoBehaviour
     public void NewTraileAngled(Quaternion therot, Vector3 argVAporPlace)
     {
 
-        if (GameSettings.Instance.NABILSETTINGSON)
+        if (GameSettings.Instance.UseNab)
         {
             Debug.Log("not 0 " + numcolor);
 

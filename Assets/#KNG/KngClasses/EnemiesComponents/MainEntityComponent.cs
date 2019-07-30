@@ -601,7 +601,7 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
         _seekAudioTriggered = false;
 
         //who can block
-        if (GameSettings.Instance.NABILSETTINGSON)
+        if (GameSettings.Instance.UseNab)
         {
             if (
          _myname == KngEnemyName.CHECKER ||
