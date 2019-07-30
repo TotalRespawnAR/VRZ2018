@@ -7,7 +7,7 @@ public class GameSettings : MonoBehaviour
 {
 
     public static GameSettings Instance = null;
-
+    public string InstNAme;
     private bool _isNOTEditor = false;//true;
 
     bool has_waveLevelSettingsFile;
@@ -21,14 +21,14 @@ public class GameSettings : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 80;
-
+        Debug.Log("hello I am " + InstNAme);
         if (Instance == null)
         {
             //FindWavveSettinggsFile();
             //if (has_waveLevelSettingsFile) Load(Kng_wavesettingsFilePATH + "/" + WaveLevelSetttingsFileName + ".txt");
 
 
-
+            Debug.Log(InstNAme + "is the only one  ");
 
 
             DontDestroyOnLoad(this.gameObject);
@@ -296,6 +296,7 @@ public class GameSettings : MonoBehaviour
         }
         else
         {
+            Debug.Log(InstNAme + "mustDie ");
             Destroy(gameObject);
         }
     }

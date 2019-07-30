@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24046f483b6c5704288dd10af9c8b04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstNAme: preinitsettings
   AttackBigclipMale: {fileID: 0}
   AttackSmallclipMale: {fileID: 0}
   DeathBigclipMale: {fileID: 0}
@@ -394,6 +395,7 @@ MonoBehaviour:
   UsePlayer2: 0
   UseScopes: 0
   UseShowPlayer: 0
+  UseAltGame: 0
   IsTournamentModeOn: 0
   IsKidsModeOn: 0
   IsSkipPregameOn: 0

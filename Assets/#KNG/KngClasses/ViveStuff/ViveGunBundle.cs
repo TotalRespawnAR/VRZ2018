@@ -64,6 +64,8 @@ public class ViveGunBundle : MonoBehaviour, IBundle
         }
         else
         {
+
+            Debug.Log("vivebun here, talkig to " + GameSettings.Instance.InstNAme);
             if (GameSettings.Instance.UseVive)
             {
                 transform.parent = this.TheCtrl.transform;
