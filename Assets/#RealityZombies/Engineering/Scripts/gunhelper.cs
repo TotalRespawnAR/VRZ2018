@@ -13,7 +13,7 @@ public class gunhelper : MonoBehaviour
     //    }
 
     private Gun thegun;
-
+    bool KeyboardSwitchGun;
     private void OnEnable()
     {
         GameEventsManager.StrikerShoot_Handeler += Shoot;
@@ -86,22 +86,62 @@ public class gunhelper : MonoBehaviour
     {
         // putClipin();
         thegun = GetComponent<Gun>();
+        Debug.Log("gun helper on " + thegun.GetGunType().ToString() + " " + gameObject.name);
+
+
+        if (GameSettings.Instance == null) { Debug.LogError("no gamesettings ofor gun helper"); }
+        else
+        {
+
+            if (GameSettings.Instance.UseVive)
+            {
+                KeyboardSwitchGun = false;
+            }
+            else
+            {
+                KeyboardSwitchGun = true;
+
+
+
+
+            }
+
+
+        }
+
     }
 
     // Update is called once per frame
 #if UNITY_EDITOR
 
-    //void Update()
-    //{
-    //    if (!isPlayerAllowedToUseStemInput) return;
 
-    //    // if (thegun.IsShowcase) { thegun.GUN_FIRE_SHOWCASE(Time.deltaTime); }
-    //    if (Input.GetKeyDown(KeyCode.E)) { EjectMag(); }
-    //    if (Input.GetKeyDown(KeyCode.I)) { InjectMag(); }
-    //    //if (Input.GetKeyDown(KeyCode.R)) { thegun.FullReplacementOfMag(); }
-    //    //if (Input.GetKeyDown(KeyCode.LeftControl)) { Shoot(); }
-    //    //if (Input.GetKeyUp(KeyCode.LeftControl)) { StopShooting(); }
-    //}
+
+
+    void Update()
+    {
+        if (KeyboardSwitchGun)
+        {
+            if (!isPlayerAllowedToUseStemInput) return;
+
+
+            //if (Input.GetKeyDown(KeyCode.LeftControl)) { Shoot(); }
+            //if (Input.GetKeyUp(KeyCode.LeftControl)) { StopShooting(); }
+            if (Input.GetMouseButtonDown(0)) { Shoot(); }
+            if (Input.GetMouseButtonUp(0)) { StopShooting(); }
+
+            //if (Input.GetMouseButtonDown(1)) {
+
+            //}
+            if (Input.GetKeyDown(KeyCode.LeftBracket))
+            {
+                ViveGunBundle.Instance.PlayerHand_Main_gun();
+            }
+            if (Input.GetKeyDown(KeyCode.RightBracket))
+            {
+                ViveGunBundle.Instance.PlayerHand_Secondary_gun();
+            }
+        }
+    }
 #endif
 
 

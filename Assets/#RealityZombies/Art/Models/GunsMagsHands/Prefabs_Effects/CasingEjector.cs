@@ -37,18 +37,18 @@ public class CasingEjector : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            torque.x = Random.Range(-200, 200);
-            torque.y = Random.Range(-200, 200);
-            torque.z = Random.Range(-200, 200);
-            GameObject _casing = Instantiate(CasingGo, this.transform.position, Quaternion.identity) as GameObject;
-            _casing.GetComponent<ConstantForce>().torque = torque;
-            _casing.GetComponent<Rigidbody>().AddForce(this.transform.forward * Random.Range(2, 5), ForceMode.Impulse);
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.A))
+    //    {
+    //        torque.x = Random.Range(-200, 200);
+    //        torque.y = Random.Range(-200, 200);
+    //        torque.z = Random.Range(-200, 200);
+    //        GameObject _casing = Instantiate(CasingGo, this.transform.position, Quaternion.identity) as GameObject;
+    //        _casing.GetComponent<ConstantForce>().torque = torque;
+    //        _casing.GetComponent<Rigidbody>().AddForce(this.transform.forward * Random.Range(2, 5), ForceMode.Impulse);
+    //    }
+    //}
 
     //public void EjectCasing() {
     //        torque.x = Random.Range(-200, 200);

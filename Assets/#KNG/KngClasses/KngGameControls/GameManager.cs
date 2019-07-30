@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,49 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         GameEventsManager.OnGameObjectAnchoredPlaced += ListenTo_AnchoresPlaced;
+
+        if (GameSettings.Instance == null)
+        {
+            Debug.LogError("NO GAMESETTINGS !");
+        }
+        else
+
+        {
+            if (GameSettings.Instance.UseVive)
+            {
+
+                FirstPersonObj.SetActive(false);
+                ViveArenaObj.SetActive(true);
+            }
+            else
+            {
+                FirstPersonObj.SetActive(true);
+                SteamVR_TrackedObject _SteamVR_TrackedObject = FPsGUNS.gameObject.GetComponent<SteamVR_TrackedObject>();
+                if (_SteamVR_TrackedObject != null)
+                {
+                    Destroy(_SteamVR_TrackedObject);
+                }
+
+                CameraVive.GetComponent<Camera>().fieldOfView = 40;
+
+                CameraVive.transform.parent = CameraFPS_POS.transform;
+                CameraVive.transform.localPosition = new Vector3(0, 0, 0);
+                CameraVive.transform.parent = CameraFPS_POS.transform.parent;
+                CameraFPS_POS.transform.parent = CameraVive.transform;
+
+                FPsGUNS.transform.parent = CameraVive.transform;
+
+                ControllerR.SetActive(false);
+                ControllerL.SetActive(false);
+
+
+                ViveArenaObj.SetActive(false);
+                //  PlayerOneObj.transform.parent = null;
+                //  PlayerOneObj.transform.parent = CameraFPS.transform;
+                // PlayerOneObj.transform.localPosition = new Vector3(0, 0, 0);
+            }
+
+        }
     }
     private void OnDisable()
     {
@@ -20,6 +64,14 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject FakeStones;
+    public GameObject ViveArenaObj;
+    public GameObject FirstPersonObj;
+    public GameObject PlayerOneObj;
+    public GameObject CameraVive;
+    public GameObject CameraFPS_POS;
+    public ViveGunBundle FPsGUNS;
+    public GameObject ControllerR;
+    public GameObject ControllerL;
 
     public List<GameObject> ElevatorWallsMeshs;
     public void Spawn_GunProp(GunType argGunType, Transform Zhand, Quaternion WorldRotOfOriginalGUn)
@@ -414,7 +466,7 @@ public class GameManager : MonoBehaviour
         GameObject LocalBillboard = Instantiate(CubeBillboard, RzPlayerComponent.Instance.transform.position, Quaternion.identity);
         GameEventsManager.Call_GunSetChangeTo(GunType.PISTOL);
         GameEventsManager.CALL_ToggleStemInput(false);
-        Position_ScoreBoard_Mists_Tuto_RoomUI();
+        //Position_ScoreBoard_Mists_Tuto_RoomUI();
 
         //if (RzPlayerHealthTubeControllerComponent.Instance != null)
         //{
@@ -436,18 +488,19 @@ public class GameManager : MonoBehaviour
         _sceneObjectMnger_Compo.ScoreSign_MNGR.SetScoreDisplay("626");
         _sceneObjectMnger_Compo.ScoreSign_MNGR.SetWaveNumberDisplay("0");
 
-        if (GameSettings.Instance.IsSkipPregameOn)
-        {
+        //if (GameSettings.Instance.IsSkipPregameOn)
+        //{
 
 
-            // _senarioManager_Compo.TutoCtrlObj.GetComponent<StemTutoController>().HideAll();
-            StartCoroutine(HideAndCheckStart());
+        //    // _senarioManager_Compo.TutoCtrlObj.GetComponent<StemTutoController>().HideAll();
+        //    StartCoroutine(HideAndCheckStart());
 
-        }
-        else
-        {
-            PREGAME_StartScenario();
-        }
+        //}
+        //else
+        //{
+        //    PREGAME_StartScenario();
+        //}
+        StartCoroutine(HideAndCheckStart());
 
 
         _sceneObjectMnger_Compo.KnodesMNGR.TogglePointsMeshes(true);

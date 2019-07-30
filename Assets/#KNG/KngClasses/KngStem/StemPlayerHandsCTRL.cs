@@ -226,6 +226,7 @@ public class StemPlayerHandsCTRL : MonoBehaviour, IPlayerHandsCTRL
     public TextMesh VibrationReader;
     private void Start()
     {
+        print("hannnnnnssxxxxxxx" + gameObject.name);
         GunSlotPosition = LeftMidRight.MID;
         isPlayerAllowedToUseStemInput = false; //<may need to change this back to false, thisis just for testing weapon swap
                                                // _uaudio = GetComponent<UAudioManager>();

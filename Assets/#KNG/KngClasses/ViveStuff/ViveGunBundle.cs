@@ -3,7 +3,7 @@
 public class ViveGunBundle : MonoBehaviour, IBundle
 {
     public static ViveGunBundle Instance = null;
-
+    public float Xrot = -60;
     private void Awake()
     {
         if (Instance == null)
@@ -16,44 +16,70 @@ public class ViveGunBundle : MonoBehaviour, IBundle
         }
     }
 
+
+    void RootBundleOnViveCTRl(Transform argHere, Quaternion argrot)
+    {
+        M1911 = Instantiate(gunM1911, argHere.position, argrot);
+        M1911.name = "Gun_M1911";
+        M1911.transform.parent = argHere;
+
+        Mac11 = Instantiate(gunMac11, argHere.position, argrot);
+        Mac11.name = "Gun_Mac11";
+        Mac11.transform.parent = argHere;
+
+        Colt = Instantiate(gunColt, argHere.position, argrot);
+        Colt.name = "Gun_Colt";
+        Colt.transform.parent = argHere;
+
+        Shotgun = Instantiate(gunShotgun, argHere.position, argrot);
+        Shotgun.name = "Gun_Shotgun";
+        Shotgun.transform.parent = argHere;
+
+
+
+        P90 = Instantiate(gunP90, argHere.position, argrot);
+        P90.name = "Gun_P90";
+        P90.transform.parent = argHere;
+
+
+        MG61 = Instantiate(gunMG61, argHere.position, argrot);
+        MG61.name = "Gun_MG61";
+        MG61.transform.parent = argHere;
+
+        Hell = Instantiate(gunHell, argHere.position, argrot);
+        Hell.name = "Gun_Hell";
+        Hell.transform.parent = argHere;
+
+        FlareG = Instantiate(gunFlareG, argHere.position, argrot);
+        FlareG.name = "Gun_FlareG";
+        FlareG.transform.parent = argHere;
+
+    }
+
     private void Start()
     {
-        M1911 = Instantiate(gunM1911, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        M1911.name = "Gun_M1911";
-        M1911.transform.parent = this.TheCtrl.transform;
+        if (GameSettings.Instance == null)
+        {
+            Debug.LogError("NO GAME SETTINGS !! for bundle to know wher to attach itself");
+        }
+        else
+        {
+            if (GameSettings.Instance.UseVive)
+            {
+                transform.parent = this.TheCtrl.transform;
+                transform.localPosition = new Vector3(-1.299f, 0.529f, -3.27f);
+                RootBundleOnViveCTRl(this.TheCtrl.transform, this.TheCtrl.transform.rotation);
+            }
+            else
+            {
+                transform.parent = this.TheFPSHandPos.transform;
+                transform.localPosition = transform.parent.position;
+                //transform.localEulerAngles = transform.parent.forward;
+                RootBundleOnViveCTRl(this.TheFPSHandPos.transform, Quaternion.Euler(Xrot, 0, 0));
 
-        Mac11 = Instantiate(gunMac11, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        Mac11.name = "Gun_Mac11";
-        Mac11.transform.parent = this.TheCtrl.transform;
+            }
 
-        Colt = Instantiate(gunColt, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        Colt.name = "Gun_Colt";
-        Colt.transform.parent = this.TheCtrl.transform;
-
-        Shotgun = Instantiate(gunShotgun, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        Shotgun.name = "Gun_Shotgun";
-        Shotgun.transform.parent = this.TheCtrl.transform;
-
-
-
-        P90 = Instantiate(gunP90, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        P90.name = "Gun_P90";
-        P90.transform.parent = this.TheCtrl.transform;
-
-
-        MG61 = Instantiate(gunMG61, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        MG61.name = "Gun_MG61";
-        MG61.transform.parent = this.TheCtrl.transform;
-
-        Hell = Instantiate(gunHell, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        Hell.name = "Gun_Hell";
-        Hell.transform.parent = this.TheCtrl.transform;
-
-        FlareG = Instantiate(gunFlareG, this.TheCtrl.transform.position, this.TheCtrl.transform.rotation);
-        FlareG.name = "Gun_FlareG";
-        FlareG.transform.parent = this.TheCtrl.transform;
-
-
+        }
         HideAllMyThings();
         //SetMyCurrBunThing(GunType.P90);
         //ShowMyCurrBunThing();
@@ -77,6 +103,7 @@ public class ViveGunBundle : MonoBehaviour, IBundle
     public GameObject gunHell;
     public GameObject gunFlareG;
     public GameObject TheCtrl;
+    public GameObject TheFPSHandPos;
 
 
     GameObject M1911;
@@ -276,6 +303,7 @@ public class ViveGunBundle : MonoBehaviour, IBundle
         GameEventsManager.OnCAnReloadReload -= SetAllowReload;
     }
 
+
     bool ALLOW_TriggerRead = true;
     bool ALLOW_ReloadRead = false;
     bool ALLOW_SwitchGunRead = false;
@@ -353,6 +381,8 @@ public class ViveGunBundle : MonoBehaviour, IBundle
 
 
     #endregion
+
+
 
     //  LeftMidRight GunSlotPosition;
 
