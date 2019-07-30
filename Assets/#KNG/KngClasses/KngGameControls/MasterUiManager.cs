@@ -30,11 +30,6 @@ public class MasterUiManager : MonoBehaviour
         GameEventsManager.OnOnBoardDisplay -= OnblardDisplay_WaveBonus;
     }
 
-    private void Awake()
-    {
-
-    }
-
     private void Start()
     {
         //Debug.Log("masterUI is on " + gameObject.name);
@@ -45,7 +40,7 @@ public class MasterUiManager : MonoBehaviour
     public void OnblardDisplay_WaveBonus(int argWaveBonus, bool IsAdded)
     {
         //  UI_Holo.DisplayBonusPointsAddedOrLostFor4Seconds(argWaveBonus, IsAdded);
-        UI_Room.Set_3D_Title("wave bonus " + argWaveBonus.ToString(), false);
+        UI_Room.Set_3D_Title(" points lost " + argWaveBonus.ToString(), false);
     }
 
     //  public void Run_TakeHit(HitType _argHitType) { UI_Holo.TakeHit(_argHitType); }

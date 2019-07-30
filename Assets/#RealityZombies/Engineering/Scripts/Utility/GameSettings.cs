@@ -583,6 +583,14 @@ public class GameSettings : MonoBehaviour
 
     }
     public void Set_GlobalTimer(float argtime) { Global_Time_Apocalypse_GameEnds_600s_10m = argtime; }
+    public void Set_GlobalTimer(string argtime)
+    {
+
+        float FloatTime = float.Parse(argtime);
+
+        Global_Time_Apocalypse_GameEnds_600s_10m = FloatTime;
+
+    }
 
 
 
@@ -590,7 +598,7 @@ public class GameSettings : MonoBehaviour
     #region GamePlaySettings
 
     //letsplay one wave simulating wave 4 when suddendeath happens
-    private float _global_Time_Tournament_GameEnds = 600f;
+    public float _global_Time_Tournament_GameEnds = 600f;
     private float _global_Time_KidsGameEnds = 240f;
     private float _global_Time_SuddenDeath = 300f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
 
@@ -626,7 +634,7 @@ public class GameSettings : MonoBehaviour
     }
 
 
-
+    public bool UseVive = true;
     //Not selectable via 3d menu
     public bool IsUseHololens() { return _isNOTEditor; } //in gamemanager, if usedDevroom and useHolo, then do the 2 anchor placement system
     public bool IsTournamentModeOn = false;
