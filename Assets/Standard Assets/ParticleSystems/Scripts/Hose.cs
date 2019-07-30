@@ -16,20 +16,22 @@ namespace UnityStandardAssets.Effects
 
 
         // Update is called once per frame
-        //private void Update()
-        //{
-        //    m_Power = Mathf.Lerp(m_Power, Input.GetMouseButton(0) ? maxPower : minPower, Time.deltaTime*changeSpeed);
+        private void Update()
+        {
+            m_Power = Mathf.Lerp(m_Power, Input.GetMouseButton(0) ? maxPower : minPower, Time.deltaTime*changeSpeed);
 
-        //    if (Input.GetKeyDown(KeyCode.Alpha1))
-        //    {
-        //        systemRenderer.enabled = !systemRenderer.enabled;
-        //    }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                systemRenderer.enabled = !systemRenderer.enabled;
+            }
 
-        //    foreach (var system in hoseWaterSystems)
-        //    {
-        //        system.startSpeed = m_Power;
-        //        system.enableEmission = (m_Power > minPower*1.1f);
-        //    }
-        //}
+            foreach (var system in hoseWaterSystems)
+            {
+				ParticleSystem.MainModule mainModule = system.main;
+                mainModule.startSpeed = m_Power;
+                var emission = system.emission;
+                emission.enabled = (m_Power > minPower*1.1f);
+            }
+        }
     }
 }

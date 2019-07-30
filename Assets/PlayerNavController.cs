@@ -39,7 +39,12 @@ public class PlayerNavController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace)) { makeRag = true; ToggleAllRiGidBOdies(true); ToggleAllKinematics(false); ToggleAllGravity(true); character.m_Animator.enabled = false; character.SetRag(makeRag); }
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            makeRag = true; ToggleAllRiGidBOdies(true); ToggleAllKinematics(false); ToggleAllGravity(true);
+            character.m_Animator.enabled = false;
+            character.SetRag(makeRag);
+        }
 
 
         if (makeRag)

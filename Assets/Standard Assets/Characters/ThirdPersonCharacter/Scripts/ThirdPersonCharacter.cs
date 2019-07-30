@@ -4,21 +4,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
-    //[RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Animator))]
     public class ThirdPersonCharacter : MonoBehaviour
     {
         [SerializeField] float m_MovingTurnSpeed = 360;
         [SerializeField] float m_StationaryTurnSpeed = 180;
-        [SerializeField] float m_JumpPower = 6f;
+        [SerializeField] float m_JumpPower = 12f;
         [Range(1f, 4f)] [SerializeField] float m_GravityMultiplier = 2f;
         [SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
         [SerializeField] float m_MoveSpeedMultiplier = 1f;
         [SerializeField] float m_AnimSpeedMultiplier = 1f;
-        [SerializeField] float m_GroundCheckDistance = 0.2f;
+        [SerializeField] float m_GroundCheckDistance = 0.1f;
 
         Rigidbody m_Rigidbody;
         public Animator m_Animator;
-        public bool UseRootMotion;
         bool m_IsGrounded;
         float m_OrigGroundCheckDistance;
         const float k_Half = 0.5f;
@@ -30,6 +29,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         CapsuleCollider m_Capsule;
         bool m_Crouching;
 
+
+        void Start()
+        {
+            m_Animator = GetComponent<Animator>();
+            m_Rigidbody = GetComponent<Rigidbody>();
+            m_Capsule = GetComponent<CapsuleCollider>();
+            m_CapsuleHeight = m_Capsule.height;
+            m_CapsuleCenter = m_Capsule.center;
+
+            m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            m_OrigGroundCheckDistance = m_GroundCheckDistance;
+        }
         bool isRagg = false;
         public void SetRag(bool argbool)
         {
@@ -41,23 +52,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
         }
-        private void Awake()
-        {
-            if (m_Animator == null)
-                m_Animator = GetComponent<Animator>();
-        }
-        void Start()
-        {
-
-            m_Rigidbody = GetComponent<Rigidbody>();
-            m_Capsule = GetComponent<CapsuleCollider>();
-            m_CapsuleHeight = m_Capsule.height;
-            m_CapsuleCenter = m_Capsule.center;
-
-            m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-            m_OrigGroundCheckDistance = m_GroundCheckDistance;
-        }
-
 
         public void Move(Vector3 move, bool crouch, bool jump)
         {
@@ -77,61 +71,58 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // control and velocity handling is different when grounded and airborne:
             if (m_IsGrounded)
             {
-                HandleGroundedMovement(crouch, jump, UseRootMotion);
+                HandleGroundedMovement(crouch, jump);
             }
             else
             {
                 HandleAirborneMovement();
             }
 
-            // ScaleCapsuleForCrouching(crouch);
-            // PreventStandingInLowHeadroom();
+            ScaleCapsuleForCrouching(crouch);
+            PreventStandingInLowHeadroom();
 
             // send input and other state parameters to the animator
             UpdateAnimator(move);
         }
 
 
-        //void ScaleCapsuleForCrouching(bool crouch)
-        //{
-        //    if (m_IsGrounded && crouch)
-        //    {
-        //        if (m_Crouching) return;
-        //        m_Capsule.height = m_Capsule.height / 2f;
-        //        m_Capsule.center = m_Capsule.center / 2f;
-        //        m_Crouching = true;
-        //    }
-        //    else
-        //    {
-        //        Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-        //        float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-        //        if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
-        //        {
-        //            m_Crouching = true;
-        //            return;
-        //        }
-        //        m_Capsule.height = m_CapsuleHeight;
-        //        m_Capsule.center = m_CapsuleCenter;
-        //        m_Crouching = false;
-        //    }
-        //}
+        void ScaleCapsuleForCrouching(bool crouch)
+        {
+            if (m_IsGrounded && crouch)
+            {
+                if (m_Crouching) return;
+                m_Capsule.height = m_Capsule.height / 2f;
+                m_Capsule.center = m_Capsule.center / 2f;
+                m_Crouching = true;
+            }
+            else
+            {
+                Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
+                float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+                if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                {
+                    m_Crouching = true;
+                    return;
+                }
+                m_Capsule.height = m_CapsuleHeight;
+                m_Capsule.center = m_CapsuleCenter;
+                m_Crouching = false;
+            }
+        }
 
-        //void PreventStandingInLowHeadroom()
-        //{
-        //     prevent standing up in crouch-only zones
-        //    if (!m_Crouching)
-        //    {
-        //        Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-        //        float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-        //        print(crouchRayLength);
-        //        if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
-        //        {
-        //            m_Crouching = true;
-        //        }
-        //        else
-        //            m_Crouching = false;
-        //    }
-        //}
+        void PreventStandingInLowHeadroom()
+        {
+            // prevent standing up in crouch-only zones
+            if (!m_Crouching)
+            {
+                Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
+                float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+                if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                {
+                    m_Crouching = true;
+                }
+            }
+        }
 
 
         void UpdateAnimator(Vector3 move)
@@ -182,7 +173,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
 
 
-        void HandleGroundedMovement(bool crouch, bool jump, bool argRootbool)
+        void HandleGroundedMovement(bool crouch, bool jump)
         {
             // check whether conditions are right to allow a jump:
             if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
@@ -190,10 +181,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 // jump!
                 m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
                 m_IsGrounded = false;
-                m_Animator.applyRootMotion = argRootbool;
+                m_Animator.applyRootMotion = false;
                 m_GroundCheckDistance = 0.1f;
             }
-
         }
 
         void ApplyExtraTurnRotation()
@@ -206,20 +196,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public void OnAnimatorMove()
         {
-            //if (isRagg)
-            //    return;
             // we implement this function to override the default root motion.
             // this allows us to modify the positional speed before it's applied.
             if (m_IsGrounded && Time.deltaTime > 0)
             {
-                if (m_Animator.isActiveAndEnabled && m_Rigidbody != null)
-                {
-                    Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
+                Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
 
-                    // we preserve the existing y part of the current velocity.
-                    v.y = m_Rigidbody.velocity.y;
-                    m_Rigidbody.velocity = v;
-                }
+                // we preserve the existing y part of the current velocity.
+                v.y = m_Rigidbody.velocity.y;
+                m_Rigidbody.velocity = v;
             }
         }
 
