@@ -1,5 +1,5 @@
 {
-  "app_key": "application.generated.unity.kngmay19scopes.exe",
+  
   "bindings": {
     "/actions/buggy": {
       "chords": [],
@@ -261,6 +261,56 @@
               "output": "/actions/kngguns1/in/grabreleasegunaction"
             }
           }
+        },
+        {
+          "path": "/input/power",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/kngguns1/in/puckmid"
+            }
+          }
+        },
+        {
+          "path": "/input/trigger",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/kngguns1/in/puckforward"
+            }
+          }
+        },
+        {
+          "path": "/input/application_menu",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/kngguns1/in/puckforward"
+            }
+          }
+        },
+        {
+          "path": "/input/grip",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/kngguns1/in/puckletf"
+            }
+          }
+        },
+        {
+          "path": "/input/thumb",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/kngguns1/in/puckright"
+            }
+          }
         }
       ],
       "skeleton": []
@@ -273,7 +323,7 @@
       "skeleton": []
     }
   },
-  "controller_type": "vive_controller",
-  "description": "this is kngGuns1",
-  "name": "My kngMay19scopes [Testing] configuration for Vive Controller"
+  "controller_type": "vive_tracker",
+  "description": "this is kngGuns1 defaults with tracker\n",
+  "name": "My VRZboosted2018 [Testing] configuration for Vive Tracker"
 }

@@ -128,5 +128,37 @@ namespace Valve.VR
                 return SteamVR_Actions.kngGuns1_StopShootGunAction;
             }
         }
+        
+        public virtual SteamVR_Action_Boolean PuckMid
+        {
+            get
+            {
+                return SteamVR_Actions.kngGuns1_PuckMid;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean PuckForward
+        {
+            get
+            {
+                return SteamVR_Actions.kngGuns1_PuckForward;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean PuckLetf
+        {
+            get
+            {
+                return SteamVR_Actions.kngGuns1_PuckLetf;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean PuckRight
+        {
+            get
+            {
+                return SteamVR_Actions.kngGuns1_PuckRight;
+            }
+        }
     }
 }

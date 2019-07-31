@@ -45,20 +45,6 @@ namespace Valve.VR
         
         private static SteamVR_Action_Vibration p_default_Haptic;
         
-        private static SteamVR_Action_Vector2 p_platformer_Move;
-        
-        private static SteamVR_Action_Boolean p_platformer_Jump;
-        
-        private static SteamVR_Action_Vector2 p_buggy_Steering;
-        
-        private static SteamVR_Action_Single p_buggy_Throttle;
-        
-        private static SteamVR_Action_Boolean p_buggy_Brake;
-        
-        private static SteamVR_Action_Boolean p_buggy_Reset;
-        
-        private static SteamVR_Action_Pose p_mixedreality_ExternalCamera;
-        
         private static SteamVR_Action_Single p_kngGuns1_ShootGunSqueezAction;
         
         private static SteamVR_Action_Boolean p_kngGuns1_ReloadGunAction;
@@ -86,6 +72,20 @@ namespace Valve.VR
         private static SteamVR_Action_Boolean p_kngGuns1_PrevGunAction;
         
         private static SteamVR_Action_Boolean p_kngGuns1_StopShootGunAction;
+        
+        private static SteamVR_Action_Boolean p_kngGuns1_PuckMid;
+        
+        private static SteamVR_Action_Boolean p_kngGuns1_PuckForward;
+        
+        private static SteamVR_Action_Boolean p_kngGuns1_PuckLetf;
+        
+        private static SteamVR_Action_Boolean p_kngGuns1_PuckRight;
+        
+        private static SteamVR_Action_Boolean p_newSet_ActionMid;
+        
+        private static SteamVR_Action_Boolean p_newSet_ActionForward;
+        
+        private static SteamVR_Action_Boolean p_newSet_NewAction;
         
         public static SteamVR_Action_Boolean default_InteractUI
         {
@@ -196,62 +196,6 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.p_default_Haptic.GetCopy <SteamVR_Action_Vibration>();
-            }
-        }
-        
-        public static SteamVR_Action_Vector2 platformer_Move
-        {
-            get
-            {
-                return SteamVR_Actions.p_platformer_Move.GetCopy <SteamVR_Action_Vector2>();
-            }
-        }
-        
-        public static SteamVR_Action_Boolean platformer_Jump
-        {
-            get
-            {
-                return SteamVR_Actions.p_platformer_Jump.GetCopy <SteamVR_Action_Boolean>();
-            }
-        }
-        
-        public static SteamVR_Action_Vector2 buggy_Steering
-        {
-            get
-            {
-                return SteamVR_Actions.p_buggy_Steering.GetCopy <SteamVR_Action_Vector2>();
-            }
-        }
-        
-        public static SteamVR_Action_Single buggy_Throttle
-        {
-            get
-            {
-                return SteamVR_Actions.p_buggy_Throttle.GetCopy <SteamVR_Action_Single>();
-            }
-        }
-        
-        public static SteamVR_Action_Boolean buggy_Brake
-        {
-            get
-            {
-                return SteamVR_Actions.p_buggy_Brake.GetCopy <SteamVR_Action_Boolean>();
-            }
-        }
-        
-        public static SteamVR_Action_Boolean buggy_Reset
-        {
-            get
-            {
-                return SteamVR_Actions.p_buggy_Reset.GetCopy <SteamVR_Action_Boolean>();
-            }
-        }
-        
-        public static SteamVR_Action_Pose mixedreality_ExternalCamera
-        {
-            get
-            {
-                return SteamVR_Actions.p_mixedreality_ExternalCamera.GetCopy <SteamVR_Action_Pose>();
             }
         }
         
@@ -367,6 +311,62 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Boolean kngGuns1_PuckMid
+        {
+            get
+            {
+                return SteamVR_Actions.p_kngGuns1_PuckMid.GetCopy <SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean kngGuns1_PuckForward
+        {
+            get
+            {
+                return SteamVR_Actions.p_kngGuns1_PuckForward.GetCopy <SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean kngGuns1_PuckLetf
+        {
+            get
+            {
+                return SteamVR_Actions.p_kngGuns1_PuckLetf.GetCopy <SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean kngGuns1_PuckRight
+        {
+            get
+            {
+                return SteamVR_Actions.p_kngGuns1_PuckRight.GetCopy <SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean newSet_ActionMid
+        {
+            get
+            {
+                return SteamVR_Actions.p_newSet_ActionMid.GetCopy <SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean newSet_ActionForward
+        {
+            get
+            {
+                return SteamVR_Actions.p_newSet_ActionForward.GetCopy <SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean newSet_NewAction
+        {
+            get
+            {
+                return SteamVR_Actions.p_newSet_NewAction.GetCopy <SteamVR_Action_Boolean>();
+            }
+        }
+        
         private static void InitializeActionArrays()
         {
             Valve.VR.SteamVR_Input.actions = new Valve.VR.SteamVR_Action[]
@@ -385,13 +385,6 @@ namespace Valve.VR
                     SteamVR_Actions.default_NextScopeAction,
                     SteamVR_Actions.default_PrevScopeAction,
                     SteamVR_Actions.default_Haptic,
-                    SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.platformer_Jump,
-                    SteamVR_Actions.buggy_Steering,
-                    SteamVR_Actions.buggy_Throttle,
-                    SteamVR_Actions.buggy_Brake,
-                    SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.mixedreality_ExternalCamera,
                     SteamVR_Actions.kngGuns1_ShootGunSqueezAction,
                     SteamVR_Actions.kngGuns1_ReloadGunAction,
                     SteamVR_Actions.kngGuns1_SwitchGunSwipeAction,
@@ -405,7 +398,14 @@ namespace Valve.VR
                     SteamVR_Actions.kngGuns1_PrevScopeAction,
                     SteamVR_Actions.kngGuns1_NextGunAction,
                     SteamVR_Actions.kngGuns1_PrevGunAction,
-                    SteamVR_Actions.kngGuns1_StopShootGunAction};
+                    SteamVR_Actions.kngGuns1_StopShootGunAction,
+                    SteamVR_Actions.kngGuns1_PuckMid,
+                    SteamVR_Actions.kngGuns1_PuckForward,
+                    SteamVR_Actions.kngGuns1_PuckLetf,
+                    SteamVR_Actions.kngGuns1_PuckRight,
+                    SteamVR_Actions.newSet_ActionMid,
+                    SteamVR_Actions.newSet_ActionForward,
+                    SteamVR_Actions.newSet_NewAction};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[]
             {
                     SteamVR_Actions.default_InteractUI,
@@ -421,13 +421,6 @@ namespace Valve.VR
                     SteamVR_Actions.default_PrevGunAction,
                     SteamVR_Actions.default_NextScopeAction,
                     SteamVR_Actions.default_PrevScopeAction,
-                    SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.platformer_Jump,
-                    SteamVR_Actions.buggy_Steering,
-                    SteamVR_Actions.buggy_Throttle,
-                    SteamVR_Actions.buggy_Brake,
-                    SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.mixedreality_ExternalCamera,
                     SteamVR_Actions.kngGuns1_ShootGunSqueezAction,
                     SteamVR_Actions.kngGuns1_ReloadGunAction,
                     SteamVR_Actions.kngGuns1_SwitchGunSwipeAction,
@@ -441,7 +434,14 @@ namespace Valve.VR
                     SteamVR_Actions.kngGuns1_PrevScopeAction,
                     SteamVR_Actions.kngGuns1_NextGunAction,
                     SteamVR_Actions.kngGuns1_PrevGunAction,
-                    SteamVR_Actions.kngGuns1_StopShootGunAction};
+                    SteamVR_Actions.kngGuns1_StopShootGunAction,
+                    SteamVR_Actions.kngGuns1_PuckMid,
+                    SteamVR_Actions.kngGuns1_PuckForward,
+                    SteamVR_Actions.kngGuns1_PuckLetf,
+                    SteamVR_Actions.kngGuns1_PuckRight,
+                    SteamVR_Actions.newSet_ActionMid,
+                    SteamVR_Actions.newSet_ActionForward,
+                    SteamVR_Actions.newSet_NewAction};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[]
             {
                     SteamVR_Actions.default_Haptic};
@@ -450,8 +450,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_Haptic};
             Valve.VR.SteamVR_Input.actionsPose = new Valve.VR.SteamVR_Action_Pose[]
             {
-                    SteamVR_Actions.default_Pose,
-                    SteamVR_Actions.mixedreality_ExternalCamera};
+                    SteamVR_Actions.default_Pose};
             Valve.VR.SteamVR_Input.actionsBoolean = new Valve.VR.SteamVR_Action_Boolean[]
             {
                     SteamVR_Actions.default_InteractUI,
@@ -463,9 +462,6 @@ namespace Valve.VR
                     SteamVR_Actions.default_PrevGunAction,
                     SteamVR_Actions.default_NextScopeAction,
                     SteamVR_Actions.default_PrevScopeAction,
-                    SteamVR_Actions.platformer_Jump,
-                    SteamVR_Actions.buggy_Brake,
-                    SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.kngGuns1_ReloadGunAction,
                     SteamVR_Actions.kngGuns1_GrabReleaseGunAction,
                     SteamVR_Actions.kngGuns1_ShootGunClickAction,
@@ -475,18 +471,22 @@ namespace Valve.VR
                     SteamVR_Actions.kngGuns1_PrevScopeAction,
                     SteamVR_Actions.kngGuns1_NextGunAction,
                     SteamVR_Actions.kngGuns1_PrevGunAction,
-                    SteamVR_Actions.kngGuns1_StopShootGunAction};
+                    SteamVR_Actions.kngGuns1_StopShootGunAction,
+                    SteamVR_Actions.kngGuns1_PuckMid,
+                    SteamVR_Actions.kngGuns1_PuckForward,
+                    SteamVR_Actions.kngGuns1_PuckLetf,
+                    SteamVR_Actions.kngGuns1_PuckRight,
+                    SteamVR_Actions.newSet_ActionMid,
+                    SteamVR_Actions.newSet_ActionForward,
+                    SteamVR_Actions.newSet_NewAction};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[]
             {
                     SteamVR_Actions.default_Squeeze,
-                    SteamVR_Actions.buggy_Throttle,
                     SteamVR_Actions.kngGuns1_ShootGunSqueezAction,
                     SteamVR_Actions.kngGuns1_SwitchGunSwipeAction,
                     SteamVR_Actions.kngGuns1_SwitchScopeSwipeAction};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[]
             {
-                    SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.buggy_Steering,
                     SteamVR_Actions.kngGuns1_DpadAction};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
             Valve.VR.SteamVR_Input.actionsSkeleton = new Valve.VR.SteamVR_Action_Skeleton[]
@@ -505,12 +505,6 @@ namespace Valve.VR
                     SteamVR_Actions.default_PrevGunAction,
                     SteamVR_Actions.default_NextScopeAction,
                     SteamVR_Actions.default_PrevScopeAction,
-                    SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.platformer_Jump,
-                    SteamVR_Actions.buggy_Steering,
-                    SteamVR_Actions.buggy_Throttle,
-                    SteamVR_Actions.buggy_Brake,
-                    SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.kngGuns1_ShootGunSqueezAction,
                     SteamVR_Actions.kngGuns1_ReloadGunAction,
                     SteamVR_Actions.kngGuns1_SwitchGunSwipeAction,
@@ -524,7 +518,14 @@ namespace Valve.VR
                     SteamVR_Actions.kngGuns1_PrevScopeAction,
                     SteamVR_Actions.kngGuns1_NextGunAction,
                     SteamVR_Actions.kngGuns1_PrevGunAction,
-                    SteamVR_Actions.kngGuns1_StopShootGunAction};
+                    SteamVR_Actions.kngGuns1_StopShootGunAction,
+                    SteamVR_Actions.kngGuns1_PuckMid,
+                    SteamVR_Actions.kngGuns1_PuckForward,
+                    SteamVR_Actions.kngGuns1_PuckLetf,
+                    SteamVR_Actions.kngGuns1_PuckRight,
+                    SteamVR_Actions.newSet_ActionMid,
+                    SteamVR_Actions.newSet_ActionForward,
+                    SteamVR_Actions.newSet_NewAction};
         }
         
         private static void PreInitActions()
@@ -543,13 +544,6 @@ namespace Valve.VR
             SteamVR_Actions.p_default_NextScopeAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/default/in/NextScopeAction")));
             SteamVR_Actions.p_default_PrevScopeAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/default/in/PrevScopeAction")));
             SteamVR_Actions.p_default_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create <SteamVR_Action_Vibration>("/actions/default/out/Haptic")));
-            SteamVR_Actions.p_platformer_Move = ((SteamVR_Action_Vector2)(SteamVR_Action.Create <SteamVR_Action_Vector2>("/actions/platformer/in/Move")));
-            SteamVR_Actions.p_platformer_Jump = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/platformer/in/Jump")));
-            SteamVR_Actions.p_buggy_Steering = ((SteamVR_Action_Vector2)(SteamVR_Action.Create <SteamVR_Action_Vector2>("/actions/buggy/in/Steering")));
-            SteamVR_Actions.p_buggy_Throttle = ((SteamVR_Action_Single)(SteamVR_Action.Create <SteamVR_Action_Single>("/actions/buggy/in/Throttle")));
-            SteamVR_Actions.p_buggy_Brake = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/buggy/in/Brake")));
-            SteamVR_Actions.p_buggy_Reset = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/buggy/in/Reset")));
-            SteamVR_Actions.p_mixedreality_ExternalCamera = ((SteamVR_Action_Pose)(SteamVR_Action.Create <SteamVR_Action_Pose>("/actions/mixedreality/in/ExternalCamera")));
             SteamVR_Actions.p_kngGuns1_ShootGunSqueezAction = ((SteamVR_Action_Single)(SteamVR_Action.Create <SteamVR_Action_Single>("/actions/KngGuns1/in/ShootGunSqueezAction")));
             SteamVR_Actions.p_kngGuns1_ReloadGunAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/ReloadGunAction")));
             SteamVR_Actions.p_kngGuns1_SwitchGunSwipeAction = ((SteamVR_Action_Single)(SteamVR_Action.Create <SteamVR_Action_Single>("/actions/KngGuns1/in/SwitchGunSwipeAction")));
@@ -564,6 +558,13 @@ namespace Valve.VR
             SteamVR_Actions.p_kngGuns1_NextGunAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/NextGunAction")));
             SteamVR_Actions.p_kngGuns1_PrevGunAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/PrevGunAction")));
             SteamVR_Actions.p_kngGuns1_StopShootGunAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/StopShootGunAction")));
+            SteamVR_Actions.p_kngGuns1_PuckMid = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/PuckMid")));
+            SteamVR_Actions.p_kngGuns1_PuckForward = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/PuckForward")));
+            SteamVR_Actions.p_kngGuns1_PuckLetf = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/PuckLetf")));
+            SteamVR_Actions.p_kngGuns1_PuckRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/KngGuns1/in/PuckRight")));
+            SteamVR_Actions.p_newSet_ActionMid = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/NewSet/in/ActionMid")));
+            SteamVR_Actions.p_newSet_ActionForward = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/NewSet/in/ActionForward")));
+            SteamVR_Actions.p_newSet_NewAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create <SteamVR_Action_Boolean>("/actions/NewSet/in/NewAction")));
         }
     }
 }

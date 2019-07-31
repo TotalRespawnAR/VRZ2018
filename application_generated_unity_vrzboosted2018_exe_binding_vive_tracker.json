@@ -316,14 +316,54 @@
                "path" : "/user/hand/right/input/grip"
             },
             {
-               "inputs" : {},
-               "mode" : "none",
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckmid"
+                  }
+               },
+               "mode" : "button",
                "path" : "/input/power"
             },
             {
-               "inputs" : {},
-               "mode" : "none",
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckforward"
+                  }
+               },
+               "mode" : "button",
                "path" : "/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckforward"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "button",
+               "path" : "/input/thumb"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckletf"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckright"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/thumb"
             }
          ]
       },
@@ -381,7 +421,7 @@
    },
    "category" : "steamvr_input",
    "controller_type" : "vive_tracker",
-   "description" : "this is kngGuns1",
+   "description" : "this is kngGuns1 defaults with tracker\n",
    "name" : "My VRZboosted2018 [Testing] configuration for Vive Tracker",
    "options" : {},
    "simulated_actions" : []

@@ -56,6 +56,7 @@ TagManager:
   - ZNoneTag
   - TerrainTag
   - RockTag
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -87,7 +88,7 @@ TagManager:
   - DebugLines
   - StencilLayer1
   - CrossHair
-  - 
+  - PostProcessing
   - SpatialMapping
   m_SortingLayers:
   - name: Default
