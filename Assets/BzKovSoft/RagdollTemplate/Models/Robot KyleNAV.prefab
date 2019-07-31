@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1237804780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237804781}
+  - component: {fileID: 1237804782}
+  m_Layer: 0
+  m_Name: Camera (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1237804781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237804780}
+  m_LocalRotation: {x: 0.12472819, y: -0.051554404, z: 0.0060530594, w: 0.99083215}
+  m_LocalPosition: {x: 0, y: 2.1635017, z: -2.6758337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4579750363779568}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -68.768005, y: 73.86301, z: 16.525002}
+--- !u!20 &1237804782
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237804780}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 2
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 1
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 100
+  field of view: 26.991467
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 1
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1017681570655892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,12 +2665,12 @@ GameObject:
   - component: {fileID: 95541434541885192}
   - component: {fileID: 143031323101733780}
   - component: {fileID: 114059132737840900}
-  - component: {fileID: 114655886791827158}
+  - component: {fileID: 5992121513624610254}
   - component: {fileID: 8505255560998131943}
-  - component: {fileID: 1025002823141309696}
-  m_Layer: 0
+  - component: {fileID: 1875983903}
+  m_Layer: 10
   m_Name: Robot KyleNAV
-  m_TagString: Untagged
+  m_TagString: ZombieTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2615,6 +2688,7 @@ Transform:
   m_Children:
   - {fileID: 4781512821249032}
   - {fileID: 4299465020503932}
+  - {fileID: 1237804781}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2667,7 +2741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c11ce03af2a95439874b128d859388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114655886791827158
+--- !u!114 &5992121513624610254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2676,7 +2750,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1921828267738280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dab433fdf3ca74b9ff1e3d93e2b066, type: 3}
+  m_Script: {fileID: 11500000, guid: cfdfc54de8fce0e4e9115fd8fe0f4a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8505255560998131943
@@ -2691,7 +2765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63443b1fc8f741f4886a40b43b2b4151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1025002823141309696
+--- !u!114 &1875983903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

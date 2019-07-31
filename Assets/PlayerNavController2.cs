@@ -18,7 +18,7 @@ public class PlayerNavController2 : MonoBehaviour
     private void Awake()
     {
         RigidBodies = RootHipObj.GetComponentsInChildren<Rigidbody>().ToList();
-        KylesTrans = GameObject.FindGameObjectWithTag("Target").transform;
+        KylesTrans = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Start()
