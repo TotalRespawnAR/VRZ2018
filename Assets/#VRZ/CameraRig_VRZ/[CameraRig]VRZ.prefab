@@ -468,7 +468,6 @@ Transform:
   - {fileID: 5449956515535622517}
   - {fileID: 5449956514731023770}
   - {fileID: 5449956515463286567}
-  - {fileID: 5449956515041362080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1632,75 +1631,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!1 &5449956515041362081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5449956515041362080}
-  - component: {fileID: 5449956515041362083}
-  m_Layer: 5
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5449956515041362080
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5449956515041362081}
-  m_LocalRotation: {x: 0.24325077, y: 0.019403473, z: 0.0048671057, w: 0.96975714}
-  m_LocalPosition: {x: 0, y: 0.687, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5449956514580501850}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 28.138, y: 2.6000001, z: 1.2270001}
---- !u!108 &5449956515041362083
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5449956515041362081}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 32
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &5449956515159479433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89091297667d53b4eaa02f366cf8271e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuadsManager: {fileID: 0}
   txRealTime: {fileID: 5449956514893122663}
   txLive: {fileID: 5449956513865520217}
   txEvent: {fileID: 5449956514079816666}
@@ -2237,6 +2168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7092f9399837c40b8e6f8ff4cc5b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Xrot: -60
   gunM1911: {fileID: 1088190458788990, guid: e15680384e04d1f43a6ed3738174611b, type: 3}
   gunMac11: {fileID: 1019557846753884, guid: 9c8ba22b8f619c44dbe335e74a288d63, type: 3}
   gunColt: {fileID: 1317075881001642, guid: f435f73a05111ca44ab424dc6363cad9, type: 3}
@@ -2246,6 +2178,7 @@ MonoBehaviour:
   gunHell: {fileID: 1376916807993400, guid: 6843d7690f3848c4abbde29473ff20c6, type: 3}
   gunFlareG: {fileID: 1168361033969232, guid: cbdfe242dae1f9a4e83a0d971ade796c, type: 3}
   TheCtrl: {fileID: 5449956515535622514}
+  TheFPSHandPos: {fileID: 0}
   isPlayerAllwedTOUseController: 0
   _hasSelectedSecondaryGgunRight: 1
   _hasSelectedMaingunLeft: 1
