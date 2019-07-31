@@ -17,14 +17,14 @@ MonoBehaviour:
   trackingSpaceOrigin: 1
   actionsFilePath: actions.json
   steamVRInputPath: SteamVR_Input
-  inputUpdateMode: 2
+  inputUpdateMode: 4
   poseUpdateMode: 8
   activateFirstActionSetOnStart: 1
   editorAppKey: application.generated.unity.vrzboosted2018.exe
   autoEnableVR: 1
   legacyMixedRealityCamera: 1
   mixedRealityCameraPose:
-    actionPath: /actions//in/ExternalCamera
+    actionPath: /actions/mixedreality/in/ExternalCamera
     needsReinit: 1
   mixedRealityCameraInputSource: 11
   mixedRealityActionSetAutoEnable: 1

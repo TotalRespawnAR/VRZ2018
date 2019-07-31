@@ -61,35 +61,6 @@
       "type": "vibration"
     },
     {
-      "name": "/actions/platformer/in/Move",
-      "type": "vector2"
-    },
-    {
-      "name": "/actions/platformer/in/Jump",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/buggy/in/Steering",
-      "type": "vector2"
-    },
-    {
-      "name": "/actions/buggy/in/Throttle",
-      "type": "vector1"
-    },
-    {
-      "name": "/actions/buggy/in/Brake",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/buggy/in/Reset",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/mixedreality/in/ExternalCamera",
-      "type": "pose",
-      "requirement": "optional"
-    },
-    {
       "name": "/actions/KngGuns1/in/ShootGunSqueezAction",
       "type": "vector1"
     },
@@ -144,23 +115,15 @@
     {
       "name": "/actions/KngGuns1/in/StopShootGunAction",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/KngGuns1/out/Haptics",
+      "type": "vibration"
     }
   ],
   "action_sets": [
     {
       "name": "/actions/default",
-      "usage": "single"
-    },
-    {
-      "name": "/actions/platformer",
-      "usage": "single"
-    },
-    {
-      "name": "/actions/buggy",
-      "usage": "single"
-    },
-    {
-      "name": "/actions/mixedreality",
       "usage": "single"
     },
     {
@@ -174,32 +137,12 @@
       "binding_url": "bindings_vive_controller.json"
     },
     {
-      "controller_type": "oculus_touch",
-      "binding_url": "bindings_oculus_touch.json"
-    },
-    {
-      "controller_type": "knuckles",
-      "binding_url": "bindings_knuckles.json"
-    },
-    {
-      "controller_type": "holographic_controller",
-      "binding_url": "bindings_holographic_controller.json"
-    },
-    {
       "controller_type": "vive",
       "binding_url": "binding_vive.json"
     },
     {
       "controller_type": "vive_pro",
       "binding_url": "binding_vive_pro.json"
-    },
-    {
-      "controller_type": "rift",
-      "binding_url": "binding_rift.json"
-    },
-    {
-      "controller_type": "holographic_hmd",
-      "binding_url": "binding_holographic_hmd.json"
     },
     {
       "controller_type": "vive_tracker_camera",
@@ -217,8 +160,7 @@
       "/actions/default/in/SkeletonLeftHand": "Skeleton (Left)",
       "/actions/default/in/SkeletonRightHand": "Skeleton (Right)",
       "/actions/default/in/Teleport": "Teleport",
-      "/actions/default/out/Haptic": "Haptic",
-      "/actions/platformer/in/Jump": "Jump"
+      "/actions/default/out/Haptic": "Haptic"
     }
   ]
 }

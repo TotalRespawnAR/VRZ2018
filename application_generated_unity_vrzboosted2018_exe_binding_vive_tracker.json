@@ -8,7 +8,68 @@
          "haptics" : [],
          "poses" : [],
          "skeleton" : [],
-         "sources" : []
+         "sources" : [
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/buggy/in/throttle"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/buggy/in/throttle"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buggy/in/brake"
+                  },
+                  "position" : {
+                     "output" : "/actions/buggy/in/steering"
+                  }
+               },
+               "mode" : "trackpad",
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buggy/in/brake"
+                  },
+                  "position" : {
+                     "output" : "/actions/buggy/in/steering"
+                  }
+               },
+               "mode" : "trackpad",
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buggy/in/reset"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buggy/in/reset"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            }
+         ]
       },
       "/actions/default" : {
          "chords" : [],
@@ -253,21 +314,115 @@
                },
                "mode" : "button",
                "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckmid"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/power"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckforward"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckforward"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "button",
+               "path" : "/input/thumb"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckletf"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/kngguns1/in/puckright"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/input/thumb"
             }
          ]
       },
       "/actions/platformer" : {
-         "chords" : [],
+         "chords" : [
+            {
+               "inputs" : [
+                  [ "/user/hand/left/input/trackpad", "click" ]
+               ],
+               "output" : "/actions/platformer/in/jump"
+            }
+         ],
          "haptics" : [],
          "poses" : [],
          "skeleton" : [],
-         "sources" : []
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/platformer/in/jump"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/platformer/in/jump"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "position" : {
+                     "output" : "/actions/platformer/in/move"
+                  }
+               },
+               "mode" : "trackpad",
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "position" : {
+                     "output" : "/actions/platformer/in/move"
+                  }
+               },
+               "mode" : "trackpad",
+               "path" : "/user/hand/right/input/trackpad"
+            }
+         ]
       }
    },
    "category" : "steamvr_input",
-   "controller_type" : "vive_controller",
-   "description" : "this is kngGuns1",
-   "name" : "knggun1 default replace",
+   "controller_type" : "vive_tracker",
+   "description" : "this is kngGuns1 defaults with tracker\n",
+   "name" : "trackeraction binds ",
    "options" : {},
    "simulated_actions" : []
 }

@@ -128,5 +128,13 @@ namespace Valve.VR
                 return SteamVR_Actions.kngGuns1_StopShootGunAction;
             }
         }
+        
+        public virtual SteamVR_Action_Vibration Haptics
+        {
+            get
+            {
+                return SteamVR_Actions.kngGuns1_Haptics;
+            }
+        }
     }
 }
