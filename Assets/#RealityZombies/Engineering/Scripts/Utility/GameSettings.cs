@@ -651,6 +651,7 @@ public class GameSettings : MonoBehaviour
     public bool UseScopes = false;
     public bool UseShowPlayer = false;
     public bool UseAltGame = false;
+    public bool UseAxe2 = true;
     //Not selectable via 3d menu
     public bool IsUseHololens() { return _isNOTEditor; } //in gamemanager, if usedDevroom and useHolo, then do the 2 anchor placement system
     public bool IsTournamentModeOn = false;

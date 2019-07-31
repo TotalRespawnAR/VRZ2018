@@ -65,6 +65,7 @@ public class SettingsMenu : MonoBehaviour
     Rect SudTimeBox;
 
     Rect AltGame;
+    Rect UseAxe2;
 
     Rect ButtonNext;
 
@@ -91,7 +92,7 @@ public class SettingsMenu : MonoBehaviour
 
 
         AltGame = new Rect(Xplace1, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
-
+        UseAxe2 = new Rect(Xplace2, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         ButtonNext = new Rect(Xplace3, Line8, TextBoxDimentionsWidth, ToggleDimentions);
     }
 
@@ -119,7 +120,7 @@ public class SettingsMenu : MonoBehaviour
         GUI.TextArea(SuddTimeLable, "SuddenDeath");
 
         GameSettings.Instance.UseAltGame = GUI.Toggle(AltGame, GameSettings.Instance.UseAltGame, "alt");
-
+        GameSettings.Instance.UseAxe2 = GUI.Toggle(UseAxe2, GameSettings.Instance.UseAxe2, "axeeffects");
 
         if (GUI.Button(ButtonNext, "next")) GoToScene();
 

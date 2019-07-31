@@ -1,26 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GunAnimate : MonoBehaviour {
+public class GunAnimate : MonoBehaviour
+{
     Animator g_animator;
     Gun _gbad2wayflow;
+
+    void OnEnable()
+    {
+        GameEventsManager.OnSlowTimeOn += ReloadSpeedUP;
+        GameEventsManager.OnSlowTimeOff += ReloadSpeedDown;
+    }
+
+    void OnDisable()
+    {
+        GameEventsManager.OnSlowTimeOn -= ReloadSpeedUP;
+        GameEventsManager.OnSlowTimeOff -= ReloadSpeedDown;
+    }
     private void Awake()
     {
         g_animator = gameObject.GetComponent<Animator>();
         _gbad2wayflow = GetComponent<Gun>();
-     }
+    }
 
-    public void PlayFast() {
-      //  if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
+    public void PlayFast()
+    {
+        //  if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
         g_animator.speed = 1.5f;
     }
-    public void PlayFastest() {
-       // if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
+    public void PlayFastest()
+    {
+        // if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
         g_animator.speed = 2.0f;
     }
-    public void PlayNormal() {
-     //   if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
+    public void PlayNormal()
+    {
+        //   if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
         g_animator.speed = 1.0f;
     }
 
@@ -29,9 +43,9 @@ public class GunAnimate : MonoBehaviour {
     {
         if (g_animator != null)
         {
-           // g_animator.Play("FIREFLAT");
+            // g_animator.Play("FIREFLAT");
             g_animator.Play("FIREFLAT");
-           
+
         }
         else
         {
@@ -63,7 +77,8 @@ public class GunAnimate : MonoBehaviour {
         }
     }
 
-    public void Gunimate_OPENSLIDER() {
+    public void Gunimate_OPENSLIDER()
+    {
         if (GameManager.Instance != null)
         {
             if (GameManager.Instance.KngGameState == ARZState.WaveBuffer) { return; }
@@ -81,10 +96,13 @@ public class GunAnimate : MonoBehaviour {
     }
 
 
-    public void Gunimate_HAMMERDOWN() {
+    public void Gunimate_HAMMERDOWN()
+    {
         g_animator.Play("HAMMERDOWN");
 
     }
 
+    void ReloadSpeedUP() { g_animator.SetFloat("reloadSpeed", 5f); }
+    void ReloadSpeedDown() { g_animator.SetFloat("reloadSpeed", 1f); }
 
 }

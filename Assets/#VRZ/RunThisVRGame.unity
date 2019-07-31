@@ -12482,6 +12482,10 @@ MonoBehaviour:
     type: 3}
   AxeStatic: {fileID: 1599959749862438, guid: 2109a1249dd8d404cad0c1ed18c85dd2, type: 3}
   AxeDynamic: {fileID: 1033669656688142, guid: 989455dfa4193f7429d2ca150bc8d3f6, type: 3}
+  AxeDynamic2: {fileID: 1033669656688142, guid: 0638ba4a75d2ab144bd04a69932ffeee,
+    type: 3}
+  FireBall: {fileID: 0}
+  Player2Zombie: {fileID: 0}
   Enemy29_PumpkinShort: {fileID: 1245605381889998, guid: 5c42472ad0adad34493f02de3c61fd65,
     type: 3}
   EnemyHolobones: {fileID: 1991459053498602, guid: 68442b4e6bb80114dba902eef9fe5aa1,
@@ -21916,40 +21920,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576971254}
   m_Mesh: {fileID: 4300006, guid: ee28604125df26b42b4f32ff15664954, type: 3}
---- !u!21 &579907449
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &587649152
 GameObject:
   m_ObjectHideFlags: 0
@@ -26959,6 +26929,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.118
       objectReference: {fileID: 0}
+    - target: {fileID: 534669902, guid: 64be78b0acd7ecb4f9cc6e03597c1296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 534669902, guid: 64be78b0acd7ecb4f9cc6e03597c1296, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7006242804682266170, guid: 64be78b0acd7ecb4f9cc6e03597c1296,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -27007,14 +26985,6 @@ PrefabInstance:
     - target: {fileID: 78058805, guid: 64be78b0acd7ecb4f9cc6e03597c1296, type: 3}
       propertyPath: StemHead
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 534669902, guid: 64be78b0acd7ecb4f9cc6e03597c1296, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 534669902, guid: 64be78b0acd7ecb4f9cc6e03597c1296, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64be78b0acd7ecb4f9cc6e03597c1296, type: 3}
@@ -34503,12 +34473,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 579907449}
+      objectReference: {fileID: 2013088493}
     - target: {fileID: 5449956514580501854, guid: 2ca78a3da9465904db96f58ac5b9483e,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1501225784}
+      objectReference: {fileID: 1491161626}
     - target: {fileID: 5449956515463286567, guid: 2ca78a3da9465904db96f58ac5b9483e,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -39547,39 +39517,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 428926890}
   m_Enabled: 1
---- !u!1 &1493481229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1738954635647676, guid: 6b59bfd067730a448a8ee7306913b542,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1493481230}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1493481230
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4664499482657626, guid: 6b59bfd067730a448a8ee7306913b542,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493481229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1542681997}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1501225784
+--- !u!43 &1491161626
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39739,6 +39677,38 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1493481229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1738954635647676, guid: 6b59bfd067730a448a8ee7306913b542,
+    type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493481230}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1493481230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4664499482657626, guid: 6b59bfd067730a448a8ee7306913b542,
+    type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493481229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1542681997}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1504500646
 GameObject:
   m_ObjectHideFlags: 0
@@ -43348,6 +43318,7 @@ MonoBehaviour:
   UseScopes: 0
   UseShowPlayer: 0
   UseAltGame: 0
+  UseAxe2: 1
   IsTournamentModeOn: 1
   IsKidsModeOn: 0
   IsSkipPregameOn: 1
@@ -47281,6 +47252,40 @@ LODGroup:
     renderers:
     - renderer: {fileID: 644583449}
   m_Enabled: 1
+--- !u!21 &2013088493
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2013331626
 GameObject:
   m_ObjectHideFlags: 0

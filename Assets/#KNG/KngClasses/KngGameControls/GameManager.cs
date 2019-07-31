@@ -105,7 +105,21 @@ public class GameManager : MonoBehaviour
     #region Zombie Making and Spawning Coordination
 
     public GameObject GetaStaticAxe() { return _enemyModelsRepo_Compo.AxeStatic; }
-    public GameObject GetaDynamicAxe() { return _enemyModelsRepo_Compo.AxeDynamic; }
+    public GameObject GetaDynamicAxe()
+    {
+        if (GameSettings.Instance != null)
+        {
+
+            if (GameSettings.Instance.UseAxe2)
+            {
+                return _enemyModelsRepo_Compo.AxeDynamic2;
+            }
+            else
+                return _enemyModelsRepo_Compo.AxeDynamic;
+
+        }
+        return _enemyModelsRepo_Compo.AxeDynamic;
+    }
     public GameObject GetaDynamicGuyle() { return _enemyModelsRepo_Compo.GuyleDynamic; }
     //from Scenariomanager , the node is just given arbitrarely
 

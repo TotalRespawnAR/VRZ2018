@@ -37,6 +37,9 @@ public class EnemyModelsRepo : MonoBehaviour
     public GameObject GuyleDynamic;
     public GameObject AxeStatic;
     public GameObject AxeDynamic;
+    public GameObject AxeDynamic2;
+    public GameObject FireBall;
+    public GameObject Player2Zombie;
     public GameObject Enemy29_PumpkinShort;
     public GameObject EnemyHolobones;
 
