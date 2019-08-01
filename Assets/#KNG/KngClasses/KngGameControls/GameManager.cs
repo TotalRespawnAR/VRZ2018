@@ -27,6 +27,16 @@ public class GameManager : MonoBehaviour
 
                 FirstPersonObj.SetActive(false);
                 ViveArenaObj.SetActive(true);
+
+                if (GameSettings.Instance.UseRoomFlip)
+                {
+                    ViveArenaObj.transform.localEulerAngles = new Vector3(0, 180, 0);
+                }
+                else
+                {
+                    ViveArenaObj.transform.localEulerAngles = new Vector3(0, 0, 0);
+
+                }
             }
             else
             {
@@ -115,8 +125,9 @@ public class GameManager : MonoBehaviour
                 return _enemyModelsRepo_Compo.AxeDynamic2;
             }
             else
+            {
                 return _enemyModelsRepo_Compo.AxeDynamic;
-
+            }
         }
         return _enemyModelsRepo_Compo.AxeDynamic;
     }
@@ -265,7 +276,11 @@ public class GameManager : MonoBehaviour
     bool hasplayedhorn = false;
     public void AirHornEffect()
     {
-        if (hasplayedhorn) return;
+        if (hasplayedhorn)
+        {
+            return;
+        }
+
         numberofbulbs--;
         if (numberofbulbs <= 0)
         {

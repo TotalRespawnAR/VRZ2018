@@ -66,6 +66,7 @@ public class SettingsMenu : MonoBehaviour
 
     Rect AltGame;
     Rect UseAxe2;
+    Rect RoomRevers;
 
     Rect ButtonNext;
 
@@ -93,7 +94,8 @@ public class SettingsMenu : MonoBehaviour
 
         AltGame = new Rect(Xplace1, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseAxe2 = new Rect(Xplace2, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
-        ButtonNext = new Rect(Xplace3, Line8, TextBoxDimentionsWidth, ToggleDimentions);
+        RoomRevers = new Rect(Xplace3, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+        ButtonNext = new Rect(Xplace4, Line8, TextBoxDimentionsWidth, ToggleDimentions);
     }
 
     private void OnDisable()
@@ -121,15 +123,16 @@ public class SettingsMenu : MonoBehaviour
 
         GameSettings.Instance.UseAltGame = GUI.Toggle(AltGame, GameSettings.Instance.UseAltGame, "alt");
         GameSettings.Instance.UseAxe2 = GUI.Toggle(UseAxe2, GameSettings.Instance.UseAxe2, "axeeffects");
-
-        if (GUI.Button(ButtonNext, "next")) GoToScene();
-
-
+        GameSettings.Instance.UseRoomFlip = GUI.Toggle(RoomRevers, GameSettings.Instance.UseRoomFlip, "roomFlip");
+        if (GUI.Button(ButtonNext, "next"))
+        {
+            GoToScene();
+        }
     }
     void GoToScene()
     {
 
-        SceneManager.LoadScene("Init");
+        SceneManager.LoadScene("RunThisVRGame");
     }
 
 }
