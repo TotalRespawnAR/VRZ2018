@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace DigitalRuby.PyroParticles
 {
@@ -7,6 +6,7 @@ namespace DigitalRuby.PyroParticles
     {
         void HandleCollision(GameObject obj, Collision c);
     }
+
 
     /// <summary>
     /// This script simply allows forwarding collision events for the objects that collide with something. This

@@ -272,7 +272,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    int numberofbulbs = 22;
+    int numberofbulbs = 23;
     bool hasplayedhorn = false;
     public void AirHornEffect()
     {
@@ -286,6 +286,7 @@ public class GameManager : MonoBehaviour
         {
             PlayHeadShotSound.Instance.PlayGongSound();
         }
+        if (numberofbulbs % 5 == 0) { ShowerMEteors(); }
     }
 
 
@@ -1203,8 +1204,22 @@ public class GameManager : MonoBehaviour
     }
 
 
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.L))
+    //    {
+    //        ShowerMEteors();
+    //    }
+    //}
 
 
+    GameObject Meteorshower;
+    public void ShowerMEteors()
+    {
+        if (Meteorshower == null)
+            Meteorshower = Instantiate(_enemyModelsRepo_Compo.MeteorShower);
+
+    }
 
     public LevelManager GetLevelManager() { return _levelManager_Compo; }
     //private void Update()
