@@ -67,6 +67,8 @@ public class SettingsMenu : MonoBehaviour
     Rect AltGame;
     Rect UseAxe2;
     Rect RoomRevers;
+    Rect UseXboxCTRL;
+    Rect UseCamShake;
 
     Rect ButtonNext;
 
@@ -95,6 +97,9 @@ public class SettingsMenu : MonoBehaviour
         AltGame = new Rect(Xplace1, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseAxe2 = new Rect(Xplace2, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         RoomRevers = new Rect(Xplace3, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+        UseXboxCTRL = new Rect(Xplace4, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+        UseCamShake = new Rect(Xplace5, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+
         ButtonNext = new Rect(Xplace4, Line8, TextBoxDimentionsWidth, ToggleDimentions);
     }
 
@@ -124,6 +129,9 @@ public class SettingsMenu : MonoBehaviour
         GameSettings.Instance.UseAltGame = GUI.Toggle(AltGame, GameSettings.Instance.UseAltGame, "alt");
         GameSettings.Instance.UseAxe2 = GUI.Toggle(UseAxe2, GameSettings.Instance.UseAxe2, "axeeffects");
         GameSettings.Instance.UseRoomFlip = GUI.Toggle(RoomRevers, GameSettings.Instance.UseRoomFlip, "roomFlip");
+
+        GameSettings.Instance.UseCamShake = GUI.Toggle(UseCamShake, GameSettings.Instance.UseCamShake, "camShake");
+        GameSettings.Instance.UseXboxCTRL = GUI.Toggle(UseXboxCTRL, GameSettings.Instance.UseXboxCTRL, "xbxCtrl");
         if (GUI.Button(ButtonNext, "next"))
         {
             GoToScene();

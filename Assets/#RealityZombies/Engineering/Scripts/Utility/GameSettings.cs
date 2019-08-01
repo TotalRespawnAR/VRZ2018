@@ -653,6 +653,8 @@ public class GameSettings : MonoBehaviour
     public bool UseAltGame = false;
     public bool UseAxe2 = true;
     public bool UseRoomFlip = false;
+    public bool UseCamShake = false;
+    public bool UseXboxCTRL = false;
     //Not selectable via 3d menu
     public bool IsUseHololens() { return _isNOTEditor; } //in gamemanager, if usedDevroom and useHolo, then do the 2 anchor placement system
     public bool IsTournamentModeOn = false;
@@ -661,6 +663,7 @@ public class GameSettings : MonoBehaviour
     public bool IsKingstonOn = true;
     public bool IsConsoleDebugOn = false;
     public bool IsLoggerOn = false;
+
     //3d menue seletable
     public bool IsBloodOn = false;
     public bool IsCanToggleLazerOn = true;
