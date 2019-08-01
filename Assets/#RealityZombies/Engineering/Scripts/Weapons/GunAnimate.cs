@@ -5,17 +5,17 @@ public class GunAnimate : MonoBehaviour
     Animator g_animator;
     Gun _gbad2wayflow;
 
-    void OnEnable()
-    {
-        GameEventsManager.OnSlowTimeOn += ReloadSpeedUP;
-        GameEventsManager.OnSlowTimeOff += ReloadSpeedDown;
-    }
+    //void OnEnable()
+    //{
+    //    GameEventsManager.OnSlowTimeOn += ReloadSpeedUP;
+    //    GameEventsManager.OnSlowTimeOff += ReloadSpeedDown;
+    //}
 
-    void OnDisable()
-    {
-        GameEventsManager.OnSlowTimeOn -= ReloadSpeedUP;
-        GameEventsManager.OnSlowTimeOff -= ReloadSpeedDown;
-    }
+    //void OnDisable()
+    //{
+    //    GameEventsManager.OnSlowTimeOn -= ReloadSpeedUP;
+    //    GameEventsManager.OnSlowTimeOff -= ReloadSpeedDown;
+    //}
     private void Awake()
     {
         g_animator = gameObject.GetComponent<Animator>();
@@ -25,17 +25,17 @@ public class GunAnimate : MonoBehaviour
     public void PlayFast()
     {
         //  if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
-        g_animator.speed = 1.5f;
+        //g_animator.speed = 1.5f;
     }
     public void PlayFastest()
     {
         // if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
-        g_animator.speed = 2.0f;
+        // g_animator.speed = 2.0f;
     }
     public void PlayNormal()
     {
         //   if (_gbad2wayflow.GUN_GET_BOOLS().ThisGunIsReloading) return;
-        g_animator.speed = 1.0f;
+        //g_animator.speed = 1.0f;
     }
 
     public void SetSpeed(float argspeed) { g_animator.speed = argspeed; }

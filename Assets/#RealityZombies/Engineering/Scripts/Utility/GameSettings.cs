@@ -608,7 +608,7 @@ public class GameSettings : MonoBehaviour
     //letsplay one wave simulating wave 4 when suddendeath happens
     public float _global_Time_Tournament_GameEnds = 600f;
     private float _global_Time_KidsGameEnds = 240f;
-    private float _global_Time_SuddenDeath = 300f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
+    private float _global_Time_SuddenDeath = 240f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
 
     public float Global_Time_Apocalypse_GameEnds_600s_10m
     {
