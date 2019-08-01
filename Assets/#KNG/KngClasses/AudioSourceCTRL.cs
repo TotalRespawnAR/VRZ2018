@@ -69,8 +69,11 @@ public class AudioSourceCTRL : MonoBehaviour
         foreach (AudioSource audS in AttachedSources)
         {
 
-            audS.maxDistance = 20f;
+            audS.maxDistance = 26f;
         }
+        AudioFootStep.maxDistance = 10f;
+        AudioSmallHurt.maxDistance = 69f;
+        AudioBigHurt.maxDistance = 69f;
     }
 
     private void Start()
