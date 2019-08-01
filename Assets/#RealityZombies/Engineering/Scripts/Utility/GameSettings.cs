@@ -679,6 +679,7 @@ public class GameSettings : MonoBehaviour
     public bool UseRoomFlip = false;
     public bool UseCamShake = false;
     public bool UseXboxCTRL = false;
+    public bool UseFirSky = false;
     //Not selectable via 3d menu
     public bool IsUseHololens() { return _isNOTEditor; } //in gamemanager, if usedDevroom and useHolo, then do the 2 anchor placement system
     public bool IsTournamentModeOn = false;

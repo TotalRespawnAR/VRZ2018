@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace DigitalRuby.PyroParticles
 {
@@ -164,6 +164,8 @@ namespace DigitalRuby.PyroParticles
                     r.AddExplosionForce(force, pos, radius);
                 }
             }
+
+
         }
 
         public virtual void Stop()

@@ -324,14 +324,15 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
 
     bool hasGongged = false;
     bool isShuttedTheFuckUp = false;
+    bool IsBurningAlready = false;
 
     public void DoSetMyAssOnFire()
     {
-
+        if (IsBurningAlready) return;
 
 
         Trigger_EndBEhaviorTASK(EnemyTaskEneum.Burning);
-
+        IsBurningAlready = true;
     }
 
     public void StickFireOnMe()

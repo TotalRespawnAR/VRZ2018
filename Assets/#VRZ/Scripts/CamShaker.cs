@@ -4,6 +4,17 @@ using UnityEngine;
 public class CamShaker : MonoBehaviour
 {
 
+
+    private void OnEnable()
+    {
+        GameEventsManager.OnTRyShake += TryShake;
+    }
+    private void OnDisable()
+    {
+        GameEventsManager.OnTRyShake -= TryShake;
+
+    }
+
     IEnumerator Shakeit(float duration, float magnitude)
     {
 
@@ -21,18 +32,40 @@ public class CamShaker : MonoBehaviour
         }
         transform.localPosition = originalLocPos;
     }
+
+    bool CanShke = true;
+    IEnumerator WaitToReset()
+    {
+        yield return new WaitForSeconds(1f);
+        CanShke = true;
+
+    }
+
+    void TryShake()
+    {
+        if (GameSettings.Instance.UseCamShake)
+        {
+            if (CanShke)
+            {
+                StartCoroutine(Shakeit(0.75f, 0.08f));
+                StartCoroutine(WaitToReset());
+            }
+            CanShke = false;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
+
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            StartCoroutine(Shakeit(0.75f, 0.08f));
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.M))
+    //    {
+    //        StartCoroutine(Shakeit(0.75f, 0.08f));
+    //    }
+    //}
 }

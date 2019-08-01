@@ -103,6 +103,14 @@ public class GameEventsManager : MonoBehaviour
     {
         if (OnWallBrak != null) OnWallBrak();
     }
+
+    public delegate void EventShakeCam();
+    public static EventShakeCam OnTRyShake;
+    public void CAll_TryShakeCam()
+    {
+        if (OnTRyShake != null) OnTRyShake();
+    }
+
     public delegate void EventWomp();
     public static EventWomp OnWomp;
     public void Call_OnWomp()

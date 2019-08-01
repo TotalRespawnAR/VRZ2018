@@ -137,7 +137,7 @@ public class AudioSourceCTRL : MonoBehaviour
 
     public void PlayKngAudioClip_inChosenSource(AudioClipType argType)
     {
-        print(m_ieec.Get_ID().ToString() + "->" + argType.ToString());
+        // print(m_ieec.Get_ID().ToString() + "->" + argType.ToString());
         switch (argType)
         {
 

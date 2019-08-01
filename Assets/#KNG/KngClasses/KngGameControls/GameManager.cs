@@ -1217,9 +1217,11 @@ public class GameManager : MonoBehaviour
     GameObject Meteorshower;
     public void ShowerMEteors()
     {
-        if (Meteorshower == null)
-            Meteorshower = Instantiate(_enemyModelsRepo_Compo.MeteorShower);
-
+        if (GameSettings.Instance.UseFirSky)
+        {
+            if (Meteorshower == null)
+                Meteorshower = Instantiate(_enemyModelsRepo_Compo.MeteorShower);
+        }
     }
 
     public LevelManager GetLevelManager() { return _levelManager_Compo; }

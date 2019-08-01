@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace DigitalRuby.PyroParticles
 {
@@ -133,7 +132,7 @@ namespace DigitalRuby.PyroParticles
 
         protected override void Update()
         {
- 	        base.Update();
+            base.Update();
 
             if (Duration > 0.0f && (elapsedSecond += Time.deltaTime) >= 1.0f)
             {
@@ -191,7 +190,16 @@ namespace DigitalRuby.PyroParticles
             {
                 pos = col.contacts[0].point;
                 normal = col.contacts[0].normal;
+
+
             }
+
+            if (GameManager.Instance != null)
+            {
+                GameEventsManager.Instance.CAll_TryShakeCam();
+                GameManager.Instance.ENEMYMNGER_getter().BurnNearest(pos, 3.5f);
+            }
+
 
             MeteorExplosionParticleSystem.transform.position = pos;
             MeteorExplosionParticleSystem.transform.rotation = Quaternion.LookRotation(normal);
@@ -205,6 +213,8 @@ namespace DigitalRuby.PyroParticles
 
             StartCoroutine(CleanupMeteor(0.1f, obj));
             GameObject.Destroy(obj, 4.0f);
+
+
         }
     }
 }

@@ -69,6 +69,7 @@ public class SettingsMenu : MonoBehaviour
     Rect RoomRevers;
     Rect UseXboxCTRL;
     Rect UseCamShake;
+    Rect UseFireSky;
 
     Rect ButtonNext;
 
@@ -99,7 +100,7 @@ public class SettingsMenu : MonoBehaviour
         RoomRevers = new Rect(Xplace3, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseXboxCTRL = new Rect(Xplace4, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseCamShake = new Rect(Xplace5, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
-
+        UseFireSky = new Rect(Xplace1, Line5, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         ButtonNext = new Rect(Xplace4, Line8, TextBoxDimentionsWidth, ToggleDimentions);
     }
 
@@ -132,6 +133,8 @@ public class SettingsMenu : MonoBehaviour
 
         GameSettings.Instance.UseCamShake = GUI.Toggle(UseCamShake, GameSettings.Instance.UseCamShake, "camShake");
         GameSettings.Instance.UseXboxCTRL = GUI.Toggle(UseXboxCTRL, GameSettings.Instance.UseXboxCTRL, "xbxCtrl");
+        GameSettings.Instance.UseFirSky = GUI.Toggle(UseFireSky, GameSettings.Instance.UseFirSky, "fireSky");
+
         if (GUI.Button(ButtonNext, "next"))
         {
             GoToScene();
