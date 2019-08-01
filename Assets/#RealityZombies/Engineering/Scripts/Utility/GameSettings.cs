@@ -101,12 +101,25 @@ public class GameSettings : MonoBehaviour
             MoanBigclipBone = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/Bone/MoanBigBone");
             MoanSmallclipBone = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/Bone/MoanSmallBone");
 
+            //BoneHeadShotCrushclip = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_6_six");
             BoneHeadShotCrushclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/EffectBoneHeadShotCrush");
+
+
             Bodyshotclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/EffectBodyShotCrush");
+            //Bodyshotclip = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_2_two");
+
             BoneBodyShotclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/EffectBoneBodyShot");
-            BoneSmallBreakclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/EffectBoneSmallBreak");
+            //BoneBodyShotclip = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_3_three");
+
+            BoneSmallBreakclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/EffectBoneSmallBreak"); //AudioClips/DeskBell
+                                                                                                                           // BoneSmallBreakclip = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_4_four");
+
             HeadShotCrushclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/EffectHeadShotCrush");
+            // HeadShotCrushclip = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_5_five");
+
             FootStepBasicclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/FootStepBasic");
+            //  FootStepBasicclip = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_1_one");
+
             FootStepPumpkinclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/FootStepPumpkin");
 
 
@@ -117,9 +130,13 @@ public class GameSettings : MonoBehaviour
             Buzz200 = Resources.Load<AudioClip>("AudioClips/200of200GOODwithYAY");
             Buzz200Cheer = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz200Cheer");
             GlassBreakSmall = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/GlassBreakSmall");
-            Impact_Metal_0 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_0");
-            Impact_Metal_1 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_1");
-            Impact_Metal_2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_2");
+            // Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_2_two");
+            // Impact_Metal_0 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_0");
+            Impact_Metal_0 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_2_two"); ;
+            //Impact_Metal_1 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_1");
+            Impact_Metal_1 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_2_two");
+            // Impact_Metal_2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_2");
+            Impact_Metal_2 = Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_2_two");
 
 
 
@@ -127,13 +144,17 @@ public class GameSettings : MonoBehaviour
             Womp2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/angryBoat");
             AirHorn = Resources.Load<AudioClip>("AudioClips/AirHorn");
             Gong = Resources.Load<AudioClip>("AudioClips/DeskBell");
-            Gong2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_2");
+            Gong2 = Resources.Load<AudioClip>("AudioClips/AirHorn"); ;
             Slow = Resources.Load<AudioClip>("AudioClips/PowerUp_SndFx_SlowTime_End");
             SlowOff = Resources.Load<AudioClip>("AudioClips/SlowTimeStartAndSTop");
             HeartBeat = Resources.Load<AudioClip>("AudioClips/HeavyBreathing");
             BodyImpact = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_BodyFlesh_0");
-            HeadshotImpace = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_2");
 
+            BerserkerShotGun = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/howitzerBigShot");
+            //Impact_LimbFlesh_0
+            //splatoriginal
+            HeadImpact = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_LimbFlesh_0");
+            HeadImpact2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/splatoriginal");
             GameOver = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/gameOver");
             Sudden = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/suddendeath");
 
@@ -520,7 +541,7 @@ public class GameSettings : MonoBehaviour
     public AudioClip SlowOff;
     public AudioClip HeartBeat;
     public AudioClip BodyImpact;
-    public AudioClip HeadshotImpace;
+    // public AudioClip HeadshotImpace;
     public AudioClip Cheer200;
     public AudioClip GameOver;
     public AudioClip Sudden;
@@ -541,6 +562,9 @@ public class GameSettings : MonoBehaviour
     public AudioClip Squish1;
     public AudioClip Squish2;
 
+    public AudioClip BerserkerShotGun;
+    public AudioClip HeadImpact;
+    public AudioClip HeadImpact2;
 
 
 

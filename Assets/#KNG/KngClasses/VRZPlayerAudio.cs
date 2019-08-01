@@ -72,7 +72,7 @@ public class VRZPlayerAudio : MonoBehaviour
     public void PlayImpactHead()
     {
         ImpactSource2D.Stop();
-        ImpactSource2D.clip = GameSettings.Instance.HeadshotImpace;
+        ImpactSource2D.clip = GameSettings.Instance.HeadImpact2;
         ImpactSource2D.Play(); ;
     }
     public void PlayImpactBody()

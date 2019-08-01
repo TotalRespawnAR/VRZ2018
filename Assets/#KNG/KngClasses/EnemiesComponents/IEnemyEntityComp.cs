@@ -62,6 +62,7 @@ public interface IEnemyEntityComp
     IEnemyRagdolComp Get_Ragger();
     IEnemyEntityComp Get_AccessToMyPrey();
     IEnemyMeshComp GEt_MEsher();
+    void Shutthefuckup();
 
     void Set_MyPrey(IEnemyEntityComp argThispoorGuy);
 
@@ -89,7 +90,7 @@ public interface IEnemyEntityComp
 
     EnemyAnimatorV6Component Get_Animer();
 
-    void PLAY_AUDIOBANK(string argEventName);
+    void PLAY_AUDIOBANK(AudioClipType argCliptype);
 
     void SetMainEnemyIsAmedAt(bool argOnOff);
     bool GetMainEnemyIsAimedAt();

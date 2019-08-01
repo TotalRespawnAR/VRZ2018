@@ -13,15 +13,21 @@ public class TimeController : MonoBehaviour
     float __CURSLOWTIMEPERCENTAGE = 0f;
 
 
-    public void ResetTimeScaleToNormal()
+    public void ResetTimeScaleToNormal(bool argPlayAudio)
     {
         __CURSLOWTIME = 0f;
         __CURSLOWTIMEPERCENTAGE = 0f;
         Time.timeScale = 1.0f;
         GameEventsManager.Instance.Call_SlowTimeOff();
-        PlayHeadShotSound.Instance.PlaySound_2d_SlowTimeOn();
-
-
+        if (argPlayAudio)
+            PlayHeadShotSound.Instance.PlaySound_2d_SlowTimeOn();
+    }
+    public void ResetTimeScaleToNormal_waverestart()
+    {
+        __CURSLOWTIME = 0f;
+        __CURSLOWTIMEPERCENTAGE = 0f;
+        Time.timeScale = 1.0f;
+        GameEventsManager.Instance.Call_SlowTimeOff();
     }
 
     public void InitialSlowTimeCall()
@@ -48,7 +54,7 @@ public class TimeController : MonoBehaviour
     {
 
         PlayHeadShotSound.Instance.PlaySound_2d_SlowTimeOn();
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.7f);
         RunInitilSlowTime();
         // PlayHeadShotSound.Instance.PlayHeartBeat(1.6f);
 

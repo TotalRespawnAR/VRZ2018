@@ -28,7 +28,8 @@ public enum AudioClipType
     AttackSmall,
     AttackBig,
     DeathSmall,
-    DeathBig
+    DeathBig,
+    ArmorMetalDing,
 
 
 }
@@ -530,7 +531,7 @@ public enum WeaponContext
 
 public enum GunScopes
 {
-    
+
     Lazor,
     Sniper,
     Kin,

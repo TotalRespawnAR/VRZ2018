@@ -354,6 +354,7 @@ public class EnemiesManager : MonoBehaviour
 
         foreach (GameObject liveZombie in liveenemies)
         {
+            liveZombie.GetComponent<IEnemyEntityComp>().Shutthefuckup();
             liveZombie.GetComponent<IEnemyEntityComp>().Kill_CurrMODE(); //this hapens when zombie dies by the gun. not by reset, so use this method to kill cur mode
             liveZombie.GetComponent<IEnemyMeshComp>().MeshDisolveToNothing();
         }

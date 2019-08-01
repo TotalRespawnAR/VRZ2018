@@ -66,6 +66,11 @@ public class AudioSourceCTRL : MonoBehaviour
         AudioBigAttack = AttachedSources[10];
         AudioSmallDeath = AttachedSources[11];
         AudioBigDeath = AttachedSources[12];
+        foreach (AudioSource audS in AttachedSources)
+        {
+
+            audS.maxDistance = 20f;
+        }
     }
 
     private void Start()
@@ -117,9 +122,19 @@ public class AudioSourceCTRL : MonoBehaviour
     //    if (Input.GetKeyDown(KeyCode.O)) { PlayKngAudioClip(AudioClipType.DeathBig); }
     //}
 
-    public void PlayKngAudioClip(AudioClipType argType)
+    public void OkIKeepQuiet()
     {
 
+        foreach (AudioSource audS in AttachedSources)
+        {
+
+            audS.Stop();
+        }
+    }
+
+    public void PlayKngAudioClip_inChosenSource(AudioClipType argType)
+    {
+        print(m_ieec.Get_ID().ToString() + "->" + argType.ToString());
         switch (argType)
         {
 
@@ -127,6 +142,16 @@ public class AudioSourceCTRL : MonoBehaviour
                 if (AudioFootStep != null)
                 {
                     AudioFootStep.Play();
+                }
+                else
+                {
+                    Debug.LogError("No FootstepSource");
+                }
+                break;
+            case AudioClipType.ArmorMetalDing:
+                if (AudioFootStep != null)
+                {
+                    //  AudioFootStep.Play();
                 }
                 else
                 {

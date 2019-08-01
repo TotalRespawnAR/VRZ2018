@@ -495,17 +495,17 @@ public class EnemyAnimatorV6Component : MonoBehaviour, IEnemyAnimatorComp
 
         if (argSwigType == TriggersDamageEffects.BearClawLR || argSwigType == TriggersDamageEffects.BearClawRL)
         {
-            m_ieec.PLAY_AUDIOBANK(EnemyAudioEvents._reachGrunt2.ToString());
+            m_ieec.PLAY_AUDIOBANK(AudioClipType.AttackSmall);
         }
         else
         if (argSwigType == TriggersDamageEffects.ScratchLR || argSwigType == TriggersDamageEffects.ScratchRL)
         {
-            m_ieec.PLAY_AUDIOBANK(EnemyAudioEvents._reachGrunt3.ToString());
+            m_ieec.PLAY_AUDIOBANK(AudioClipType.AttackBig);
         }
         else
         if (argSwigType == TriggersDamageEffects.Scratch2XUpdpwn || argSwigType == TriggersDamageEffects.ScratchUpdown)
         {
-            m_ieec.PLAY_AUDIOBANK(EnemyAudioEvents._reachGrunt4.ToString());
+            m_ieec.PLAY_AUDIOBANK(AudioClipType.AttackSmall);
         }
 
 
@@ -620,7 +620,7 @@ public class EnemyAnimatorV6Component : MonoBehaviour, IEnemyAnimatorComp
         // if (m_ieec.GetMyType() == ARZombieypes.PREDATOR)
         if (_isLookPayerOn)
         {
-           // Debug.Log(zero2one);
+            // Debug.Log(zero2one);
             m_animator.SetLookAtWeight(0.95f);
             m_animator.SetLookAtPosition(RzPlayerComponent.Instance.Get_PlayerHeadCamTrans().position);
         }

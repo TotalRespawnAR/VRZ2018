@@ -144,7 +144,7 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
     }
 
     //this is initialized at InitBeh() that way i can keep 10 as a base value if the wave starts in sprint mode
-    float _seekAudioRandomeLoopTime = 10f; //max or sprinters. sprinters do the crazy Infected garble on 10 second loop
+    float _seekAudioRandomeLoopTime = 30f; //max or sprinters. sprinters do the crazy Infected garble on 10 second loop
     bool _seekAudioTriggered;
     #endregion
     //EBD_REACHGUNPLAYER
@@ -238,8 +238,10 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
     {
         if (argBullet.HitBoss)
         {
-
-            PLAY_AUDIOBANK("_armording");
+            //Debug.Log("Seriously? we hit boss?");
+            //Debug.Break();
+            //PLAY_AUDIOBANK("_armording");
+            MyAudioManager.PlayArmorDing();
         }
 
         bool Killshot = (argNewHp <= 0);
@@ -321,8 +323,19 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
     }
 
     bool hasGongged = false;
+    bool isShuttedTheFuckUp = false;
+
+
+    public void Shutthefuckup()
+    {
+        print("STFU");
+        isShuttedTheFuckUp = true;
+        MyAudioManager.ShutUpYourMouth();
+    }
     void FixedUpdate()
     {
+        if (isShuttedTheFuckUp) return;
+
         //if (this.transform.position.y > 2)
         //{
         //    // Debug.LogError("2 hi");
@@ -592,11 +605,11 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
 
         if (argData.LevelSeekSpeed == SeekSpeed.sprint)
         {
-            _seekAudioRandomeLoopTime = 9.8f; // the audio clips for sprinting are 10 and 10.2 second slong. just crop them bothe equally
+            _seekAudioRandomeLoopTime = 12f;// 9.8f; // the audio clips for sprinting are 10 and 10.2 second slong. just crop them bothe equally
         }
         else
         {
-            _seekAudioRandomeLoopTime = UnityEngine.Random.Range(2.5f, 5f);
+            _seekAudioRandomeLoopTime = 25f;// UnityEngine.Random.Range(2.5f, 5f);
         }
         _seekAudioTriggered = false;
 
@@ -1185,30 +1198,33 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
 
 
 
-    public void PLAY_AUDIOBANK(string argUNDERSCOREDEventName)
+    public void PLAY_AUDIOBANK(AudioClipType argcliptype)
     {
-        MyAudioManager.PlayBodyEffects();
+        // Debug.Log(Get_ID().ToString() + "wtfXXXX? " + argUNDERSCOREDEventName);
+        MyAudioManager.PlayAudioSourcCTRL_CONVERSION(argcliptype);
     }
 
     //only use while seeking. ebd_seek will call this on rand intervals
     public void Play_AUDIO_by_SeekSatate()
     {
-        if (Get_Animer().iGet_SeekSpedNum() == 0)
-        {
-            PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan0.ToString());
-        }
-        else if (Get_Animer().iGet_SeekSpedNum() == 1)
-        {
-            PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan0.ToString());
-        }
-        else if (Get_Animer().iGet_SeekSpedNum() == 2)
-        {
-            PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan2.ToString());
-        }
-        else if (Get_Animer().iGet_SeekSpedNum() == 3) //must be played at 10 sec intervls
-        {
-            PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan3.ToString());
-        }
+        MyAudioManager.PlayMoan();
+        //if (Get_Animer().iGet_SeekSpedNum() == 0)
+        //{
+        //    PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan0.ToString());
+        //    MyAudioManager.PlayMoan();
+        //}
+        //else if (Get_Animer().iGet_SeekSpedNum() == 1)
+        //{
+        //    PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan0.ToString());
+        //}
+        //else if (Get_Animer().iGet_SeekSpedNum() == 2)
+        //{
+        //    PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan2.ToString());
+        //}
+        //else if (Get_Animer().iGet_SeekSpedNum() == 3) //must be played at 10 sec intervls
+        //{
+        //    PLAY_AUDIOBANK(EnemyAudioEvents._chaseMoan3.ToString());
+        //}
 
     }
 

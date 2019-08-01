@@ -855,7 +855,7 @@ public class GameManager : MonoBehaviour
         KngGameState = ARZState.EndGame;
         PersistantScoreGrabber.Instance.DoGrabScores();
         StartCoroutine(AUTOGOTO_DataEntry(10));
-        _timeCtrl_Compo.ResetTimeScaleToNormal();
+        _timeCtrl_Compo.ResetTimeScaleToNormal(false);
     }
     IEnumerator AUTOGOTO_DataEntry(int arg8)
     {
@@ -897,7 +897,7 @@ public class GameManager : MonoBehaviour
         WaveStartingGraphics();
 
         GameEventsManager.CALL_ToggleStemInput(true);
-        _timeCtrl_Compo.ResetTimeScaleToNormal();
+        _timeCtrl_Compo.ResetTimeScaleToNormal(false);
     }
 
     //called by wavelevel 
@@ -915,7 +915,7 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("loading next level ");
-        _timeCtrl_Compo.ResetTimeScaleToNormal();
+        _timeCtrl_Compo.ResetTimeScaleToNormal(false);
 
         _scoreManager_Compo.AddBonusPointForFinishingWaveNumber(_levelManager_Compo.Get_Cure_LoadedLevel_Num());
 
@@ -1118,7 +1118,7 @@ public class GameManager : MonoBehaviour
 #if ENABLE_DEBUGLOG
 #endif
         Debug.Log("PlayerDied_GameManager");
-        _timeCtrl_Compo.ResetTimeScaleToNormal();
+        _timeCtrl_Compo.ResetTimeScaleToNormal(false);
         IsPlayerDead = true;
         PlayerHasDiedInThisWave = true;
         GameEventsManager.CALL_ToggleStemInput(false);

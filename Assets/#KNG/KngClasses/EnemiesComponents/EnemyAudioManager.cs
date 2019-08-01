@@ -132,41 +132,56 @@ Resources.Load<AudioClip>("AudioClips\Enemy\Audio_Zombies\Male3_Zombie_Todd\Zomb
     {
 
         //print("moan");
-        myAidioController.PlayKngAudioClip(AudioClipType.MoanBig);
+        myAidioController.PlayKngAudioClip_inChosenSource(AudioClipType.MoanBig);
     }
 
     public void PlayGrowl()
     {
 
         //print("moan");
-        myAidioController.PlayKngAudioClip(AudioClipType.GrowlBig);
+        myAidioController.PlayKngAudioClip_inChosenSource(AudioClipType.GrowlBig);
     }
 
     public void PlayHurt()
     {
 
-        myAidioController.PlayKngAudioClip(AudioClipType.HurtBig);
+        myAidioController.PlayKngAudioClip_inChosenSource(AudioClipType.HurtBig);
     }
     public void PlayDeath()
     {
 
-        myAidioController.PlayKngAudioClip(AudioClipType.DeathBig);
+        myAidioController.PlayKngAudioClip_inChosenSource(AudioClipType.DeathBig);
+    }
+
+    public void PlayArmorDing()
+    {
+        Debug.Log("PlayDing");
+        myAidioController.PlayKngAudioClip_inChosenSource(AudioClipType.ArmorMetalDing);
     }
 
     public void PlayBodyEffects()
     {
 
-        myAidioController.PlayKngAudioClip(AudioClipType.BodyShot);
+        myAidioController.PlayKngAudioClip_inChosenSource(AudioClipType.BodyShot);
     }
 
     public void PlayHeadEffects()
     {
 
-        myAidioController.PlayKngAudioClip(AudioClipType.HeadShot);
+        myAidioController.PlayKngAudioClip_inChosenSource(AudioClipType.HeadShot);
     }
 
+
+    public void PlayAudioSourcCTRL_CONVERSION(AudioClipType argtype)
+    {
+
+        myAidioController.PlayKngAudioClip_inChosenSource(argtype);
+    }
     public void PlayEvent()
     {
+        // print("no one should ever call this animation Event");
+        // Debug.Break();
+
         //if (isSkeleton)
         //    print("stepBone");
         //else
@@ -179,12 +194,17 @@ Resources.Load<AudioClip>("AudioClips\Enemy\Audio_Zombies\Male3_Zombie_Todd\Zomb
     public void PlayEvent(string str)
     {
 
-        //print(str);
+        print("no one should ever call this" + str);
+        Debug.Break();
         //if (str.Contains("tep"))
         //{
         //    myAidioController.PlayKngAudioClip(AudioClipType.FootStep);
 
         //}
+    }
+
+    public void ShutUpYourMouth() {
+        myAidioController.OkIKeepQuiet();
     }
 
 }
