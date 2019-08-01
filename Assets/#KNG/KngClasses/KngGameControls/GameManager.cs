@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
     #region Zombie Making and Spawning Coordination
 
     public GameObject GetaStaticAxe() { return _enemyModelsRepo_Compo.AxeStatic; }
+    public GameObject GetBasicFire() { return _enemyModelsRepo_Compo.BAsicFire; }
     public GameObject GetaDynamicAxe()
     {
         if (GameSettings.Instance != null)

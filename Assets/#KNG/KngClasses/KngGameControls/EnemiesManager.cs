@@ -393,4 +393,23 @@ public class EnemiesManager : MonoBehaviour
         RESETLiveZombies();
 
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            foreach (GameObject g in liveenemies)
+            {
+                //Animator a = g.GetComponent<Animator>();
+
+                //foreach (var anim in a)
+                //{
+                //    anim.Stop();
+                //}
+
+                g.GetComponent<IEnemyEntityComp>().DoSetMyAssOnFire(); //this hapens when zombie dies by the gun. not by reset, so use this method to kill cur mode
+
+            }
+        }
+    }
 }

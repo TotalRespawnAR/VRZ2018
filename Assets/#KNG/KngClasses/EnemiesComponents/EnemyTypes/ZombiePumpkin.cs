@@ -91,7 +91,34 @@ public class ZombiePumpkin : MainEntityComponent
                 }
                 break;
 
+            case EnemyTaskEneum.Burning:
 
+                if (CurMODE.GET_MyModeEnum() == ModesEnum.KSEEK ||
+                    CurMODE.GET_MyModeEnum() == ModesEnum.SEEKTARGET ||
+                    CurMODE.GET_MyModeEnum() == ModesEnum.TARGETPLAYER ||
+                    CurMODE.GET_MyModeEnum() == ModesEnum.ATTACK)
+                {
+
+                    CurMODE.EndBehavior();
+#if ENABLE_DEBUGLOG
+                    Debug.Log("ovr ->Dead ?? do i even c this");
+#endif
+                    CurMODE = new EBD_Burn(this, ModesEnum.BURNING, 10f, StartBurnAction);
+                    CurMODE.StartBehavior();
+                }
+                else
+                {
+                    //Debug.Log("ovr already dead");
+
+
+                }
+
+
+
+
+
+
+                break;
 
 
 

@@ -82,8 +82,9 @@ public interface IEnemyEntityComp
     void BuildRocket();
     void Run_Rocket();
     void Destroy_Prey_RocketObj_PrimitivMagnet();
+    void DoSetMyAssOnFire();
     void KillYourselfandCeanitup();
-
+    void StickFireOnMe();
     void PauseEnemy(bool argonoff);
 
 

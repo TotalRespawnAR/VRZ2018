@@ -4,6 +4,7 @@ public class EnemyModelsRepo : MonoBehaviour
 {
 
     public GameObject MeteorShower;
+    public GameObject BAsicFire;
     public GameObject EnemyBox;
     public GameObject Enemy1_Basic;
     public GameObject Enemy2_Spinal;
