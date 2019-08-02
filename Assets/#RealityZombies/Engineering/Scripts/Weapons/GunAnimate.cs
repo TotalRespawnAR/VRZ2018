@@ -39,6 +39,7 @@ public class GunAnimate : MonoBehaviour
     }
 
     public void SetSpeed(float argspeed) { g_animator.speed = argspeed; }
+    public void SetMultiplyer(float argmulti) { g_animator.SetFloat("reloadSpeed", argmulti); }
     public void Gunimate_FIRE()
     {
         if (g_animator != null)
@@ -102,7 +103,5 @@ public class GunAnimate : MonoBehaviour
 
     }
 
-    void ReloadSpeedUP() { g_animator.SetFloat("reloadSpeed", 5f); }
-    void ReloadSpeedDown() { g_animator.SetFloat("reloadSpeed", 1f); }
 
 }

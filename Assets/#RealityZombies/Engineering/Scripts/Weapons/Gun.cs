@@ -70,11 +70,14 @@ public class Gun : MonoBehaviour, IGun
 
         if (SlowTimeOn)
         {
-            _myGunAnimate.SetSpeed(14.5f);
+            //_myGunAnimate.SetSpeed(14.5f);
+            _myGunAnimate.SetMultiplyer(5f);
         }
         else
         {
-            _myGunAnimate.SetSpeed(0.5f);
+            //_myGunAnimate.SetSpeed(0.5f);
+            _myGunAnimate.SetMultiplyer(1f);
+
         }
 
         if (curGunState == GunReloadState.A_LOCKEDANDLOAEDED)
