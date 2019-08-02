@@ -243,6 +243,39 @@ public class Bullet : MonoBehaviour
 #endif
         if (hitInfo.collider.gameObject.layer == enemyLayer)
         {
+
+
+
+
+            if (hitInfo.collider.gameObject.CompareTag("FlyTag"))
+            {
+#if ENABLE_DEBUGLOG
+                Debug.Log("a bullet in the NONE");
+#endif
+
+                BreakTheStreak();
+
+                IShootable Ishot = hitInfo.collider.gameObject.GetComponentInParent<IShootable>();
+                if (Ishot == null)
+                {
+                    Debug.LogError("oh must be an fly " + hitInfo.collider.gameObject.name);
+                }
+                else
+                {
+                    Ishot.Shot(this);
+                    return;
+                }
+
+                return;
+            }
+
+
+
+
+
+
+
+
             IEnemyEntityComp EntityHit = hitInfo.collider.gameObject.GetComponentInParent<IEnemyEntityComp>();
             if (EntityHit != null)
             {
@@ -358,6 +391,11 @@ public class Bullet : MonoBehaviour
             }
             else
             {
+
+
+
+
+
 
                 if (hitInfo.collider.gameObject.CompareTag("EnemyProjectile"))
                 {

@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
             }
 
         }
+        if (GameSettings.Instance.UseFlies)
+            InvokeRepeating("SpawnSwarm", 10, 30);
     }
     private void OnDisable()
     {
@@ -1212,4 +1214,15 @@ public class GameManager : MonoBehaviour
     //  //  if (Input.GetKey(KeyCode.L)) { PlayerDied_GameManager(); }
     //}
 
+
+    public void SpawnSwarm()
+    {
+
+        // if (KngGameState == ARZState.WavePlay)
+        // {
+        // if (GameSettings.Instance.UseFlies)
+        Instantiate(_enemyModelsRepo_Compo.Flys);
+        //   }
+
+    }
 }

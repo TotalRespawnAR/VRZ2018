@@ -2,7 +2,7 @@
 
 public class EnemyModelsRepo : MonoBehaviour
 {
-
+    public GameObject Flys;
     public GameObject EnemyBlank;
     public GameObject EnemyBox;
     public GameObject Enemy1_Basic;
