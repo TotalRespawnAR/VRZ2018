@@ -9,6 +9,7 @@ public class BoidFlocking : MonoBehaviour
     {
         while (true)
         {
+            float waitTime;
             if (controller)
             {
                 GetComponent<Rigidbody>().velocity += steer() * Time.deltaTime;
@@ -19,14 +20,20 @@ public class BoidFlocking : MonoBehaviour
                 float speed = GetComponent<Rigidbody>().velocity.magnitude;
                 if (speed > controller.maxVelocity)
                 {
+                    waitTime = Random.Range(0.1f, 0.2f);
                     GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * controller.maxVelocity;
                 }
                 else if (speed < controller.minVelocity)
                 {
                     GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * controller.minVelocity;
+                    waitTime = Random.Range(0.4f, 0.8f);
                 }
+                else
+                    waitTime = Random.Range(0.3f, 0.5f);
             }
-            float waitTime = Random.Range(0.2f, 0.4f);
+            else
+                waitTime = 0.1f;//Random.Range(0.2f, 0.4f);
+
             yield return new WaitForSeconds(waitTime);
         }
     }
@@ -44,10 +51,10 @@ public class BoidFlocking : MonoBehaviour
         return (center + velocity + follow * 2 + randomize);
     }
 
-    private void FixedUpdate()
-    {
-        Debug.DrawRay(transform.position, GetComponent<Rigidbody>().velocity.normalized, Color.yellow);
+    //private void FixedUpdate()
+    //{
+    //    Debug.DrawRay(transform.position, GetComponent<Rigidbody>().velocity.normalized, Color.yellow);
 
 
-    }
+    //}
 }

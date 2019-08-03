@@ -101,6 +101,7 @@ public class FlyBehavior : MonoBehaviour, IShootable
     bool shot;
     private void Update()
     {
+        print("NOOOOO");
 
         if (shot) return;
         if (!Attacking)
