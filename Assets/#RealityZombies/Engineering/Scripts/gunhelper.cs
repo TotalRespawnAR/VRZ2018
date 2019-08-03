@@ -86,7 +86,7 @@ public class gunhelper : MonoBehaviour
     {
         // putClipin();
         thegun = GetComponent<Gun>();
-        Debug.Log("gun helper on " + thegun.GetGunType().ToString() + " " + gameObject.name);
+        //Debug.Log("gun helper on " + thegun.GetGunType().ToString() + " " + gameObject.name);
 
 
         if (GameSettings.Instance == null) { Debug.LogError("no gamesettings ofor gun helper"); }
