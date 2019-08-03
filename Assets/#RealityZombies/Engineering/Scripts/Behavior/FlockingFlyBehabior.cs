@@ -22,13 +22,14 @@ public class FlockingFlyBehabior : MonoBehaviour, IShootable
     }
     void LateUpdate()
     {
+        if (shot) return;
         //  transform.LookAt(TargetTrans);
         Vector3 lTargetDir = TargetTrans.position - transform.position;
         lTargetDir.y = 0.0f;
         // transform.rotation =    Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lTargetDir), Time.time * rotspeed);
         //transform.rotation = Quaternion.Lerp(transform.rotation, transform.parent.GetComponent<Rigidbody>().velocity.normalized, Time.time * rotspeed);
         // transform.forward = Vector3.Lerp(transform.forward, transform.parent.GetComponent<Rigidbody>().velocity.normalized, Time.time * rotspeed);
-        Debug.DrawRay(transform.position, transform.parent.GetComponent<Rigidbody>().velocity.normalized, Color.yellow);
+        //  Debug.DrawRay(transform.position, transform.parent.GetComponent<Rigidbody>().velocity.normalized, Color.yellow);
 
 
         Vector3 targetDir = transform.parent.GetComponent<Rigidbody>().velocity.normalized;

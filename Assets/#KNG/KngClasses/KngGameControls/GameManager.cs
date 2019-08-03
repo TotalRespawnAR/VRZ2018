@@ -69,6 +69,11 @@ public class GameManager : MonoBehaviour
         }
         if (GameSettings.Instance.UseFlies)
             InvokeRepeating("SpawnSwarm", 10, 30);
+        if (GameSettings.Instance.UseFlies2)
+            SpawnFlock();
+
+
+
     }
     private void OnDisable()
     {
@@ -1240,6 +1245,17 @@ public class GameManager : MonoBehaviour
         // {
         // if (GameSettings.Instance.UseFlies)
         Instantiate(_enemyModelsRepo_Compo.Flys);
+        //   }
+
+    }
+
+    public void SpawnFlock()
+    {
+
+        // if (KngGameState == ARZState.WavePlay)
+        // {
+        // if (GameSettings.Instance.UseFlies)
+        Instantiate(_enemyModelsRepo_Compo.FlockingFlies);
         //   }
 
     }
