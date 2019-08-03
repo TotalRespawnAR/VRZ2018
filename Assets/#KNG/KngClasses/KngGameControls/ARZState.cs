@@ -90,7 +90,8 @@ public enum EnemyTaskEneum
     punching,
     Punching,
     Crawling,
-    Dancing
+    Dancing,
+    Burning
 }
 
 
@@ -127,7 +128,7 @@ public enum EBSTATE
     COMBAT_eb2 = 2,
     REACHING_eb3 = 3,
     EBDEAD_eb4 = 4,
-
+    EBDBURNING_eb5,
     PAUSED = 99,
 
 
@@ -224,7 +225,8 @@ public enum ModesEnum
     DEAD,
     WAITPREY,
     RAGDOLL,
-    COMBAT
+    COMBAT,
+    BURNING
 }
 
 

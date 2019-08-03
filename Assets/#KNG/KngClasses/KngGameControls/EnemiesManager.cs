@@ -271,6 +271,8 @@ public class EnemiesManager : MonoBehaviour
 
     float ShortestDistToPlayer = float.MaxValue;
     int indexOfClossesZombie = 0;
+
+
     public IEnemyEntityComp ClosesZombieTOPlayer()
     {
         indexOfClossesZombie = 0;
@@ -284,6 +286,30 @@ public class EnemiesManager : MonoBehaviour
             }
         }
         return liveenemies[indexOfClossesZombie].GetComponent<IEnemyEntityComp>();
+    }
+
+    public void BurnNearest(Vector3 argPos, float argRad)
+    {
+
+
+        //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //cube.transform.position = argPos;
+
+        if (liveenemies.Count > 1)
+        {
+            indexOfClossesZombie = 0;
+            for (int zcnt = 0; zcnt < liveenemies.Count; zcnt++)
+            {
+                float tempDist = Mathf.Abs(Vector3.Distance(liveenemies[zcnt].transform.position, argPos));
+
+                if (tempDist < argRad)
+                {
+
+                    liveenemies[zcnt].GetComponent<IEnemyEntityComp>().DoSetMyAssOnFire();
+                }
+            }
+        }
+
     }
 
     void SpeedUpLiveZombies()
@@ -393,4 +419,23 @@ public class EnemiesManager : MonoBehaviour
         RESETLiveZombies();
 
     }
+
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.L))
+    //    {
+    //        foreach (GameObject g in liveenemies)
+    //        {
+    //            //Animator a = g.GetComponent<Animator>();
+
+    //            //foreach (var anim in a)
+    //            //{
+    //            //    anim.Stop();
+    //            //}
+
+    //            g.GetComponent<IEnemyEntityComp>().DoSetMyAssOnFire(); //this hapens when zombie dies by the gun. not by reset, so use this method to kill cur mode
+
+    //        }
+    //    }
+    //}
 }

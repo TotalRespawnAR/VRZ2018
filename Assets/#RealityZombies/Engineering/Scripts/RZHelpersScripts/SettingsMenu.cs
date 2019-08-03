@@ -70,6 +70,7 @@ public class SettingsMenu : MonoBehaviour
     Rect UseXboxCTRL;
     Rect UseCamShake;
     Rect UseFlies;
+    Rect UseFireSky;
 
     Rect ButtonNext;
 
@@ -101,6 +102,8 @@ public class SettingsMenu : MonoBehaviour
         UseXboxCTRL = new Rect(Xplace4, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseCamShake = new Rect(Xplace5, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseFlies = new Rect(Xplace1, Line5, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+
+        UseFireSky = new Rect(Xplace1, Line5, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         ButtonNext = new Rect(Xplace4, Line8, TextBoxDimentionsWidth, ToggleDimentions);
     }
 
@@ -134,6 +137,7 @@ public class SettingsMenu : MonoBehaviour
         GameSettings.Instance.UseCamShake = GUI.Toggle(UseCamShake, GameSettings.Instance.UseCamShake, "camShake");
         GameSettings.Instance.UseXboxCTRL = GUI.Toggle(UseXboxCTRL, GameSettings.Instance.UseXboxCTRL, "xbxCtrl");
         GameSettings.Instance.UseFlies = GUI.Toggle(UseFlies, GameSettings.Instance.UseFlies, "swarmOn");
+        GameSettings.Instance.UseFirSky = GUI.Toggle(UseFireSky, GameSettings.Instance.UseFirSky, "fireSky");
 
         if (GUI.Button(ButtonNext, "next"))
         {

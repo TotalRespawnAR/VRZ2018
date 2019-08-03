@@ -324,6 +324,47 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
 
     bool hasGongged = false;
     bool isShuttedTheFuckUp = false;
+    bool IsBurningAlready = false;
+
+    public void DoSetMyAssOnFire()
+    {
+        if (IsBurningAlready) return;
+
+
+        Trigger_EndBEhaviorTASK(EnemyTaskEneum.Burning);
+        IsBurningAlready = true;
+    }
+
+    public void StickFireOnMe()
+    {
+        GameObject fire = Instantiate(GameManager.Instance.GetBasicFire());
+        fire.transform.parent = this.transform;
+        fire.transform.localPosition = new Vector3(0, 0, 0);
+    }
+    // public void DoRemoveMyAshes() { }
+
+    IEnumerator WaitTOBEdestroyedByFire__LongerWait()
+    {
+        yield return new WaitForSeconds(5f);
+        //audioMnger.StopAll();
+        CurMODE.EndBehavior();
+        DestroyImmediate(this.gameObject);
+    }
+
+    public void StartBurnAction()
+    {
+
+
+        Get_Animer().Do_LookPlayer(false);
+
+
+
+        myAnimatorObj.iSet_EBEstate((int)EBSTATE.EBDBURNING_eb5);
+        myAnimatorObj.iTrigger_TrigEBstateTransition();
+        //  audioMnger.StopAll();
+
+        Debug.Log("Dispozeof this burned");
+    }
 
 
     public void Shutthefuckup()
@@ -887,7 +928,7 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
     //called from meshcomp , after the whole disolv...just wait 4 seconds to make sure the disolve is done
     public void KillYourselfandCeanitup()
     {
-        Debug.LogError("DO NOT USE , does not remove from enemy manager");
+        Debug.Log("DO NOT USE , does not remove from enemy manager");
         // GameManager.Instance.Zombie_ID_Died(Get_ID());
         StartCoroutine(WaitTOBEdestroyed());
     }
@@ -988,6 +1029,31 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
 #endif
                 }
                 break;
+            case EnemyTaskEneum.Burning:
+
+                if (CurMODE.GET_MyModeEnum() == ModesEnum.KSEEK ||
+                    CurMODE.GET_MyModeEnum() == ModesEnum.SEEKTARGET ||
+                    CurMODE.GET_MyModeEnum() == ModesEnum.TARGETPLAYER ||
+                    CurMODE.GET_MyModeEnum() == ModesEnum.ATTACK)
+                {
+
+                    CurMODE.EndBehavior();
+#if ENABLE_DEBUGLOG
+                    Debug.Log("ovr ->Dead ?? do i even c this");
+#endif
+                    CurMODE = new EBD_Burn(this, ModesEnum.BURNING, 10f, StartBurnAction);
+                    CurMODE.StartBehavior();
+                }
+                else
+                {
+                    //Debug.Log("ovr already dead");
+
+
+                }
+
+
+                break;
+
             default:
                 break;
         }

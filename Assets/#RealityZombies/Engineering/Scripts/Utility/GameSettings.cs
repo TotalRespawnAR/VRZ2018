@@ -123,12 +123,12 @@ public class GameSettings : MonoBehaviour
             FootStepPumpkinclip = Resources.Load<AudioClip>("AudioClips/Enemy/AudioUsed/SharedAudio/FootStepPumpkin");
 
 
-            Buzz100 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz100");
-            Buzz125 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz125");
-            Buzz150 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz150");
-            Buzz175 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz175");
+            Buzz100 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/100of200");
+            Buzz125 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/125of200");
+            Buzz150 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/150of200");
+            Buzz175 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/175of200");
             Buzz200 = Resources.Load<AudioClip>("AudioClips/200of200GOODwithYAY");
-            Buzz200Cheer = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Buzz200Cheer");
+            Buzz200Cheer = Resources.Load<AudioClip>("AudioClips/200of200GOODwithYAY");
             GlassBreakSmall = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/GlassBreakSmall");
             // Resources.Load<AudioClip>("AudioClips/DemonicCountDown/Demonic_2_two");
             // Impact_Metal_0 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_Metal_0");
@@ -145,7 +145,7 @@ public class GameSettings : MonoBehaviour
             AirHorn = Resources.Load<AudioClip>("AudioClips/AirHorn");
             Gong = Resources.Load<AudioClip>("AudioClips/DeskBell");
             Gong2 = Resources.Load<AudioClip>("AudioClips/AirHorn"); ;
-            Slow = Resources.Load<AudioClip>("AudioClips/PowerUp_SndFx_SlowTime_End");
+            Slow = Resources.Load<AudioClip>("AudioClips/SlowTimeStartAndSTop");
             SlowOff = Resources.Load<AudioClip>("AudioClips/SlowTimeStartAndSTop");
             HeartBeat = Resources.Load<AudioClip>("AudioClips/HeavyBreathing");
             BodyImpact = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Impact_BodyFlesh_0");
@@ -680,6 +680,7 @@ public class GameSettings : MonoBehaviour
     public bool UseCamShake = false;
     public bool UseXboxCTRL = false;
     public bool UseFlies = false;
+    public bool UseFirSky = false;
     //Not selectable via 3d menu
     public bool IsUseHololens() { return _isNOTEditor; } //in gamemanager, if usedDevroom and useHolo, then do the 2 anchor placement system
     public bool IsTournamentModeOn = false;

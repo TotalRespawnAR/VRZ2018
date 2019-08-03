@@ -2,8 +2,12 @@
 
 public class EnemyModelsRepo : MonoBehaviour
 {
+
     public GameObject Flys;
+    public GameObject FlockingFlies;
     public GameObject EnemyBlank;
+    public GameObject MeteorShower;
+    public GameObject BAsicFire;
     public GameObject EnemyBox;
     public GameObject Enemy1_Basic;
     public GameObject Enemy2_Spinal;
@@ -247,7 +251,7 @@ public class EnemyModelsRepo : MonoBehaviour
         switch (_argZname)
         {
             case KngEnemyName.Blank:
-                Goref = EnemyBlank;
+                Goref = Enemy1_Basic;
                 break;
             case KngEnemyName.Box:
                 Goref = EnemyBox;
@@ -344,7 +348,7 @@ public class EnemyModelsRepo : MonoBehaviour
                 break;
 
             default:
-                Goref = EnemyBlank;
+                Goref = Enemy1_Basic;
                 break;
         }
 

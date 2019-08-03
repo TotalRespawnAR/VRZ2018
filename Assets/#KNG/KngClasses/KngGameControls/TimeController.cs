@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
-
-
+    float SuddenDeath_Seconds;
+    float EndGAme_Seconds;
+    public float PlayerMustDieTime;
+    public float _curRealTimePlayTime;
+    private void Start()
+    {
+        SuddenDeath_Seconds = GameSettings.Instance.Global_Time_SuddenDeath_300s_5min;
+        EndGAme_Seconds = GameSettings.Instance.Global_Time_Apocalypse_GameEnds_600s_10m;
+    }
 
     float MAXWAITTIME = 10f;
 
@@ -80,10 +87,7 @@ public class TimeController : MonoBehaviour
     bool TriggeredEndGAme;
     bool TriggeredPlayerMustDie;
 
-    public float SuddenDeath_Seconds;
-    public float EndGAme_Seconds;
-    public float PlayerMustDieTime;
-    public float _curRealTimePlayTime;
+
     //  float _curTimeSinceSceneLoaded;
     int _curSecInt;
     int _lastSecInt;
