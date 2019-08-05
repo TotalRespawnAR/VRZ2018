@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public interface IMag  {
+public interface IMag
+{
 
-      bool TryDecrementBulletCount();
+    bool TryDecrementBulletCount();
     GameObject GetBulletFromMag();
     int GetBulletsCount_inMag();
     void Refill();
