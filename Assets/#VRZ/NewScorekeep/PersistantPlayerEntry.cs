@@ -39,7 +39,7 @@ public class PersistantPlayerEntry : MonoBehaviour
 
     public override string ToString()
     {
-        String thedata =_playerFullInfoScore.SessionTime +" "+ _playerFullInfoScore.FinalScore + " " + _playerFullInfoScore.FinalKills + " " + _playerFullInfoScore.FinalHeadShots + " " + _playerFullInfoScore.FinalDeaths + " " + _playerFullInfoScore.PlayerFirstName + " " + _playerFullInfoScore.PlayerLastName + " " + _playerFullInfoScore.PlayerEmail + " " + _playerFullInfoScore.PlayerUserName;
+        String thedata =_playerFullInfoScore.GameTime +" "+ _playerFullInfoScore.FinalScore + " " + _playerFullInfoScore.FinalKills + " " + _playerFullInfoScore.FinalHeadShots + " " + _playerFullInfoScore.FinalDeaths + " " + _playerFullInfoScore.PlayerFirstName + " " + _playerFullInfoScore.PlayerLastName + " " + _playerFullInfoScore.PlayerEmail + " " + _playerFullInfoScore.PlayerUserName;
         return thedata;
     }
 

@@ -19,11 +19,19 @@ public class VRZ_SessionSaver : MonoBehaviour
         get
         {
 
-            return Path_OGpc_ExternalSharedFolder;
+            return Path_OGpc_ExternalSharedFolder ;
 
         }
     }
 
+    string GetFullTimedPathFullFilePath(Data_VRZPlayerInfoScore argVRZdata)
+    {
+        string Path =    VRZ_SinglePlayerScoreDataPath + "\\"  + PlayerSessionName +"_"+ argVRZdata.PlayerFirstName + "_" + ".txt"; ;
+        Debug.Log(Path);
+        return Path;
+    }
+    //int fileCount = 0;
+    //DirectoryInfo VrzDir;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +43,21 @@ public class VRZ_SessionSaver : MonoBehaviour
         {
             Debug.Log("I'm NOT og pc");
         }
+        //VrzDir = new DirectoryInfo(VRZ_SinglePlayerScoreDataPath);
+        //FileInfo[] info = VrzDir.GetFiles("*.*");
+    
+        //foreach (FileInfo f in info)
+        //{
+        //    if (f.Name.Contains(PlayerSessionName))
+        //    {
+             
+        //        fileCount++;
+        //    }
+        //}
 
-        ProcessDirectory(VRZ_SinglePlayerScoreDataPath);
+
+
+     //   ProcessDirectory(VRZ_SinglePlayerScoreDataPath);
 
 
         //if not make it
@@ -78,10 +99,22 @@ public class VRZ_SessionSaver : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void SaveIt(Data_VRZPlayerInfoScore argThisData)
     {
 
+
+        string jsonData = JsonUtility.ToJson(argThisData);
+        File.WriteAllText(GetFullTimedPathFullFilePath(argThisData), jsonData);
+        //  File.WriteAllText(VRZ_SinglePlayerScoreDataPath+"\\yo.txt", "HELLO");
     }
+
+
+
+
+    Data_VRZPlayerInfoScore Build_Data_FromJson(string argAllSess)
+    {
+        return JsonUtility.FromJson<Data_VRZPlayerInfoScore>(argAllSess);
+    }
+
+    
 }

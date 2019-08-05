@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using System;
 public class PersistantDataChecker : MonoBehaviour
 {
-
+    public VRZ_SessionSaver _sessionSaver;
     public string txt;
     PersistantPlayerEntry _playerData;
     PersistantScoreGrabber _scoreGrabber;
     Data_PlayerPoints CurPlayerPoints;
-
+    Data_VRZPlayerInfoScore _TESTPlayerScoreobj;
     Rect ButtonNewGame;
     Rect ButtonAgain;
     float Xspace = 5f;
@@ -44,9 +44,12 @@ public class PersistantDataChecker : MonoBehaviour
     void Start()
     {
         _playerData = PersistantPlayerEntry.Instance;
-        if (_playerData  == null) {
+        if (_playerData == null)
+        {
             Debug.Log("persitantplayerentry did not carry over");
+            _TESTPlayerScoreobj = new Data_VRZPlayerInfoScore(DateTime.Now, "joe", "shmo", "js", "j@s.com", 0, 0, 0, 0);
         }
+       
 
 
         _scoreGrabber = PersistantScoreGrabber.Instance;
@@ -58,29 +61,65 @@ public class PersistantDataChecker : MonoBehaviour
             if (CurPlayerPoints == null)
             {
                 CurPlayerPoints = _scoreGrabber.Get_Data_Player();
+              
             }
         }
 
-        _playerData.GetCurPlayerDataObj().FinalScore = CurPlayerPoints.score;
-        _playerData.GetCurPlayerDataObj().FinalKills = CurPlayerPoints.kills;
-        _playerData.GetCurPlayerDataObj().FinalHeadShots = CurPlayerPoints.headshots;
-        _playerData.GetCurPlayerDataObj().FinalDeaths = CurPlayerPoints.deaths;
+        if (_playerData != null)
+        {
+            _playerData.GetCurPlayerDataObj().FinalScore = CurPlayerPoints.score;
+            _playerData.GetCurPlayerDataObj().FinalKills = CurPlayerPoints.kills;
+            _playerData.GetCurPlayerDataObj().FinalHeadShots = CurPlayerPoints.headshots;
+            _playerData.GetCurPlayerDataObj().FinalDeaths = CurPlayerPoints.deaths;
 
-        txt = "             Please Keep your Headset on." + "\n" +
-                      "             Wait for Store Staff." + "\n" +
-                      "       Final Score______  " + CurPlayerPoints.score + "\n" +
-                      "       Zombies Killed___  " + CurPlayerPoints.kills + "\n" +
-                      "       Points Lost______  " + CurPlayerPoints.pointslost + "\n";
-        ButtonNewGame = new Rect(Xplace1, Line1, TextBoxDimentionsWidth, ToggleDimentions);
-        ButtonAgain = new Rect(Xplace4, Line1, TextBoxDimentionsWidth, ToggleDimentions);
+            txt = "             Please Keep your Headset on." + "\n" +
+                          "             Wait for Store Staff." + "\n" +
+                          " Final Score______  " + CurPlayerPoints.score + "\n" +
+                          " Zombies Killed___  " + CurPlayerPoints.kills + "\n" +
+                          " headshots______  " + CurPlayerPoints.headshots + "\n"+
+                          " deaths  " + CurPlayerPoints.deaths + "\n";
+
+            SAVE_playerDataToFile(_playerData.GetCurPlayerDataObj());
+
+        }
+        else {
+
+            _TESTPlayerScoreobj.FinalScore = CurPlayerPoints.score;
+            _TESTPlayerScoreobj.FinalKills = CurPlayerPoints.kills;
+            _TESTPlayerScoreobj.FinalHeadShots = CurPlayerPoints.headshots;
+            _TESTPlayerScoreobj.FinalDeaths = CurPlayerPoints.deaths;
+
+            txt = "             Please Keep your Headset on." + "\n" +
+                          "             Wait for Store Staff." + "\n" +
+                          " Final Score______  " + _TESTPlayerScoreobj.FinalScore + "\n" +
+                          " Zombies Killed___  " + _TESTPlayerScoreobj.FinalKills + "\n" +
+                          " headshots______  " + CurPlayerPoints.headshots + "\n" +
+                          " deaths  " + CurPlayerPoints.deaths + "\n";
+
+            SAVE_playerDataToFile(_TESTPlayerScoreobj);
+        }
+
+
+
+            ButtonNewGame = new Rect(Xplace1, Line1, TextBoxDimentionsWidth, ToggleDimentions);
+            ButtonAgain = new Rect(Xplace4, Line1, TextBoxDimentionsWidth, ToggleDimentions);
+
+
+    }
+
+    void SAVE_playerDataToFile(Data_VRZPlayerInfoScore argThisData) {
+       _sessionSaver.SaveIt(argThisData);
     }
 
     private void OnGUI()
     {
+        GUI.TextField ( new Rect(20,200,300,400),txt, GUIStyle.none);
+      //  if(_playerData!=null)
         if (GUI.Button(ButtonNewGame, "newGame"))
         {
             PlayNewGame();
         }
+      //  if(_scoreGrabber!=null)
         if (GUI.Button(ButtonAgain, "Re play"))
         {
             PlayAgain();

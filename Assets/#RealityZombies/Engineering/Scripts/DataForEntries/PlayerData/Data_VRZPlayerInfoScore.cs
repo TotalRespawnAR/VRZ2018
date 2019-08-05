@@ -12,7 +12,7 @@ public class Data_VRZPlayerInfoScore
     public int FinalKills;
     public int FinalHeadShots;
     public int FinalDeaths;
-    public string SessionTime;
+    public string GameTime;
 
     public Data_VRZPlayerInfoScore()
     {
@@ -27,7 +27,7 @@ public class Data_VRZPlayerInfoScore
         PlayerLastName = ln;
         PlayerUserName = un;
         PlayerEmail = em;
-        SessionTime = SessionTimeStampFormatter(dt);
+        GameTime = SessionTimeStampFormatter(dt);
         FinalScore = vrzScore;
         FinalKills = vrzKills;
         FinalHeadShots = vrzHeadshot;
@@ -44,6 +44,6 @@ public class Data_VRZPlayerInfoScore
     string SessionTimeStampFormatter(DateTime argDatetime)
     {
         //'s' is "Sortable" date format. Output looks like 2008-04-10T06:30:00
-        return "sessiontime=" + argDatetime.ToString("s");
+        return  argDatetime.ToString("s");
     }
 }
