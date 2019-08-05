@@ -264,17 +264,21 @@ public class StemPlayerHandsCTRL : MonoBehaviour, IPlayerHandsCTRL
     void Fires_EquippedGun()
     {
         if (_curEquippedIGun != null)
+        {
             _curEquippedIGun.GUN_FIRE();
+        }
     }
     void FireStops_EquippedGun()
     {
         if (_curEquippedIGun != null)
+        {
             _curEquippedIGun.GUN_STOP_FIRE();
+        }
     }
     void Reloads_EuippedGUn()
     {
-        if (_curEquippedIGun != null)
-            GameEventsManager.Instance.CallTutoPlayerreloaded();
+        //if (_curEquippedIGun != null)
+        //    GameEventsManager.Instance.CallTutoPlayerreloaded();
         _curEquippedIGun.FullReplacementOfMag();
 
     }
@@ -745,7 +749,11 @@ public class StemPlayerHandsCTRL : MonoBehaviour, IPlayerHandsCTRL
     void SwitchOcclusion()
     {
         One234++;
-        if (One234 > 4) One234 = 0;
+        if (One234 > 4)
+        {
+            One234 = 0;
+        }
+
         GameEventsManager.Instance.CAll_Matchange(One234);
 
     }

@@ -418,10 +418,10 @@ public class ViveGunBundle : MonoBehaviour, IBundle
     }
     void Reloads_EuippedGUn()
     {
-        if (CurGunScript != null)
-        {
-            GameEventsManager.Instance.CallTutoPlayerreloaded();
-        }
+        //if (CurGunScript != null)
+        //{
+        //    GameEventsManager.Instance.CallTutoPlayerreloaded();
+        //}
 
         CurGunScript.FullReplacementOfMag();
 

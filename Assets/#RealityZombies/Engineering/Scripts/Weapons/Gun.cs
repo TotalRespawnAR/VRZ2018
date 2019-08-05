@@ -400,7 +400,7 @@ public class Gun : MonoBehaviour, IGun
 
     public void CheckForEmptyMag_andMaybeReload(bool argOverride)
     {
-        if (argOverride)
+        if (GameSettings.Instance.UseBabyGun)
         {
             return;
         }
