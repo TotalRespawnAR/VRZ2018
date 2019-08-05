@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerEntryUI : MonoBehaviour {
+public class PlayerEntryUI : MonoBehaviour
+{
 
- 
- 
+
+
     //      y                                         .     y
     //      |                                         .     |                                         .
     //  ....x                                         . ....x                                         
@@ -29,6 +28,7 @@ public class PlayerEntryUI : MonoBehaviour {
     float Xspace = 5f;
     float Yspace = 5f;
     float TextBoxDimentionsWidth = 120f; //=12 chars round to 10 
+    float TextBoxDimentionsWidth2 = 220f; //=12 chars round to 10 
     float TextBoxDimentionsHeight = 20f;
     float ToggleDimentions = 20f;
     float PosX = 10;
@@ -52,7 +52,7 @@ public class PlayerEntryUI : MonoBehaviour {
     float Xplace3 = 210f;
     float Xplace4 = 310f;
     float Xplace5 = 410f;
- 
+
     Rect Lable_firstName;
     Rect Box_FirstName;
 
@@ -85,10 +85,10 @@ public class PlayerEntryUI : MonoBehaviour {
         Lable_Email = new Rect(Xplace1, Line3, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         Lable_UserName = new Rect(Xplace1, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
 
-        Box_FirstName = new Rect(Xplace3, Line1, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
-        Box_LastName = new Rect(Xplace3, Line2, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
-        Box_Email = new Rect(Xplace3, Line3, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
-        Box_UserName = new Rect(Xplace3, Line4, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+        Box_FirstName = new Rect(Xplace3, Line1, TextBoxDimentionsWidth2, TextBoxDimentionsHeight);
+        Box_LastName = new Rect(Xplace3, Line2, TextBoxDimentionsWidth2, TextBoxDimentionsHeight);
+        Box_Email = new Rect(Xplace3, Line3, TextBoxDimentionsWidth2, TextBoxDimentionsHeight);
+        Box_UserName = new Rect(Xplace3, Line4, TextBoxDimentionsWidth2, TextBoxDimentionsHeight);
 
         ButtonNext = new Rect(Xplace1, Line5, TextBoxDimentionsWidth, ToggleDimentions);
         ButtonClearAll = new Rect(Xplace2, Line5, TextBoxDimentionsWidth, ToggleDimentions);
@@ -98,7 +98,7 @@ public class PlayerEntryUI : MonoBehaviour {
 
     private void OnDisable()
     {
-    
+
 
     }
 
@@ -106,15 +106,15 @@ public class PlayerEntryUI : MonoBehaviour {
 
     private void Start()
     {
- 
+
     }
     private void OnGUI()
     {
 
         str_fn = GUI.TextField(Box_FirstName, str_fn);
-        GUI.TextArea(Lable_firstName, "first name",GUIStyle.none);
+        GUI.TextArea(Lable_firstName, "first name", GUIStyle.none);
 
-        str_ln =GUI.TextField(Box_LastName, str_ln);
+        str_ln = GUI.TextField(Box_LastName, str_ln);
         GUI.TextArea(Lable_LastName, "last name", GUIStyle.none);
 
         str_email = GUI.TextField(Box_Email, str_email);
@@ -125,20 +125,16 @@ public class PlayerEntryUI : MonoBehaviour {
         GUI.TextArea(Lable_UserName, "user name", GUIStyle.none);
 
 
-        if (GUI.Button(ButtonNext, "next"))
+        if (GUI.Button(ButtonNext, "Play"))
         {
             GoToScene();
         }
 
         //if (GUI.Button(ButtonClearAll, "clearall"))
         //{
-            
+
         //}
 
-        if (GUI.Button(ButtonPlayAgain, "replay"))
-        {
-             
-        }
     }
     void GoToScene()
     {
@@ -148,11 +144,11 @@ public class PlayerEntryUI : MonoBehaviour {
         PersistantPlayerEntry.Instance.UpdateUsertName(str_un);
 
 
-       // Debug.Log(PersistantPlayerEntry.Instance.ToString() + stringToEdit);
+        // Debug.Log(PersistantPlayerEntry.Instance.ToString() + stringToEdit);
 
         SceneManager.LoadScene("RunThisVRGame");
     }
 
- 
+
 
 }
