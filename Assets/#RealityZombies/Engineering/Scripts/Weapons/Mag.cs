@@ -25,7 +25,7 @@ public class Mag : MonoBehaviour, IMag
     }
 
 
-    public bool TryDecrementBulletCount(bool argSlowtimeOn)
+    public bool TryDecrementBulletCount()
     {
         if (GameSettings.Instance.Controlertype == ARZControlerType.StrikerControlSystem)
         {
@@ -39,7 +39,7 @@ public class Mag : MonoBehaviour, IMag
         {
             if (GameSettings.Instance != null)
             {
-                if (GameSettings.Instance.IsTestModeON || GameSettings.Instance.IsIsGodModeON || argSlowtimeOn)
+                if (GameSettings.Instance.UseBabyGun)
                 {
                     return true;
                 }

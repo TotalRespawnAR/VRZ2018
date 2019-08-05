@@ -42,7 +42,7 @@ public class MagazineMNGR : MonoBehaviour
         if (curMagInGun == null) { return false; }
         // Debug.Log("-1");
         TestCurMagValidity();
-        return curMagInGun.TryDecrementBulletCount(argSlowTimeOnOverride);
+        return curMagInGun.TryDecrementBulletCount();
     }
 
 
