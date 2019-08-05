@@ -17,7 +17,10 @@ public class SessionDataManager : MonoBehaviour {
     // C:/Users/juliePC/AppData/LocalLow/Total Respawn/ARZHaloloween
     string AllSessionsFileName="ARZAllSessions";
 
-    string ArzDirPath
+
+
+
+string ArzDirPath
     {
         get
         {

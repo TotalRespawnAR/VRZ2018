@@ -11,7 +11,7 @@ using Windows.Storage;
 #endif
 
 public class FilePathTest : MonoBehaviour {
-    /*
+    /*\\DESKTOP-A8JUUIJ\Shared_MainPC
     string dirPath = @"C:\Users\Nabil\Desktop\"; 
     string DesktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + @"\RZDataFolder";
 

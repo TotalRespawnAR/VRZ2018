@@ -141,7 +141,7 @@ public class SettingsMenu : MonoBehaviour
         GameSettings.Instance.UseFirSky = GUI.Toggle(UseFireSky, GameSettings.Instance.UseFirSky, "fireSky");
         GameSettings.Instance.UseFlies2 = GUI.Toggle(UseFlies2, GameSettings.Instance.UseFirSky, "swarm");
 
-        if (GUI.Button(ButtonNext, "next"))
+        if (GUI.Button(ButtonNext, "playerEntry"))
         {
             GoToScene();
         }
@@ -149,7 +149,7 @@ public class SettingsMenu : MonoBehaviour
     void GoToScene()
     {
 
-        SceneManager.LoadScene("RunThisVRGame");
+        SceneManager.LoadScene("PlayerEntry");
     }
 
 }

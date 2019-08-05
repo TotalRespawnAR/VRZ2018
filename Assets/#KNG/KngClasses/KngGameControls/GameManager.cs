@@ -877,7 +877,7 @@ public class GameManager : MonoBehaviour
         _suddenDeathFlagIsUp = false;
         // Destroy(ScoreBoardRef);
         // SceneManager.LoadScene("KngSetupMenu");
-        SceneManager.LoadScene("DataEntry");
+        SceneManager.LoadScene("DataEntryV2");
     }
 
     //called by level manager

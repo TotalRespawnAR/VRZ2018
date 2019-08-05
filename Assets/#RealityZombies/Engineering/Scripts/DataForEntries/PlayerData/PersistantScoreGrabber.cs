@@ -114,6 +114,7 @@ public class PersistantScoreGrabber : MonoBehaviour {
     public Data_PlayerPoints Get_Data_Player() { return this.CurPlayerPoints; }
 
     public void Clear_DataPoints() {
+        //doGrabScore is called in Gamemanager when game ends , the persistant scoregrabber jst makes a new  CurPlayerpoint object
         CurPlayerPoints = null;
     }
 }
