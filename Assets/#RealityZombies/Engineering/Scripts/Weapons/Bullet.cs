@@ -270,6 +270,27 @@ public class Bullet : MonoBehaviour
             }
 
 
+            if (hitInfo.collider.gameObject.CompareTag("Player2"))
+            {
+#if ENABLE_DEBUGLOG
+                Debug.Log("a bullet in the NONE");
+#endif
+
+                BreakTheStreak();
+
+                IShootable Ishot = hitInfo.collider.gameObject.GetComponentInParent<IShootable>();
+                if (Ishot == null)
+                {
+                    Debug.LogError("oh must be an player2 " + hitInfo.collider.gameObject.name);
+                }
+                else
+                {
+                    Ishot.Shot(this);
+                    return;
+                }
+
+                return;
+            }
 
 
 

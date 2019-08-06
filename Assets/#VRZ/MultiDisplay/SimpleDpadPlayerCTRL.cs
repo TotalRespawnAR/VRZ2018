@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SimpleDpadPlayerCTRL : MonoBehaviour
+public class SimpleDpadPlayerCTRL : MonoBehaviour, IShootable
 {
 
     private Transform m_Cam;                  // A reference to the main camera in the scenes transform
@@ -9,6 +9,7 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     public Rigidbody m_Rigidbody;
     public Animator m_Animator;
+    public Animator m_AnimatorMesh;
     public float VertValue;
     public float HorValue;
     public bool PressA;
@@ -20,19 +21,29 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour
     public bool isGrounded;
     public float Yrbvel;
     RigidbodyConstraints originalConstrains;
+
+    public GameObject FireBAll;
+    FireBallProjectile fbp;
+    Transform RightHandTrans;
+    Transform CamTarget;
+
+    bool IsVisible = false;
     private void Start()
     {
+        CamTarget = GameObject.FindGameObjectWithTag("Player").transform;
         _gs = GameSettings.Instance;
 
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Animator = GetComponent<Animator>();
         originalConstrains = m_Rigidbody.constraints;
+        RightHandTrans = m_Animator.GetBoneTransform(HumanBodyBones.RightHand);
     }
     bool highPt = false;
 
 
     private void Update()
     {
+
         UpdateAnimator();
     }
 
@@ -40,7 +51,14 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
+
+        if (PressY) { SetAlive(false); }
+        if (PressX) { SetAlive(true); }
+
+        transform.LookAt(CamTarget);
         Yrbvel = m_Rigidbody.velocity.y;
+
+
         ReadPlayer2Inputs();
         if (PressA && isGrounded)
         {
@@ -151,13 +169,42 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour
         if (argJumpAimFinished == 0)
         {
             RigidBodyJump();
+            m_Animator.SetTrigger("TrigThrow");
         }
         else
             if (argJumpAimFinished == 1)
         {
             print("time to shoot");
-
-
+            m_Animator.ResetTrigger("TrigThrow");
+            SpawnErekiBall();
         }
+        else if (argJumpAimFinished == 2)
+        {
+            fbp.ReleaseTheProjectile();
+        }
+    }
+
+    void SpawnErekiBall()
+    {
+        GameObject ball = Instantiate(FireBAll, RightHandTrans.position, Quaternion.identity);
+        fbp = ball.GetComponent<FireBallProjectile>();
+        ball.transform.parent = RightHandTrans;
+    }
+
+    public void SetAlive(bool argIsAlive)
+    {
+        IsVisible = argIsAlive;
+
+        m_AnimatorMesh.SetBool("isVisible", IsVisible);
+    }
+
+    public void Shot(Bullet argBullet)
+    {
+        print("ouch");
+    }
+
+    public void aimed(bool argTF)
+    {
+        throw new System.NotImplementedException();
     }
 }

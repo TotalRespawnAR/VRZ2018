@@ -213,6 +213,8 @@ public class EnemySpinnerProjectile : MonoBehaviour, IShootable
 
 
     }
+    bool isReleased;
+    public void ReleaseTheProjectile() { }
     //bool CheckIfPAssedPlayer()
     //{
     //    DistTraveled = Vector3.Distance(transform.position, _originalPlayerPos_V3);
