@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5534570645703160853}
   - component: {fileID: 5534570645711353925}
   - component: {fileID: 5534570645697884230}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Player2BigMutant
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Rigidbody: {fileID: 0}
   m_Animator: {fileID: 0}
+  m_AnimatorMesh: {fileID: 943469870985792312}
   VertValue: 0
   HorValue: 0
   PressA: 0
@@ -710,6 +711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7877487211553351942}
   - component: {fileID: 7877487211556829290}
+  - component: {fileID: 943469870985792312}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -816,6 +818,25 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.11974758, y: -0.00081795454, z: -0.035017595}
     m_Extent: {x: 1.3712656, y: 0.93067163, z: 0.35254145}
   m_DirtyAABB: 0
+--- !u!95 &943469870985792312
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7877487211553649958}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61c67189c3f4ee84fa01b3d6c13266de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7877487211553649960
 GameObject:
   m_ObjectHideFlags: 0

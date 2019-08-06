@@ -52,8 +52,8 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour, IShootable
     private void FixedUpdate()
     {
 
-        if (PressY) { SetAlive(false); }
-        if (PressX) { SetAlive(true); }
+        if (PressY) { SetVisiblePlz(false); }
+        if (PressX) { SetVisiblePlz(true); }
 
         transform.LookAt(CamTarget);
         Yrbvel = m_Rigidbody.velocity.y;
@@ -68,6 +68,7 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour, IShootable
 
     void ReadPlayer2Inputs()
     {
+        if (!canMove) return;
         if (_gs != null)
         {
             if (_gs.UseXboxCTRL) { UseXboxCTRL(); } else { UseKeyboard(); }
@@ -191,16 +192,30 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour, IShootable
         ball.transform.parent = RightHandTrans;
     }
 
-    public void SetAlive(bool argIsAlive)
+    public void SetVisiblePlz(bool argIsAlive)
     {
         IsVisible = argIsAlive;
 
         m_AnimatorMesh.SetBool("isVisible", IsVisible);
     }
 
+    bool canMove = false;
+    public void AllowInputs(bool argCanMove) { canMove = argCanMove; }
+
+    int Shotsmax = 5;
+
+    public void ResetShotCount()
+    {
+        Shotsmax = 5;
+    }
     public void Shot(Bullet argBullet)
     {
         print("ouch");
+        Shotsmax--;
+        if (Shotsmax <= 0)
+        {
+            GameEventsManager.Instance.CALL_Player2Died();
+        }
     }
 
     public void aimed(bool argTF)

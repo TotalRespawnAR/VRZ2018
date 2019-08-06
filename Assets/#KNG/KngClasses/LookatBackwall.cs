@@ -62,7 +62,13 @@ public class LookatBackwall : MonoBehaviour
         else
         if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            other.gameObject.GetComponentInParent<EnemySpinnerProjectile>().TellAxeItPassedPlayer();
+            EnemySpinnerProjectile ep = other.gameObject.GetComponentInParent<EnemySpinnerProjectile>();
+            if (ep != null)
+                ep.TellAxeItPassedPlayer();
+
+            FireBallProjectile fbp = other.gameObject.GetComponentInParent<FireBallProjectile>();
+            if (fbp != null)
+                fbp.TellFireBallItPassedPlayer();
         }
     }
 

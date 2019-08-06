@@ -25,7 +25,6 @@ public class GameEventsManager : MonoBehaviour
     }
 
 
-
     public delegate void GunFlavorChanged(GunType argGunType);
     public static event GunFlavorChanged OnGunSetChanged;
     public static void Call_GunSetChangeTo(GunType argGunType)
@@ -198,6 +197,12 @@ public class GameEventsManager : MonoBehaviour
 
 
 
+    public delegate void PLAYER2DIED();
+    public static event PLAYER2DIED OnPlayer2Died;
+    public void CALL_Player2Died()
+    {
+        if (OnPlayer2Died != null) OnPlayer2Died();
+    }
     public delegate void EventShooterMissedt();
     public static EventShooterMissedt OnShooterMissed;
     public void Call_ShooterMissed()
