@@ -68,12 +68,26 @@ public class GameManager : MonoBehaviour
 
         }
         if (GameSettings.Instance.UseFlies)
+        {
             InvokeRepeating("SpawnSwarm", 10, 30);
+        }
+
         if (GameSettings.Instance.UseFlies2)
+        {
             SpawnFlock();
+        }
 
+        if (GameSettings.Instance.UsePlayer2)
+        {
 
+            Player2Capsule.SetActive(true);
 
+        }
+        else
+        {
+            Player2Capsule.SetActive(false);
+
+        }
     }
     private void OnDisable()
     {
@@ -89,6 +103,7 @@ public class GameManager : MonoBehaviour
     public ViveGunBundle FPsGUNS;
     public GameObject ControllerR;
     public GameObject ControllerL;
+    public GameObject Player2Capsule;
 
     public List<GameObject> ElevatorWallsMeshs;
     public void Spawn_GunProp(GunType argGunType, Transform Zhand, Quaternion WorldRotOfOriginalGUn)
@@ -1227,7 +1242,9 @@ public class GameManager : MonoBehaviour
         if (GameSettings.Instance.UseFirSky)
         {
             if (Meteorshower == null)
+            {
                 Meteorshower = Instantiate(_enemyModelsRepo_Compo.MeteorShower);
+            }
         }
     }
 
