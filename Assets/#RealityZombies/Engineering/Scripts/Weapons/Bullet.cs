@@ -211,7 +211,7 @@ public class Bullet : MonoBehaviour
 
     public void NewStartWithAngle()
     {
-        layer_mask = LayerMask.GetMask("Enemy", "Target"); //, "GridMap"
+        layer_mask = LayerMask.GetMask("Enemy", "Target", "GridMap"); //,
         if (GameManager.Instance != null)
         {
             if (GameManager.Instance.KngGameState == ARZState.WavePlay)

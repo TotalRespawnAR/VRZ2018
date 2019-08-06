@@ -17,7 +17,7 @@ public class Player2Spawner : MonoBehaviour
     {
         GameEventsManager.OnPlayer2Died -= HandlePlayer2Died;
     }
-    void Start()
+    void Awake()
     {
         if (GameSettings.Instance.UsePlayer2)
         {
@@ -25,6 +25,8 @@ public class Player2Spawner : MonoBehaviour
             _cameraPlayer2 = GameObject.FindGameObjectWithTag("Player2Cam");
             _player2CampPos = GameObject.FindGameObjectWithTag("Player2CamPos");
             _Player2 = GameObject.FindGameObjectWithTag("Player2");
+
+            dpd = _Player2.GetComponent<SimpleDpadPlayerCTRL>();
         }
     }
 
@@ -34,7 +36,6 @@ public class Player2Spawner : MonoBehaviour
         if (GameSettings.Instance.UsePlayer2)
         {
 
-            dpd = _Player2.GetComponent<SimpleDpadPlayerCTRL>();
             dpd.SetVisiblePlz(true);
             dpd.AllowInputs(true);
             _cameraPlayer2.transform.parent = _player2CampPos.transform;

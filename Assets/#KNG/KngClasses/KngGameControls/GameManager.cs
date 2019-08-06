@@ -11,6 +11,7 @@ using Valve.VR;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
+    public Player2Spawner p2spawner;
     private void OnEnable()
     {
         GameEventsManager.OnGameObjectAnchoredPlaced += ListenTo_AnchoresPlaced;
@@ -81,7 +82,7 @@ public class GameManager : MonoBehaviour
         {
 
             Player2Capsule.SetActive(true);
-
+            p2spawner.DoSpawnPlayer2();
         }
         else
         {
@@ -467,6 +468,14 @@ public class GameManager : MonoBehaviour
     {
         // _sceneObjectMnger_Compo.Anchor_StemBase();
         // _sceneObjectMnger_Compo.Anchor_Land();
+
+
+
+        if (GameSettings.Instance.UsePlayer2)
+        {
+
+            p2spawner.DoSpawnPlayer2();
+        }
         if (UseElevator)
         {
             StartCoroutine(StartElevator());
@@ -631,15 +640,15 @@ public class GameManager : MonoBehaviour
         //argDataEnemy.InitialRotEuler = new Vector3(0f, 180f, 0f);
 
         GameObject NEwZombie = new GameObject("very BROKKKEN"); // _spawningMNGR.NEWenemy_willNeed_Datapath(argDataEnemy, _LevelMANAGER.Get_Cur_iLEvel().Get_WaveLevelNumber() - 1, GEtcahedAB());
-        /*
-        if (argDataEnemy.Ztype_STD == ARZombieypes.GRAVER)
-        {
-            GameObject dirt = Instantiate(NEwZombie.GetComponent<ZombieEffects>().DirtEffect, NEwZombie.transform.position, Quaternion.identity);
-            Destroy(dirt, 5f);
-        }
+                                                                /*
+                                                                if (argDataEnemy.Ztype_STD == ARZombieypes.GRAVER)
+                                                                {
+                                                                    GameObject dirt = Instantiate(NEwZombie.GetComponent<ZombieEffects>().DirtEffect, NEwZombie.transform.position, Quaternion.identity);
+                                                                    Destroy(dirt, 5f);
+                                                                }
 
-        _enemiesManager.AddLiveZombie(NEwZombie);
-        _scoreManager.Increment_ZombiesCreated();*/
+                                                                _enemiesManager.AddLiveZombie(NEwZombie);
+                                                                _scoreManager.Increment_ZombiesCreated();*/
         return NEwZombie;
     }
     //percent splay changes on wave ;
@@ -691,9 +700,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
 
-   //THIS IS THE ONE TO USE FOR REQ AXE GUY in tuto
+
+    //THIS IS THE ONE TO USE FOR REQ AXE GUY in tuto
     public GameObject Req_axeguyOnANY( int row, int argCol)
     {
         GameObject CreatedAxeGuyOnSpwan = _spawningMNGR.CreateTutoAxeOnANY(new Vector3(0f, 180f, 0f), row ,argCol  , _WPstruct ); //find the kngnode at col row to giv the zombie as a startingpoint

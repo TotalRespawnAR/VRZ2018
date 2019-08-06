@@ -1133,7 +1133,7 @@ GameObject:
   - component: {fileID: 78624614}
   - component: {fileID: 78624613}
   - component: {fileID: 78624612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2077,40 +2077,6 @@ Transform:
   m_Father: {fileID: 556944896}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: -10.940001, y: -79.86301, z: 6.4210005}
---- !u!21 &145905054
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &148155049
 GameObject:
   m_ObjectHideFlags: 0
@@ -7445,7 +7411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 198584909}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fences (Mid)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13116,6 +13082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a205b8b623529d4985a6485b35e9a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p2spawner: {fileID: 356584205}
   FakeStones: {fileID: 905109647}
   ViveArenaObj: {fileID: 793345971}
   FirstPersonObj: {fileID: 8740782848828869606}
@@ -13367,7 +13334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281873574}
   - component: {fileID: 281873575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14484,6 +14451,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341142871}
   m_Mesh: {fileID: 4300000, guid: 17c709794f5e9f94983235cfcc50f32e, type: 3}
+--- !u!114 &356584205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 519468778767957289, guid: 08ebfee2eb0822e4ab7ff24513e69c7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1544035467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e22b540fd2ce2e4f8837ab1fcf2ffd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &359446998
 GameObject:
   m_ObjectHideFlags: 0
@@ -15134,7 +15113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390413509}
   - component: {fileID: 390413510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15291,7 +15270,7 @@ GameObject:
   - component: {fileID: 392918467}
   - component: {fileID: 392918466}
   - component: {fileID: 392918465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_A (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15391,7 +15370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402984422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fences (Front)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15432,7 +15411,7 @@ GameObject:
   - component: {fileID: 404481028}
   - component: {fileID: 404481027}
   - component: {fileID: 404481026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15616,7 +15595,7 @@ GameObject:
   - component: {fileID: 413157978}
   - component: {fileID: 413157977}
   - component: {fileID: 413157976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15808,7 +15787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421439090}
   - component: {fileID: 421439091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Gate_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21275,7 +21254,7 @@ GameObject:
   - component: {fileID: 462204360}
   - component: {fileID: 462204359}
   - component: {fileID: 462204358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_A (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23328,7 +23307,7 @@ GameObject:
   - component: {fileID: 662904157}
   - component: {fileID: 662904156}
   - component: {fileID: 662904155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Gate_A_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23796,7 +23775,7 @@ GameObject:
   - component: {fileID: 697619266}
   - component: {fileID: 697619265}
   - component: {fileID: 697619264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Gate_A_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24884,7 +24863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797145098}
   - component: {fileID: 797145099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25511,7 +25490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 819516623}
   - component: {fileID: 819516624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26405,7 +26384,7 @@ GameObject:
   - component: {fileID: 866595721}
   - component: {fileID: 866595720}
   - component: {fileID: 866595719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26649,7 +26628,7 @@ GameObject:
   - component: {fileID: 872205809}
   - component: {fileID: 872205808}
   - component: {fileID: 872205807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Gate_A_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27939,7 +27918,7 @@ GameObject:
   - component: {fileID: 947903109}
   - component: {fileID: 947903108}
   - component: {fileID: 947903107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_A (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34311,6 +34290,166 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047481619}
   m_Mesh: {fileID: 4300006, guid: 3ba2d426b1f399a4a9cfaa5e362e5b97, type: 3}
+--- !u!43 &1047670024
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 9
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimized: 0
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1055589165
 GameObject:
   m_ObjectHideFlags: 0
@@ -35102,7 +35241,7 @@ GameObject:
   - component: {fileID: 1085052467}
   - component: {fileID: 1085052466}
   - component: {fileID: 1085052465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35267,12 +35406,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 145905054}
+      objectReference: {fileID: 1161581073}
     - target: {fileID: 5449956514580501854, guid: 2ca78a3da9465904db96f58ac5b9483e,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1464195249}
+      objectReference: {fileID: 1047670024}
     - target: {fileID: 5449956515463286567, guid: 2ca78a3da9465904db96f58ac5b9483e,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -36081,7 +36220,7 @@ GameObject:
   - component: {fileID: 1130017952}
   - component: {fileID: 1130017951}
   - component: {fileID: 1130017950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36465,7 +36604,7 @@ GameObject:
   - component: {fileID: 1137930496}
   - component: {fileID: 1137930495}
   - component: {fileID: 1137930494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36724,7 +36863,7 @@ GameObject:
   - component: {fileID: 1146253567}
   - component: {fileID: 1146253566}
   - component: {fileID: 1146253565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37067,6 +37206,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161033161}
   m_Mesh: {fileID: 4300000, guid: 897aa189ac6d70647ba1cec22c5f2b6d, type: 3}
+--- !u!21 &1161581073
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1169676569
 GameObject:
   m_ObjectHideFlags: 0
@@ -37616,7 +37789,7 @@ GameObject:
   - component: {fileID: 1205624840}
   - component: {fileID: 1205624839}
   - component: {fileID: 1205624838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38481,7 +38654,7 @@ GameObject:
   - component: {fileID: 1289261854}
   - component: {fileID: 1289261853}
   - component: {fileID: 1289261852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38578,7 +38751,7 @@ GameObject:
   - component: {fileID: 1295735484}
   - component: {fileID: 1295735483}
   - component: {fileID: 1295735482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38675,7 +38848,7 @@ GameObject:
   - component: {fileID: 1307400293}
   - component: {fileID: 1307400292}
   - component: {fileID: 1307400291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40325,166 +40498,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463221034}
   m_Mesh: {fileID: 4300014, guid: e63dd9175d8b1954cafd0679808bb39c, type: 3}
---- !u!43 &1464195249
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 9
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 2
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimized: 0
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1469154067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5449956515159479433, guid: 2ca78a3da9465904db96f58ac5b9483e,
@@ -41046,7 +41059,7 @@ GameObject:
   - component: {fileID: 1519662594}
   - component: {fileID: 1519662593}
   - component: {fileID: 1519662592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41906,7 +41919,7 @@ PrefabInstance:
     - target: {fileID: 519468778767957294, guid: 08ebfee2eb0822e4ab7ff24513e69c7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 519468778767957294, guid: 08ebfee2eb0822e4ab7ff24513e69c7e,
         type: 3}
@@ -42542,7 +42555,7 @@ GameObject:
   - component: {fileID: 1599038703}
   - component: {fileID: 1599038702}
   - component: {fileID: 1599038701}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_A (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43177,7 +43190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621815467}
   - component: {fileID: 1621815468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43439,7 +43452,7 @@ GameObject:
   - component: {fileID: 1632496267}
   - component: {fileID: 1632496266}
   - component: {fileID: 1632496265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43739,7 +43752,7 @@ GameObject:
   - component: {fileID: 1675302468}
   - component: {fileID: 1675302467}
   - component: {fileID: 1675302466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48523,7 +48536,7 @@ GameObject:
   - component: {fileID: 2013331630}
   - component: {fileID: 2013331629}
   - component: {fileID: 2013331628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49576,7 +49589,7 @@ GameObject:
   - component: {fileID: 2081165439}
   - component: {fileID: 2081165438}
   - component: {fileID: 2081165437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Struct_Fence1_Mid_B_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

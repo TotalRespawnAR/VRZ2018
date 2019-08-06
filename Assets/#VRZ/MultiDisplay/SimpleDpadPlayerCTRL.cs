@@ -113,10 +113,16 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour, IShootable
         HorValue = Input.GetAxis("xbxP2_JSL_Hor");
         //if (Input.GetButton("xbxP2_A")) { }
         //if (Input.GetButton("xbxP2_B")) { }
+
+
         PressA = Input.GetButton("xbxP2_A");
         PressB = Input.GetButton("xbxP2_B");
-        PressX = Input.GetButton("xbxP2_X");
-        PressY = Input.GetButton("xbxP2_Y");
+
+        if (_gs.UseNab)
+        {
+            PressX = Input.GetButton("xbxP2_X");
+            PressY = Input.GetButton("xbxP2_Y");
+        }
     }
 
     void USeArduinoCtrl() { }

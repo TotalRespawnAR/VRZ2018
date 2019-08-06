@@ -73,7 +73,7 @@ public class FireBallProjectile : MonoBehaviour, IShootable
         _originalPlayerPos_V3 = CamTarget.position;
         DistToCamAtBirth = Vector3.Distance(BirthPos, _originalPlayerPos_V3);
         transform.LookAt(_originalPlayerPos_V3);
-        _speedMove = 10.5f;
+        _speedMove = 20.5f;
         _midDistToWaypointTarget = 0.5f;
 
         AudioLoopTIme(2.0f);
