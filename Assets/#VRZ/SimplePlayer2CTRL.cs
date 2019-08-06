@@ -40,7 +40,7 @@ public class SimplePlayer2CTRL : MonoBehaviour
         transform.LookAt(new Vector3(Player1Trans.position.x, this.transform.position.y, Player1Trans.position.z));
         if (characterController.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = new Vector3(Input.GetAxis("Horizontal") * -1f, 0.0f, Input.GetAxis("Vertical") * -1f);
             moveDirection = moveDirection * movementSpeed;
         }
         //Gravity
