@@ -15,8 +15,6 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 #if UNITY_STANDALONE_WIN
 using Thrift.Unity;
@@ -48,17 +46,21 @@ namespace BlueprintReality.MixCast
             bool cantActivate = false;
 
             if (Instance != null)
+            {
                 cantActivate = true;
+            }
 
 #if UNITY_EDITOR
             if (!MixCastSdkData.ProjectSettings.enableMixCastInEditor)
+            {
                 cantActivate = true;
+            }
 #else
             if( MixCastSdkData.ProjectSettings.requireCommandLineArg && System.Array.IndexOf<string>(System.Environment.GetCommandLineArgs(), "-mixcast") == -1 )
                 cantActivate = true;
 #endif
 
-            if ( IntPtr.Size == 4 )
+            if (IntPtr.Size == 4)
             {
                 cantActivate = true;
                 Debug.LogWarning("MixCast is only compatible with 64 bit applications");
@@ -80,12 +82,16 @@ namespace BlueprintReality.MixCast
             }
 
             if (reparentToSceneRootOnStart)
+            {
                 transform.parent = null;
-            if (transform.parent == null)
-                DontDestroyOnLoad(gameObject);
+            }
+            //if (transform.parent == null)
+            //    DontDestroyOnLoad(gameObject);
 
             if (GetComponent<MixCastCameras>() == null)
+            {
                 gameObject.AddComponent<MixCastCameras>();
+            }
 
             Instance = this;
 
@@ -126,7 +132,9 @@ namespace BlueprintReality.MixCast
         private void OnDisable()
         {
             if (!Initialized)
+            {
                 return;
+            }
 
             MixCastSdk.Active = false;
 
