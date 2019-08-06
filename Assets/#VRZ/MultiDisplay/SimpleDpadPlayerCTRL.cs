@@ -16,12 +16,17 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour
     public bool PressX;
     public bool PressY;
     GameSettings _gs;
+    public float jumpSpeed = 5f;
+    public bool isGrounded;
+    public float Yrbvel;
+    RigidbodyConstraints originalConstrains;
     private void Start()
     {
         _gs = GameSettings.Instance;
 
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Animator = GetComponent<Animator>();
+        originalConstrains = m_Rigidbody.constraints;
     }
     bool highPt = false;
 
@@ -35,8 +40,12 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
+        Yrbvel = m_Rigidbody.velocity.y;
         ReadPlayer2Inputs();
-
+        if (PressA && isGrounded)
+        {
+            AnimateJump();
+        }
     }
 
     void ReadPlayer2Inputs()
@@ -99,5 +108,56 @@ public class SimpleDpadPlayerCTRL : MonoBehaviour
     {
         m_Animator.SetFloat("VertFloat", VertValue);
         m_Animator.SetFloat("HoriFloat", HorValue);
+        m_Animator.SetBool("GroundedBool", isGrounded);
+        m_Animator.SetFloat("RbVertVelo", Yrbvel);
+    }
+
+    void RigidBodyJump()
+    {
+        print("forc up");
+
+        m_Rigidbody.AddForce(new Vector3(0, 2, 0) * jumpSpeed, ForceMode.Impulse);
+        isGrounded = false;
+        m_Animator.ResetTrigger("TrigJump");
+    }
+
+    void AnimateJump()
+    {
+        if (isGrounded)
+        {
+            //  m_Rigidbody.isKinematic = false;
+            m_Animator.SetTrigger("TrigJump");
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == ("SpatialMesh") && isGrounded == false)
+        {
+            isGrounded = true;
+            m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
+
+            //m_Rigidbody.isKinematic = true;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (isGrounded) m_Rigidbody.constraints = originalConstrains;
+    }
+    public void AnimEvent(int argJumpAimFinished)
+    {
+
+        if (argJumpAimFinished == 0)
+        {
+            RigidBodyJump();
+        }
+        else
+            if (argJumpAimFinished == 1)
+        {
+            print("time to shoot");
+
+
+        }
     }
 }
