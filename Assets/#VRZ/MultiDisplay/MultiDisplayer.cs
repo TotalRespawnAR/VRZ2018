@@ -8,6 +8,8 @@ public class MultiDisplayer : MonoBehaviour
                         // Start is called before the first frame update
     void Start()
     {
+        MCam = Camera.main;
+        Scam = GameObject.FindGameObjectWithTag("Player2Cam").GetComponent<Camera>();
         if (GameSettings.Instance.UsePlayer2)
         {
             Debug.Log("displays connected: " + Display.displays.Length);
