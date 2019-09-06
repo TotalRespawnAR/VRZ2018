@@ -81,15 +81,30 @@ public class KngViveController : MonoBehaviour
 
     private void OnNextGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
-        //print("right");
-        RightHandBundle.PlayerHand_Main_gun();
+
+        if (GameSettings.Instance.ISimpleGunSwapn)
+        {
+            RightHandBundle.SwapToOtherGun();
+        }
+        else
+        {
+            //print("right");
+            RightHandBundle.PlayerHand_Main_gun();
+        }
     }
 
     private void OnPrevGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
+        if (GameSettings.Instance.ISimpleGunSwapn)
+        {
+            RightHandBundle.SwapToOtherGun();
+        }
+        else
+        {
+            //print("left");
+            RightHandBundle.PlayerHand_Secondary_gun();
+        }
 
-        //print("left");
-        RightHandBundle.PlayerHand_Secondary_gun();
     }
 
     private void OnNextScopeClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)

@@ -72,7 +72,7 @@ public class SettingsMenu : MonoBehaviour
     Rect UseFlies;
     Rect UseFlies2;
     Rect UseFireSky;
-
+    Rect UseSingleButtonReload;
     Rect ButtonNext;
 
     private void OnEnable()
@@ -105,6 +105,7 @@ public class SettingsMenu : MonoBehaviour
         UseFlies = new Rect(Xplace1, Line5, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseFlies2 = new Rect(Xplace2, Line5, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         UseFireSky = new Rect(Xplace3, Line5, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
+        UseSingleButtonReload = new Rect(Xplace4, Line5, TextBoxDimentionsWidth, TextBoxDimentionsHeight);
         ButtonNext = new Rect(Xplace4, Line8, TextBoxDimentionsWidth, ToggleDimentions);
     }
 
@@ -140,6 +141,8 @@ public class SettingsMenu : MonoBehaviour
         GameSettings.Instance.UseFlies = GUI.Toggle(UseFlies, GameSettings.Instance.UseFlies, "swarmOn");
         GameSettings.Instance.UseFirSky = GUI.Toggle(UseFireSky, GameSettings.Instance.UseFirSky, "fireSky");
         GameSettings.Instance.UseFlies2 = GUI.Toggle(UseFlies2, GameSettings.Instance.UseFirSky, "swarm");
+
+        GameSettings.Instance.ISimpleGunSwapn = GUI.Toggle(UseSingleButtonReload, GameSettings.Instance.ISimpleGunSwapn, "1 butt Rel");
 
         if (GUI.Button(ButtonNext, "playerEntry"))
         {

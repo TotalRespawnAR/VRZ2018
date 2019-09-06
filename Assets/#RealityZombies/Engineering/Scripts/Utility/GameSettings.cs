@@ -182,7 +182,7 @@ public class GameSettings : MonoBehaviour
             //WaveGraveRates = new int[8] { 6000, 5, 4, 2, 1, 3, 2, 2 };
 
             Wave_Enemy_HItPoints_HP = new int[8] { 100, 200, 300, 400, 500, 4, 4, 4 };
-            WaveMaxe_Standards_OnScreen = new int[8] { 10, 15, 18, 20, 22, 25, 18, 18 };
+            WaveMaxe_Standards_OnScreen = new int[8] { 10, 14, 16, 18, 22, 25, 18, 18 };
             WaveMaxe_Graverrrs_OnScreen = new int[8] { 5, 10, 10, 10, 10, 10, 18, 18 };
             WaveMaxe_Sprinters_OnScreen = new int[8] { 5, 4, 7, 8, 10, 16, 18, 18 };
             WaveMaxe_AxeDudess_OnScreen = new int[8] { 1, 3, 4, 5, 6, 0, 0, 0 };
@@ -632,7 +632,7 @@ public class GameSettings : MonoBehaviour
     //letsplay one wave simulating wave 4 when suddendeath happens
     public float _global_Time_Tournament_GameEnds = 600f;
     private float _global_Time_KidsGameEnds = 240f;
-    private float _global_Time_SuddenDeath = 240f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
+    private float _global_Time_SuddenDeath = 210f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
 
     public float Global_Time_Apocalypse_GameEnds_600s_10m
     {
@@ -706,7 +706,7 @@ public class GameSettings : MonoBehaviour
     public int curHeadShotNum = 0;
     public int maxHeadShotNum = 4;
 
-
+    public bool ISimpleGunSwapn = false;
 
 
     public ARZPregameType PregmeType = ARZPregameType.BRICKWALL;

@@ -339,9 +339,10 @@ public class ViveGunBundle : MonoBehaviour, IBundle
         {
             GameManager.Instance.ENEMYMNGER_getter().Un_Aim_All_Live_Enemies();
         }
-        //Debug.Log("C H A N G E t0" + _arggunType.ToString());
-        _hasSelectedSecondaryGgunRight = true;
-        _hasSelectedMaingunLeft = false;
+        Debug.Log("new scene C H A N G E t0" + _arggunType.ToString());
+        MainGunSelected_OnOff = true;
+        _hasSelectedSecondaryGgunRight = true; //a dk why these are reversed
+        _hasSelectedMaingunLeft = false;       //b idk why these are reversed
         Equips_GunInMainHand(_arggunType);
     }
 
@@ -391,6 +392,7 @@ public class ViveGunBundle : MonoBehaviour, IBundle
 
 
 
+    bool MainGunSelected_OnOff;
     // tracking meter // evrytime i put a gun in my hand(bundle gun enable) -> I endup making gunbundles pass a reff to metergo to the gun activated
     void Equips_GunInMainHand(GunType gunType)
     {
@@ -473,6 +475,7 @@ public class ViveGunBundle : MonoBehaviour, IBundle
         //    NEXT_GunSelection();
         //}
         Equips_GunInMainHand(_localwave.Get_LevelGunType(LeftMidRight.MID));
+        MainGunSelected_OnOff = false;
     }
     public void PlayerHand_Main_gun()
     {
@@ -488,7 +491,21 @@ public class ViveGunBundle : MonoBehaviour, IBundle
         //}
 
         Equips_GunInMainHand(_localwave.Get_LevelGunType(LeftMidRight.RIGHT));
+        MainGunSelected_OnOff = true;
     }
+
+    public void SwapToOtherGun()
+    {
+        if (MainGunSelected_OnOff)
+        {
+            PlayerHand_Secondary_gun();
+        }
+        else
+        {
+            PlayerHand_Main_gun();
+        }
+    }
+
 
 
     //void NEXT_GunSelection()
