@@ -64,10 +64,25 @@ public class KnProvVisualzer : MonoBehaviour
                 if (thepotentialnextnode != null)
                 {
                     if (thepotentialnextnode.IsFree)
+                    {
                         DrawLine_FromPosToPos(sp.GetPos(), KnodeProvider.Instance.RequestNextKnode(sp).GetPos());
+                    }
                 }
             }
         }
 #endif
+    }
+
+
+    public void DrawPath(List<int> argIDS)
+    {
+        if (argIDS.Count < 2) { return; }
+
+        DrawLine_FromPosToPos(KnodeProvider.Instance.GetNodeByID(argIDS[0]).GetPos(), KnodeProvider.Instance.GetNodeByID(argIDS[1]).GetPos());
+        DrawLine_FromPosToPos(KnodeProvider.Instance.GetNodeByID(argIDS[argIDS.Count - 1]).GetPos(), KnodeProvider.Instance.GetNodeByID(argIDS[0]).GetPos());
+        for (int x = 1; x < argIDS.Count; x++)
+        {
+            DrawLine_FromPosToPos(KnodeProvider.Instance.GetNodeByID(argIDS[x - 1]).GetPos(), KnodeProvider.Instance.GetNodeByID(argIDS[x]).GetPos());
+        }
     }
 }

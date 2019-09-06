@@ -16,8 +16,24 @@ public class GameSettings : MonoBehaviour
         return has_waveLevelSettingsFile;
     }
 
+    int[] _patrolleSet1_Top = new int[] { 25, 26, 36, 34 };
+    int[] _patrolleSet2_Mid = new int[] { 40, 32, 37 };
+    int[] _patrolleSet3_bot = new int[] { 50, 45, 40 };
+    int[] _patrolleSet4_default = new int[] { 43, 42, 47 };
 
+    public int[] Get_Patrole(FarMidNearNone argFarnear)
+    {
+        if (argFarnear == FarMidNearNone.FAR) { return _patrolleSet1_Top; }
+        else
+if (argFarnear == FarMidNearNone.MID) { return _patrolleSet2_Mid; }
+        else
+if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
+        else
+        {
 
+            return _patrolleSet4_default;
+        }
+    }
     private void Awake()
     {
         Application.targetFrameRate = 80;
@@ -266,9 +282,9 @@ public class GameSettings : MonoBehaviour
 
 
             WaveAvailableSpawnPoints = new List<int>[8];
-            WaveAvailableSpawnPoints[0] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
-            WaveAvailableSpawnPoints[1] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            WaveAvailableSpawnPoints[2] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            WaveAvailableSpawnPoints[0] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            WaveAvailableSpawnPoints[1] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            WaveAvailableSpawnPoints[2] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             WaveAvailableSpawnPoints[3] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
             WaveAvailableSpawnPoints[4] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
             WaveAvailableSpawnPoints[5] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };

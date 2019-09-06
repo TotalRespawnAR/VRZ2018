@@ -6,10 +6,46 @@ public class ZombieAxeMan : MainEntityComponent
     //UAudioManager audioMnger;
     private GameObject InHandAxe;
     int[] _4_knodesToJumpTo;
+
     int _curKNodetojumpto_INDEX;
     int nodeToJumpToPTR;
     int NumberOfAttackPointsBeforeRussingPlayer;
     int curAttackpoint;
+
+    bool PatroleWasSet = false;
+
+    public override void SpetialEnemyIINIT()
+    {
+        Init_PatrolNodes();
+    }
+    void Init_PatrolNodes()
+    {
+        if (PatroleWasSet)
+        {
+            return;
+        }
+
+        if (Get_CurAndOnlyKnode().KnokeID == 1 || Get_CurAndOnlyKnode().KnokeID == 9 ||
+            Get_CurAndOnlyKnode().KnokeID == 4 || Get_CurAndOnlyKnode().KnokeID == 7 ||
+                Get_CurAndOnlyKnode().KnokeID == 12 || Get_CurAndOnlyKnode().KnokeID == 15)
+        {
+            _4_knodesToJumpTo = GameSettings.Instance.Get_Patrole(FarMidNearNone.FAR);
+        }
+        else
+        {
+            _4_knodesToJumpTo = GameSettings.Instance.Get_Patrole(FarMidNearNone.MID);
+        }
+
+
+        nodeToJumpToPTR = Random.Range(0, _4_knodesToJumpTo.Length);//the increment prtr to ensure a clock wise position
+        nodeToJumpToPTR++;
+        if (nodeToJumpToPTR >= _4_knodesToJumpTo.Length)
+        {
+            nodeToJumpToPTR = 0;
+        }
+        PatroleWasSet = true;
+    }
+
 
     // 16    18 19 20 21    23
     // 24    26 27 28 29    31
@@ -18,27 +54,28 @@ public class ZombieAxeMan : MainEntityComponent
     // 48 49 50 51 52 53 54 55
     public override void StartEnemy()
     {
+
+
         //audioMnger = GetComponent<UAudioManager>();
         GEt_MEsher().ToggleExternalMesh_inTime(true, 0.2f);
-        if (Get_ID() % 3 == 0)
-        {
-            _4_knodesToJumpTo = new int[] { 33, 37, 40 };
-        }
-        else
-        if (Get_ID() % 3 == 1)
-        {
-            _4_knodesToJumpTo = new int[] { 35, 26, 39 };
-        }
-        else
-        {
-            _4_knodesToJumpTo = new int[] { 50, 45, 40 };
-        }
+        //if (Get_ID() % 3 == 0)
+        //{
+        //    _4_knodesToJumpTo = new int[] { 33, 37, 40 };
+        //}
+        //else
+        //if (Get_ID() % 3 == 1)
+        //{
+        //    _4_knodesToJumpTo = new int[] { 34, 27, 39 };
+        //}
+        //else
+        //{
+        //    _4_knodesToJumpTo = new int[] { 50, 45, 40 };
+        //}
         _curKNodetojumpto_INDEX = 0;
         NumberOfAttackPointsBeforeRussingPlayer = 3;
         curAttackpoint = 0;
-        nodeToJumpToPTR = Random.Range(0, _4_knodesToJumpTo.Length);//the increment prtr to ensure a clock wise position
-        nodeToJumpToPTR++;
-        if (nodeToJumpToPTR >= _4_knodesToJumpTo.Length) nodeToJumpToPTR = 0;
+
+
         InHandAxe = Get_my_RHandtrans().GetChild(0).GetChild(0).gameObject;// Instantiate(GameManager.Instance.GetaStaticAxe(), Get_my_RHandtrans().position, Quaternion.Euler(Get_my_RHandtrans().localRotation.eulerAngles));
                                                                            // InHandAxe.transform.parent = Get_my_RHandtrans();
         CurMODE = new EBD_StartTimer(this, ModesEnum.STARTIDLE, 3f, StartActionIdle, false);
@@ -100,7 +137,9 @@ public class ZombieAxeMan : MainEntityComponent
             //    Trigger_EndBEhaviorTASK(EnemyTaskEneum.LaunchRocket);
             //}
             else
+            {
                 Debug.Log("no matches");
+            }
         }
 
         else
@@ -132,8 +171,9 @@ public class ZombieAxeMan : MainEntityComponent
 
 
             else
-
+            {
                 Debug.Log("no matches");
+            }
         }
         else
                 if (StringMatch(thesplit[1], "MOVE"))
@@ -217,7 +257,11 @@ public class ZombieAxeMan : MainEntityComponent
                     Debug.Log("->ovr EB_SeekAxe");
 #endif
                     nodeToJumpToPTR++;
-                    if (nodeToJumpToPTR >= _4_knodesToJumpTo.Length) nodeToJumpToPTR = 0;
+                    if (nodeToJumpToPTR >= _4_knodesToJumpTo.Length)
+                    {
+                        nodeToJumpToPTR = 0;
+                    }
+
                     CurMODE.EndBehavior();
                     CurMODE = new EBD_SeekKnodes(this, ModesEnum.KSEEK, false, 3f, StartActionAxeManSeek, ActionAxeManRoll, true, _4_knodesToJumpTo[nodeToJumpToPTR], 0.6f); //try 0.5f
                     CurMODE.StartBehavior();
@@ -298,7 +342,11 @@ public class ZombieAxeMan : MainEntityComponent
   Debug.Log("->ovr EB_SeekAxe");
 #endif
                     nodeToJumpToPTR++;
-                    if (nodeToJumpToPTR >= _4_knodesToJumpTo.Length) nodeToJumpToPTR = 0;
+                    if (nodeToJumpToPTR >= _4_knodesToJumpTo.Length)
+                    {
+                        nodeToJumpToPTR = 0;
+                    }
+
                     CurMODE.EndBehavior();
                     CurMODE = new EBD_SeekKnodes(this, ModesEnum.KSEEK, true, 3f, StartActionAxeManSeek, ActionAxeManRoll, true, _4_knodesToJumpTo[nodeToJumpToPTR], 1f); //try 0.5f
                     CurMODE.StartBehavior();

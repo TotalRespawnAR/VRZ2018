@@ -41,7 +41,9 @@ public class KnodeProvider : MonoBehaviour
             // m_visualizer.EraseAll();
         }
         else
+        {
             Destroy(gameObject);
+        }
     }
     //List<KNode> SpawnNodes;
     //List<KNode> GraveNodes;
@@ -109,7 +111,10 @@ public class KnodeProvider : MonoBehaviour
                 break;
             }
         }
-        if (Bestnode == null) Bestnode = cur.NextNeighbors[0];
+        if (Bestnode == null)
+        {
+            Bestnode = cur.NextNeighbors[0];
+        }
 
         //could be null, make sure ther IS a path
         return Bestnode;
@@ -265,8 +270,10 @@ public KNode Get_RandNode()
             return m_KnodeManager.ExplicitNodeAlpha;
         }
         else
+        {
             return
                 m_KnodeManager.ExplicitNodeBravo;
+        }
     }
 #if ENABLE_KEYBORADINPUTS
     private void Update()
@@ -276,23 +283,48 @@ public KNode Get_RandNode()
 
             m_visualizer.EraseAll();
         }
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            //  SetTunnelInactives(0);
-            m_visualizer.UpdateNExtNeighborsVisually(m_KnodeManager.GetAll_LandNodes());
-        }
         if (Input.GetKeyDown(KeyCode.I))
         {
             //  SetTunnelInactives(0);
+            m_visualizer.EraseAll();
+            HelpVisualizePath(GameSettings.Instance.Get_Patrole(FarMidNearNone.FAR).ToList());
+
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            m_visualizer.EraseAll();
+            HelpVisualizePath(GameSettings.Instance.Get_Patrole(FarMidNearNone.MID).ToList());
+
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            m_visualizer.EraseAll();
+            HelpVisualizePath(GameSettings.Instance.Get_Patrole(FarMidNearNone.NEAR).ToList());
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            m_visualizer.EraseAll();
+            m_visualizer.UpdateNExtNeighborsVisually(m_KnodeManager.GetAll_LandNodes());
+
         }
 
     }
+
+
+
 
 #endif
 
     public KNode GET_knode(int row, int col)
     {
         return m_KnodeManager.Knodes2D[row, col];
+    }
+
+    public void HelpVisualizePath(List<int> argNodeIDS)
+    {
+        m_visualizer.DrawPath(argNodeIDS);
     }
 }
 

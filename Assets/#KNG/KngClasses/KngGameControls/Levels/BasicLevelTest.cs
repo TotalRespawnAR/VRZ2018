@@ -342,7 +342,7 @@ public class BasicLevelTest : WaveLevel
                     _curStandardIndex = 0;
                 }
 
-                Data_Enemy DE_noTimeStamp_noID = BuildDE(ARZombieypes.STANDARD, pickfrom[_curStandardIndex], Get_LevelBaseSeekSpeed(), Get_LevelHP(), SelfRoundRobin_SpawnPoints());
+                Data_Enemy DE_noTimeStamp_noID = BuildDE(ARZombieypes.STANDARD, pickfrom[_curStandardIndex], Get_LevelBaseSeekSpeed(), Get_LevelHP(), SelfRoundRobin_SpawnPoints(false));
                 GameManager.Instance.Spawn_Enemy(DE_noTimeStamp_noID);
                 _curStandardIndex++;
                 Alive_Standards++;
@@ -399,7 +399,7 @@ public class BasicLevelTest : WaveLevel
                 curSprinterIndex = 0;
             }
 
-            Data_Enemy boosp = BuildDE(ARZombieypes.Sprinter, SPrinters[curSprinterIndex], SeekSpeed.sprint, Get_LevelHP(), SelfRoundRobin_SpawnPoints());
+            Data_Enemy boosp = BuildDE(ARZombieypes.Sprinter, SPrinters[curSprinterIndex], SeekSpeed.sprint, Get_LevelHP(), SelfRoundRobin_SpawnPoints(false));
             GameManager.Instance.Spawn_Enemy(boosp);
 
             curSprinterIndex++;
@@ -421,7 +421,7 @@ public class BasicLevelTest : WaveLevel
         if (Alive_AxeGuys < Get_LevelMax_Axers_OnScreen())
         {
             int axeguyHP = Get_LevelHP() * 2;
-            Data_Enemy argAxeguyDE = BuildDE(ARZombieypes.AXEMAN, KngEnemyName.axvmanv2, SeekSpeed.walk, axeguyHP, SelfRoundRobin_SpawnPoints());
+            Data_Enemy argAxeguyDE = BuildDE(ARZombieypes.AXEMAN, KngEnemyName.axvmanv2, SeekSpeed.walk, axeguyHP, SelfRoundRobin_SpawnPoints(true));
             GameManager.Instance.Spawn_Enemy(argAxeguyDE);
             Alive_AxeGuys++;
         }
@@ -567,7 +567,7 @@ public class BasicLevelTest : WaveLevel
     //}
 
     int curIndex_SpawnPoints = 0;
-    KNode SelfRoundRobin_SpawnPoints()
+    KNode SelfRoundRobin_SpawnPoints(bool IsAxmanSkipID2_3_10_11)
     {
         curIndex_SpawnPoints++;
         if (curIndex_SpawnPoints >= Get_ListSpawnPointIds().Count)
@@ -575,6 +575,21 @@ public class BasicLevelTest : WaveLevel
             curIndex_SpawnPoints = 0;
         }
 
+        if (IsAxmanSkipID2_3_10_11)
+        {
+            if (curIndex_SpawnPoints == 2 || curIndex_SpawnPoints == 3) { curIndex_SpawnPoints = 4; }
+            else
+                if (curIndex_SpawnPoints == 6 || curIndex_SpawnPoints == 7) { curIndex_SpawnPoints = 8; }
+            else
+                 if (curIndex_SpawnPoints == 10 || curIndex_SpawnPoints == 11) { curIndex_SpawnPoints = 12; }
+            else
+                 if (curIndex_SpawnPoints == 14 || curIndex_SpawnPoints == 15) { curIndex_SpawnPoints = 0; }
+        }
+
+        if (curIndex_SpawnPoints >= Get_ListSpawnPointIds().Count)
+        {
+            curIndex_SpawnPoints = 0;
+        }
         return KnodeProvider.Instance.GetNodeByID(Get_ListSpawnPointIds()[curIndex_SpawnPoints]);
     }
     int curIndex_GravePoints = 0;

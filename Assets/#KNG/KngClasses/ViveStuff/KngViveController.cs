@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using Valve.VR;
 public class KngViveController : MonoBehaviour
 {
@@ -36,6 +37,12 @@ public class KngViveController : MonoBehaviour
 
     }
 
+    bool CanFire = false;
+    IEnumerator WaitToInit()
+    {
+        yield return new WaitForSeconds(3);
+        CanFire = true;
+    }
     // Use this for initialization
     void Start()
     {
@@ -63,6 +70,7 @@ public class KngViveController : MonoBehaviour
         {
             Debug.Log("NoRZplayer");
         }
+        StartCoroutine(WaitToInit());
     }
 
     //private void Update()
@@ -74,13 +82,35 @@ public class KngViveController : MonoBehaviour
 
 
     //}
-    private void OnShootGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source) { RightHandBundle.GetActiveGunScript().GUN_FIRE(); }
-    private void OnStopShootGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source) { RightHandBundle.GetActiveGunScript().GUN_STOP_FIRE(); }
+    private void OnShootGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
+    {
+        if (!CanFire)
+        {
+            return;
+        }
+
+        RightHandBundle.GetActiveGunScript().GUN_FIRE();
+
+    }
+    private void OnStopShootGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
+    {
+        if (!CanFire)
+        {
+            return;
+        }
+
+        RightHandBundle.GetActiveGunScript().GUN_STOP_FIRE();
+    }
 
 
 
     private void OnNextGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
+        if (!CanFire)
+        {
+            return;
+        }
+
 
         if (GameSettings.Instance.ISimpleGunSwap)
         {
@@ -95,6 +125,12 @@ public class KngViveController : MonoBehaviour
 
     private void OnPrevGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
+        if (!CanFire)
+        {
+            return;
+        }
+
+
         if (GameSettings.Instance.ISimpleGunSwap)
         {
             RightHandBundle.SwapToOtherGun();
@@ -109,12 +145,22 @@ public class KngViveController : MonoBehaviour
 
     private void OnNextScopeClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
+        if (!CanFire)
+        {
+            return;
+        }
+
         //print("up");
         // RightHandBundle.SwitchScopesRoundRobbin();
     }
 
     private void OnPrevScopeClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
+
+        if (!CanFire)
+        {
+            return;
+        }
         //print("down");
         //RightHandBundle.SwitchScopesRoundRobbin();
     }

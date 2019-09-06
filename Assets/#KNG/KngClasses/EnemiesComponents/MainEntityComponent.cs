@@ -189,6 +189,11 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
         //}
     }
 
+    public virtual void SpetialEnemyIINIT()
+    {
+
+    }
+
     #region PrivateMethods
 
     void InitShouldRagdollDeath()
@@ -328,8 +333,10 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
 
     public void DoSetMyAssOnFire()
     {
-        if (IsBurningAlready) return;
-
+        if (IsBurningAlready)
+        {
+            return;
+        }
 
         Trigger_EndBEhaviorTASK(EnemyTaskEneum.Burning);
         IsBurningAlready = true;
@@ -375,7 +382,10 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
     }
     void FixedUpdate()
     {
-        if (isShuttedTheFuckUp) return;
+        if (isShuttedTheFuckUp)
+        {
+            return;
+        }
 
         //if (this.transform.position.y > 2)
         //{
@@ -689,7 +699,10 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
             }
         }
 
-
+        if (GetMyType() == ARZombieypes.AXEMAN)
+        {
+            SpetialEnemyIINIT();
+        }
 
 
 
@@ -1068,7 +1081,9 @@ public class MainEntityComponent : MonoBehaviour, IEnemyEntityComp
         if (myAnimatorObj == null) { Debug.Log("no anim idle"); }
         myAnimatorObj.iSet_EBEstate((int)EBSTATE.START_eb0); myAnimatorObj.iSet_IsStartUnderground(false);
         if (GetMyType() == ARZombieypes.AXEMAN)
+        {
             return;
+        }
 
         Get_Animer().Do_LookPlayer(true);
     }
