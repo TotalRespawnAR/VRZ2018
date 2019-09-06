@@ -82,7 +82,7 @@ public class KngViveController : MonoBehaviour
     private void OnNextGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
 
-        if (GameSettings.Instance.ISimpleGunSwapn)
+        if (GameSettings.Instance.ISimpleGunSwap)
         {
             RightHandBundle.SwapToOtherGun();
         }
@@ -95,7 +95,7 @@ public class KngViveController : MonoBehaviour
 
     private void OnPrevGunClicked(SteamVR_Action_Boolean action, SteamVR_Input_Sources source)
     {
-        if (GameSettings.Instance.ISimpleGunSwapn)
+        if (GameSettings.Instance.ISimpleGunSwap)
         {
             RightHandBundle.SwapToOtherGun();
         }

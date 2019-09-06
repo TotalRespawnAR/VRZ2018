@@ -706,8 +706,8 @@ public class GameSettings : MonoBehaviour
     public int curHeadShotNum = 0;
     public int maxHeadShotNum = 4;
 
-    public bool ISimpleGunSwapn = true;
-
+    bool _ISimpleGunSwap = true;
+    public bool ISimpleGunSwap { get => _ISimpleGunSwap; set => _ISimpleGunSwap = value; }
 
     public ARZPregameType PregmeType = ARZPregameType.BRICKWALL;
 
@@ -1313,6 +1313,8 @@ public class GameSettings : MonoBehaviour
         }
 
     }
+
+
 
     //********************************************************************************************************
     //private void Update()

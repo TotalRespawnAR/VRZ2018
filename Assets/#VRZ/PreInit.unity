@@ -368,7 +368,6 @@ MonoBehaviour:
   SlowOff: {fileID: 0}
   HeartBeat: {fileID: 0}
   BodyImpact: {fileID: 0}
-  HeadshotImpace: {fileID: 0}
   Cheer200: {fileID: 0}
   GameOver: {fileID: 0}
   Sudden: {fileID: 0}
@@ -386,6 +385,9 @@ MonoBehaviour:
   Squish0: {fileID: 0}
   Squish1: {fileID: 0}
   Squish2: {fileID: 0}
+  BerserkerShotGun: {fileID: 0}
+  HeadImpact: {fileID: 0}
+  HeadImpact2: {fileID: 0}
   _global_Time_Tournament_GameEnds: 600
   UseNab: 0
   UseVive: 1
@@ -398,6 +400,11 @@ MonoBehaviour:
   UseAltGame: 0
   UseAxe2: 1
   UseRoomFlip: 0
+  UseCamShake: 0
+  UseXboxCTRL: 0
+  UseFlies: 0
+  UseFlies2: 0
+  UseFirSky: 0
   IsTournamentModeOn: 0
   IsKidsModeOn: 0
   IsSkipPregameOn: 0

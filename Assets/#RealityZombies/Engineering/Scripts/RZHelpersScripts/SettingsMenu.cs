@@ -142,7 +142,7 @@ public class SettingsMenu : MonoBehaviour
         GameSettings.Instance.UseFirSky = GUI.Toggle(UseFireSky, GameSettings.Instance.UseFirSky, "fireSky");
         GameSettings.Instance.UseFlies2 = GUI.Toggle(UseFlies2, GameSettings.Instance.UseFirSky, "swarm");
 
-        GameSettings.Instance.ISimpleGunSwapn = GUI.Toggle(UseSingleButtonReload, GameSettings.Instance.ISimpleGunSwapn, "any swap");
+        GameSettings.Instance.ISimpleGunSwap = GUI.Toggle(UseSingleButtonReload, GameSettings.Instance.ISimpleGunSwap, "any swap");
 
         if (GUI.Button(ButtonNext, "playerEntry"))
         {
