@@ -706,7 +706,7 @@ public class GameSettings : MonoBehaviour
     public int curHeadShotNum = 0;
     public int maxHeadShotNum = 4;
 
-    public bool ISimpleGunSwapn = false;
+    public bool ISimpleGunSwapn = true;
 
 
     public ARZPregameType PregmeType = ARZPregameType.BRICKWALL;

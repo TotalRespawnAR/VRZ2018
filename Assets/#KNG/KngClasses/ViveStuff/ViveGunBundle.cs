@@ -464,7 +464,7 @@ public class ViveGunBundle : MonoBehaviour, IBundle
 
     public void PlayerHand_Secondary_gun()
     {
-        if (GameManager.Instance.KngGameState == ARZState.Pregame)
+        if (GameManager.Instance.KngGameState != ARZState.WavePlay && GameManager.Instance.KngGameState != ARZState.WaveOverTime)
         {
             return;
             //    //GameEventsManager.Instance.CallTutoPlayerChangedWeapon();
@@ -479,7 +479,7 @@ public class ViveGunBundle : MonoBehaviour, IBundle
     }
     public void PlayerHand_Main_gun()
     {
-        if (GameManager.Instance.KngGameState == ARZState.Pregame)
+        if (GameManager.Instance.KngGameState != ARZState.WavePlay && GameManager.Instance.KngGameState != ARZState.WaveOverTime)
         {
             return;
             //GameEventsManager.Instance.CallTutoPlayerChangedWeapon();
