@@ -191,31 +191,31 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
 
             //                             30
-            WaveTimes__Sec = new int[8] { 30, 40, 50, 60, 6000, 40, 40, 1000000 };
+            WaveTimes__Sec = new int[8] { 40, 50, 6000, 60, 6000, 40, 40, 1000000 };
             WaveSpawnRates = new int[8] { 1, 1, 1, 1, 1, 1, 1, 1 };
-            WaveGraveRates = new int[8] { 5, 4, 3, 2, 1, 1, 2, 2 };
+            WaveGraveRates = new int[8] { 4, 4, 3, 2, 1, 1, 2, 2 };
             //WaveSpawnRates = new int[8] { 2000, 4, 3, 3, 2, 1, 1, 1 };
             //WaveGraveRates = new int[8] { 6000, 5, 4, 2, 1, 3, 2, 2 };
 
-            Wave_Enemy_HItPoints_HP = new int[8] { 100, 200, 300, 400, 500, 4, 4, 4 };
-            WaveMaxe_Standards_OnScreen = new int[8] { 10, 14, 16, 18, 22, 25, 18, 18 };
+            Wave_Enemy_HItPoints_HP = new int[8] { 200, 300, 500, 400, 500, 4, 4, 4 };
+            WaveMaxe_Standards_OnScreen = new int[8] { 14, 16, 22, 18, 22, 25, 18, 18 };
             WaveMaxe_Graverrrs_OnScreen = new int[8] { 5, 10, 10, 10, 10, 10, 18, 18 };
-            WaveMaxe_Sprinters_OnScreen = new int[8] { 5, 4, 7, 8, 10, 16, 18, 18 };
-            WaveMaxe_AxeDudess_OnScreen = new int[8] { 1, 3, 4, 5, 6, 0, 0, 0 };
+            WaveMaxe_Sprinters_OnScreen = new int[8] { 4, 6, 8, 8, 10, 16, 18, 18 };
+            WaveMaxe_AxeDudess_OnScreen = new int[8] { 1, 2, 4, 5, 6, 0, 0, 0 };
 
-            Wave_Boss____Times = new int[8] { -1, -1, 30, 40, 60, -1, -1, -1 };
+            Wave_Boss____Times = new int[8] { -1, -1, 60, 40, 60, -1, -1, -1 };
 
             WaveGraveTimeStart = new int[8] { 1, 1, 1, 1, 1, 1, 1, 1 };
 
-            WaveSpeedUpTimeStart = new int[8] { 40, 50, 70, 60, 70, 10, 10, 10 };
+            WaveSpeedUpTimeStart = new int[8] { 40, 50, 80, 60, 70, 10, 10, 10 };
 
-            Wave_zombieHIt_Strengthss = new int[8] { 2, 2, 3, 4, 5, 4, 4, 4 };
+            Wave_zombieHIt_Strengthss = new int[8] { 2, 3, 4, 4, 5, 4, 4, 4 };
 
 
 
 
             WaveSeekSpeeds = new SeekSpeed[8];
-            WaveSeekSpeeds[0] = SeekSpeed.walk;
+            WaveSeekSpeeds[0] = SeekSpeed.run;
             WaveSeekSpeeds[1] = SeekSpeed.run;
             WaveSeekSpeeds[2] = SeekSpeed.run;
             WaveSeekSpeeds[3] = SeekSpeed.run;
@@ -227,9 +227,9 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
 
             MainGuns = new GunType[8];
-            MainGuns[0] = GunType.MAGNUM;
-            MainGuns[1] = GunType.PISTOL;
-            MainGuns[2] = GunType.MG61;
+            MainGuns[0] = GunType.PISTOL;
+            MainGuns[1] = GunType.MG61;
+            MainGuns[2] = GunType.P90;
             MainGuns[3] = GunType.UZI;
             MainGuns[4] = GunType.P90;
             MainGuns[5] = GunType.MG61;
@@ -250,7 +250,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
             WaveHasBos = new bool[8];
             WaveHasBos[0] = true;
             WaveHasBos[1] = true; //but boss time -1 so just do spawning groups , not incremental
-            WaveHasBos[2] = false;
+            WaveHasBos[2] = true;
             WaveHasBos[3] = true;
             WaveHasBos[4] = true;
             WaveHasBos[5] = false;
@@ -259,9 +259,9 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
 
             WaveTimesSpawnAxe = new List<int>[8];
-            WaveTimesSpawnAxe[0] = new List<int>() { 10, 60, 65, 68 };// { 5, 8, 10, 12, 15, 20, 21, 22, 23, 24, 25, 26, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 };//   
-            WaveTimesSpawnAxe[1] = new List<int>() { 20, 40, 50 };//{ 5, 8, 10, 12, 15, 20, 21, 22, 23, 24, 25, 26, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 };//  
-            WaveTimesSpawnAxe[2] = new List<int>() { 15, 25, 35, 50, 65, 70, 80 };
+            WaveTimesSpawnAxe[0] = new List<int>() { 20, 40, 60, 70 };// { 5, 8, 10, 12, 15, 20, 21, 22, 23, 24, 25, 26, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 };//   
+            WaveTimesSpawnAxe[1] = new List<int>() { 15, 25, 35, 50, 65, 70, 80 };//{ 5, 8, 10, 12, 15, 20, 21, 22, 23, 24, 25, 26, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 };//  
+            WaveTimesSpawnAxe[2] = new List<int>() { 15, 25, 35, 50, 65, 70, 80, 100, 120, 130, 140, 150, 160, 170, 180, 190, 200, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600 };
             WaveTimesSpawnAxe[3] = new List<int>() { 15, 30, 45, 60, 70, 80 };
             WaveTimesSpawnAxe[4] = new List<int>() { 15, 25, 35, 50, 65, 70, 80, 100, 120, 130, 140, 150, 160, 170, 180, 190, 200, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600 };
             WaveTimesSpawnAxe[5] = new List<int>() { 1000 };// { 15, 25 };
@@ -271,9 +271,9 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
 
             WaveTimesSpawnPrinter = new List<int>[8];
-            WaveTimesSpawnPrinter[0] = new List<int>() { 1000 };
-            WaveTimesSpawnPrinter[1] = new List<int>() { 55, 58 };// { 10, 15, 20, 25, 30, 40, 50, 60 };  
-            WaveTimesSpawnPrinter[2] = new List<int>() { 5, 15, 16, 17, 20, 25, 30, 45, 60 };
+            WaveTimesSpawnPrinter[0] = new List<int>() { 50, 60 };
+            WaveTimesSpawnPrinter[1] = new List<int>() { 5, 15, 16, 17, 20, 25, 30, 45, 60 };// { 10, 15, 20, 25, 30, 40, 50, 60 };  
+            WaveTimesSpawnPrinter[2] = new List<int>() { 10, 15, 20, 25, 26, 30, 35, 36, 40, 45, 46, 47, 50, 55, 56, 57, 60, 65, 66, 70, 75, 76, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 100, 110, 120 };
             WaveTimesSpawnPrinter[3] = new List<int>() { 10, 15, 20, 25, 26, 30, 35, 36, 40, 45, 46, 47, 50, 55, 56, 57, 60, 65, 66, 70, 75, 76, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 100, 110, 120 };
             WaveTimesSpawnPrinter[4] = new List<int>() { 2, 5, 10, 11, 15, 17, 20, 21, 23, 24, 30, 32, 35, 37, 40, 42, 46, 48, 51, 55, 56, 57, 60, 62, 64, 66, 70, 80, 100, 115, 117, 120, 121, 123, 124, 130, 132, 135, 137, 140, 142, 146, 148, 151, 155, 156, 157, 160, 162, 164, 166, 170, 171, 172, 175, 180, 200, 215, 217, 220, 221, 223, 224, 230, 232, 235, 237, 240, 242, 246, 248, 251, 255, 256, 257, 260, 262, 264, 266, 270, 271, 272, 275, 280, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 30000 };
             WaveTimesSpawnPrinter[5] = new List<int>() { 1000 };// { 2, 3, 4, 5, 16, 19, 21, 26, 20, 28 };
@@ -284,7 +284,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
             WaveAvailableSpawnPoints = new List<int>[8];
             WaveAvailableSpawnPoints[0] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             WaveAvailableSpawnPoints[1] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            WaveAvailableSpawnPoints[2] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            WaveAvailableSpawnPoints[2] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
             WaveAvailableSpawnPoints[3] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
             WaveAvailableSpawnPoints[4] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
             WaveAvailableSpawnPoints[5] = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
