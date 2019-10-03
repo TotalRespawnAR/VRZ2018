@@ -189,7 +189,8 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
             Squish1 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Squish_1");
             Squish2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Squish_2");
 
-
+            //_global_Time_SuddenDeath = 240;
+            //Global_Time_SuddenDeath_300s_5min = 240f;
             //                             30
             WaveTimes__Sec = new int[8] { 60, 90, 60000, 60, 6000, 40, 40, 1000000 };
             WaveSpawnRates = new int[8] { 1, 1, 1, 1, 1, 1, 1, 1 };
@@ -198,7 +199,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
             //WaveGraveRates = new int[8] { 6000, 5, 4, 2, 1, 3, 2, 2 };
 
             Wave_Enemy_HItPoints_HP = new int[8] { 200, 300, 500, 400, 500, 4, 4, 4 };
-            WaveMaxe_Standards_OnScreen = new int[8] { 14, 16, 22, 18, 22, 25, 18, 18 };
+            WaveMaxe_Standards_OnScreen = new int[8] { 10, 14, 20, 18, 22, 25, 18, 18 };
             WaveMaxe_Graverrrs_OnScreen = new int[8] { 5, 10, 10, 10, 10, 10, 18, 18 };
             WaveMaxe_Sprinters_OnScreen = new int[8] { 4, 6, 8, 8, 10, 16, 18, 18 };
             WaveMaxe_AxeDudess_OnScreen = new int[8] { 1, 2, 4, 5, 6, 0, 0, 0 };
