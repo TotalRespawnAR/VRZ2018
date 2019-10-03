@@ -708,7 +708,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
     public bool IsLoggerOn = false;
 
     //3d menue seletable
-    public bool IsBloodOn = false;
+    public bool IsBloodOn = true;
     public bool IsCanToggleLazerOn = true;
     public bool IsCanSelectReloadON = false;
     public bool IsCanSelectRoomOn = true;
