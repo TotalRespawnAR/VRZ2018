@@ -191,7 +191,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
 
             //                             30
-            WaveTimes__Sec = new int[8] { 40, 50, 6000, 60, 6000, 40, 40, 1000000 };
+            WaveTimes__Sec = new int[8] { 60, 90, 60000, 60, 6000, 40, 40, 1000000 };
             WaveSpawnRates = new int[8] { 1, 1, 1, 1, 1, 1, 1, 1 };
             WaveGraveRates = new int[8] { 4, 4, 3, 2, 1, 1, 2, 2 };
             //WaveSpawnRates = new int[8] { 2000, 4, 3, 3, 2, 1, 1, 1 };
@@ -647,8 +647,8 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
     //letsplay one wave simulating wave 4 when suddendeath happens
     public float _global_Time_Tournament_GameEnds = 600f;
-    private float _global_Time_KidsGameEnds = 240f;
-    private float _global_Time_SuddenDeath = 210f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
+    private float _global_Time_KidsGameEnds;// = 240f;
+    private float _global_Time_SuddenDeath=240f;// = 210f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
 
     public float Global_Time_Apocalypse_GameEnds_600s_10m
     {
