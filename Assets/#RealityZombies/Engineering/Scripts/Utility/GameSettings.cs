@@ -199,7 +199,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
             Wave_Enemy_HItPoints_HP = new int[8] { 200, 300, 500, 400, 500, 4, 4, 4 };
             WaveMaxe_Standards_OnScreen = new int[8] { 10, 14, 20, 18, 22, 25, 18, 18 };
-            WaveMaxe_Graverrrs_OnScreen = new int[8] { 5, 10, 10, 10, 10, 10, 18, 18 };
+            WaveMaxe_Graverrrs_OnScreen = new int[8] { 5, 7, 10, 10, 10, 10, 18, 18 };
             WaveMaxe_Sprinters_OnScreen = new int[8] { 4, 6, 8, 8, 10, 16, 18, 18 };
             WaveMaxe_AxeDudess_OnScreen = new int[8] { 1, 2, 4, 5, 6, 0, 0, 0 };
 
@@ -207,7 +207,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
             WaveGraveTimeStart = new int[8] { 1, 1, 1, 1, 1, 1, 1, 1 };
 
-            WaveSpeedUpTimeStart = new int[8] { 40, 50, 80, 60, 70, 10, 10, 10 };
+            WaveSpeedUpTimeStart = new int[8] { 80, 110, 50, 60, 70, 10, 10, 10 };
 
             Wave_zombieHIt_Strengthss = new int[8] { 2, 3, 4, 4, 5, 4, 4, 4 };
 
