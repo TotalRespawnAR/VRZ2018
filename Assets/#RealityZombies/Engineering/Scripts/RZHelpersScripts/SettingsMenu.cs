@@ -129,7 +129,7 @@ public class SettingsMenu : MonoBehaviour
         GameSettings.Instance.UseShowPlayer = GUI.Toggle(ToggleShowPlayer1, GameSettings.Instance.UseShowPlayer, "showP1");
         GameSettings.Instance.Set_GlobalTimer(GUI.TextField(GameTimeBox, GameSettings.Instance.Global_Time_Apocalypse_GameEnds_600s_10m.ToString()));
         GUI.TextArea(GameTimeLable, "gameTime");
-        GameSettings.Instance.Set_SuddenDeathTimer(GUI.TextField(SudTimeBox, GameSettings.Instance.Global_Time_SuddenDeath_300s_5min.ToString()));
+        GameSettings.Instance.Set_SuddenDeathTimer(GUI.TextField(SudTimeBox, GameSettings.Instance.Global_Time_SuddenDeath_220.ToString()));
         GUI.TextArea(SuddTimeLable, "SuddenDeath");
 
         GameSettings.Instance.UseAltGame = GUI.Toggle(AltGame, GameSettings.Instance.UseAltGame, "alt");

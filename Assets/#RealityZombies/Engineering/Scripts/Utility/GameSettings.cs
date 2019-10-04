@@ -189,10 +189,9 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
             Squish1 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Squish_1");
             Squish2 = Resources.Load<AudioClip>("AudioClips/HeadshotBuzz/Squish_2");
 
-            //_global_Time_SuddenDeath = 240;
-            //Global_Time_SuddenDeath_300s_5min = 240f;
+             
             //                             30
-            WaveTimes__Sec = new int[8] { 60, 90, 60000, 60, 6000, 40, 40, 1000000 };
+            WaveTimes__Sec = new int[8] { 90, 120, 60000, 60, 6000, 40, 40, 1000000 };
             WaveSpawnRates = new int[8] { 1, 1, 1, 1, 1, 1, 1, 1 };
             WaveGraveRates = new int[8] { 4, 4, 3, 2, 1, 1, 2, 2 };
             //WaveSpawnRates = new int[8] { 2000, 4, 3, 3, 2, 1, 1, 1 };
@@ -639,7 +638,7 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
 
         float FloatTime = float.Parse(argtime);
 
-        Global_Time_SuddenDeath_300s_5min = FloatTime;
+        Global_Time_SuddenDeath_220 = FloatTime;
 
     }
 
@@ -649,23 +648,23 @@ if (argFarnear == FarMidNearNone.NEAR) { return _patrolleSet3_bot; }
     //letsplay one wave simulating wave 4 when suddendeath happens
     public float _global_Time_Tournament_GameEnds = 600f;
     private float _global_Time_KidsGameEnds;// = 240f;
-    private float _global_Time_SuddenDeath=240f;// = 210f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
+    private float _global_Time_SuddenDeath=220f;// = 210f;//65f;  //when suddendeath gest called . should be within the sutdden death buffer
 
     public float Global_Time_Apocalypse_GameEnds_600s_10m
     {
         get { return _global_Time_Tournament_GameEnds; }
         set { _global_Time_Tournament_GameEnds = value; }
     }
-    public float Global_Time_SuddenDeath_300s_5min
+    public float Global_Time_SuddenDeath_220
     {
         get { return _global_Time_SuddenDeath; }
         set { _global_Time_SuddenDeath = value; }
     }
-    public float Global_Time_Arcade_GameEnds_240s_4m
-    {
-        get { return _global_Time_KidsGameEnds; }
-        set { _global_Time_KidsGameEnds = value; }
-    }
+  //  public float Global_Time_Arcade_GameEnds_240s_4m
+    //{
+    //    get { return _global_Time_KidsGameEnds; }
+    //    set { _global_Time_KidsGameEnds = value; }
+    //}
 
 
     private string _gameName;

@@ -9,7 +9,7 @@ public class TimeController : MonoBehaviour
     public float _curRealTimePlayTime;
     private void Start()
     {
-        SuddenDeath_Seconds = GameSettings.Instance.Global_Time_SuddenDeath_300s_5min;
+        SuddenDeath_Seconds = GameSettings.Instance.Global_Time_SuddenDeath_220;
         EndGAme_Seconds = GameSettings.Instance.Global_Time_Apocalypse_GameEnds_600s_10m;
     }
 
